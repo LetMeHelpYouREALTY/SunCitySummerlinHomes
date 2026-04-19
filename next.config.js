@@ -1,11 +1,10 @@
+const path = require('path');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  outputFileTracingRoot: path.join(__dirname),
   reactStrictMode: true,
-  // For Next.js 14 and React 19
-  experimental: {
-    // Experimental features for improved compatibility
-  },
+  experimental: {},
   // For images, ensure you're using the latest format
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -22,8 +21,6 @@ const nextConfig = {
     // number of pages that should be kept simultaneously without being disposed
     pagesBufferLength: 2,
   },
-  // Additional settings to improve build stability
-  swcMinify: true,
   compiler: {
     // Suppress hydration warnings in production
     styledComponents: true,
@@ -37,12 +34,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Configure server to listen on all interfaces
-  server: {
-    // This ensures the server binds to all available network interfaces
-    host: '0.0.0.0',
-    port: process.env.PORT || 3000
-  }
 };
 
 module.exports = nextConfig;

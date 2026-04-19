@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Script from 'next/script'
 import { useEffect } from 'react'
 import styles from '../styles/Home.module.css'
+import { getLocalBusinessJsonLd, getOrganizationJsonLd } from '../lib/site-contact'
 // Import AOS styles
 import 'aos/dist/aos.css'
 
@@ -98,88 +99,46 @@ function MyApp({ Component, pageProps }: AppProps) {
             }
           `
         }} />
-        {/* Global site tag (gtag.js) - Google Analytics */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-XXXXXXXXXX');
-            `
-          }}
-        />
       </Head>
 
-      {/* RealScout script is now loaded in _document.tsx */}
-
-      {/* Add Google Analytics */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-        strategy="afterInteractive"
-      />
+      {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ? (
+        <>
+          <Script
+            id="google-analytics"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}');
+          `,
+            }}
+          />
+          <Script
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+            strategy="afterInteractive"
+          />
+        </>
+      ) : null}
 
       <Component {...pageProps} />
 
-      {/* LocalBusiness Structured Data */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{
-        __html: `
-          {
-            "@context": "https://schema.org",
-            "@type": "LocalBusiness",
-            "name": "Dr. Jan Duffy - Sun City Summerlin REALTOR®",
-            "image": "/drjan-logo.png",
-            "url": "https://suncitysummerlin.com",
-            "telephone": "(702) 718-0043",
-            "priceRange": "$$$",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "9406 Del Webb Boulevard",
-              "addressLocality": "Las Vegas",
-              "addressRegion": "NV",
-              "postalCode": "89134",
-              "addressCountry": "US"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": 36.2043,
-              "longitude": -115.2936
-            },
-            "openingHoursSpecification": {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-              ],
-              "opens": "09:00",
-              "closes": "19:00"
-            }
-          }
-        `
-      }}/>
+      <Script
+        id="local-business-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(getLocalBusinessJsonLd()),
+        }}
+      />
 
-      {/* Structured data for organization */}
       <Script
         id="organization-schema"
         type="application/ld+json"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Berkshire Hathaway HomeServices Nevada",
-            "url": "https://www.bhhsnv.com/",
-            "logo": {/* BHHS logo removed */},
-            "sameAs": [
-              "https://www.facebook.com/DrJanDuffyRealtorCentennialHills/",
-              "https://www.instagram.com/drjanduffy/",
-              "https://www.linkedin.com/company/lvrmembers/"
-            ]
-          })
+          __html: JSON.stringify(getOrganizationJsonLd()),
         }}
       />
     </div>

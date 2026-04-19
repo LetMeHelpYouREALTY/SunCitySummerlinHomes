@@ -1,0 +1,119 @@
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 5.75rem 1.25rem 3rem;
+}
+
+.h1 {
+  font-size: 1.85rem;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  line-height: 1.55;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.65;
+  color: #333;
+}
+
+.section {
+  margin-top: 2rem;
+}
+
+.section h2 {
+  font-size: 1.25rem;
+  color: #8e1f41;
+  margin-bottom: 0.75rem;
+}
+
+.napBox {
+  border: 1px solid #e8e8e8;
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  margin: 2rem 0;
+  background: #fafafa;
+}
+
+.napBox p {
+  margin: 0.35rem 0;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+.linkList li {
+  margin: 0.5rem 0;
+}
+
+.linkList a {
+  color: #8e1f41;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.linkList a:hover {
+  text-decoration: underline;
+}
+
+.faq dl {
+  margin: 0;
+}
+
+.faq dt {
+  font-weight: 600;
+  margin-top: 1.35rem;
+  color: #222;
+}
+
+.faq dd {
+  margin: 0.5rem 0 0 0;
+  padding: 0;
+  color: #444;
+  line-height: 1.6;
+}
+
+.ctaRow {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cta {
+  display: inline-block;
+  background: #8e1f41;
+  color: #fff !important;
+  padding: 0.65rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: #721935;
+}
+
+.ctaSecondary {
+  display: inline-block;
+  border: 2px solid #8e1f41;
+  color: #8e1f41;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ctaSecondary:hover {
+  background: rgba(142, 31, 65, 0.06);
+}

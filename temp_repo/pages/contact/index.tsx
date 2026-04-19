@@ -4,6 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../../styles/Home.module.css";
 import { useState, useEffect } from "react";
+import {
+  address,
+  email,
+  footerLicenseDisclaimer,
+  gbpLinks,
+  officeHoursLines,
+  phone,
+} from "../../lib/site-contact";
 
 const Contact: NextPage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -122,34 +130,61 @@ const Contact: NextPage = () => {
           <div className={styles.contactInfo}>
             <div className={styles.infoItem}>
               <h3>Address</h3>
-              <p>9406 Del Webb Boulevard, Las Vegas, NV 89134</p>
+              <p>{address.singleLine}</p>
             </div>
             <div className={styles.infoItem}>
               <h3>Phone</h3>
-              <p>(702) 718-0043</p>
+              <p>
+                <a href={phone.telHref}>{phone.display}</a>
+              </p>
             </div>
             <div className={styles.infoItem}>
               <h3>Email</h3>
-              <p>DrDuffy@bhhsnv.com</p>
+              <p>
+                <a href={email.mailtoHref}>{email.display}</a>
+              </p>
             </div>
             <div className={styles.infoItem}>
               <h3>Office Hours</h3>
-              <p>Every day: 6:00 AM–9:00 PM</p>
+              {officeHoursLines.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
               <p><small>Closed on major holidays</small></p>
             </div>
             <div className={styles.infoItem}>
               <h3>Google Business</h3>
-              <p><a href="https://g.co/kgs/uwtzcWj" target="_blank" rel="noopener noreferrer">View Google Business Profile</a></p>
+              <p>
+                <a href={gbpLinks.profile} target="_blank" rel="noopener noreferrer">
+                  View Google Business Profile
+                </a>
+              </p>
+              <p>
+                <a href={phone.telHref}>Call</a>
+                {" · "}
+                <a href={gbpLinks.directions} target="_blank" rel="noopener noreferrer">
+                  Directions
+                </a>
+                {" · "}
+                <a href={gbpLinks.profile} target="_blank" rel="noopener noreferrer">
+                  Google reviews
+                </a>
+              </p>
             </div>
           </div>
 
           <div className={styles.mapContainer}>
             <h3>Find Us</h3>
             <div className={styles.map}>
-              {/* In a real application, you would embed a Google Map here */}
-              <div className={styles.mapPlaceholder}>
-                <p>Map of Sun City Summerlin Location</p>
-              </div>
+              <iframe
+                title="Office location map — 9406 Del Webb Boulevard, Las Vegas"
+                src={gbpLinks.mapsEmbedSrc}
+                width="100%"
+                height="360"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
           </div>
         </section>
@@ -161,7 +196,7 @@ const Contact: NextPage = () => {
           <p>&copy; {new Date().getFullYear()} Berkshire Hathaway HomeServices. All rights reserved.</p>
           <p>Sun City Summerlin REALTOR® Dr. Jan Duffy - Serving Las Vegas since 2013</p>
           <p>Dr Jan Duffy REALTOR® | CA to LV Relocation Expert @DrJanDuffy</p>
-          <p>Dr. Jan Duffy is a Nevada REALTOR® Making Dreams Come True in Las Vegas, Summerlin, Henderson, North Las Vegas, and Spring Valley Nevada. S.0197614.LL</p>
+          <p>{footerLicenseDisclaimer}</p>
           <p>Real Estate Las Vegas, NV <a href="https://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener noreferrer">drjanduffy.realscout.com/onboarding</a></p>
         </div>
         <div className={styles.footerLinks}>

@@ -1,25 +1,28 @@
+'use client';
+
 import Link from "next/link";
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import styles from "../styles/Home.module.css";
 import { useEffect, useState } from "react";
+import { phone } from "@/lib/site-contact";
 
 const Header = () => {
-  const router = useRouter();
+  const pathname = usePathname() ?? '';
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Determine if a link is active
   const isActive = (path: string) => {
-    return router.pathname === path ? `${styles.navLink} ${styles.activeLink}` : styles.navLink;
+    return pathname === path ? `${styles.navLink} ${styles.activeLink}` : styles.navLink;
   };
 
   const isDropdownActive = (paths: string[]) => {
-    return paths.some(path => router.pathname.includes(path)) ? 
-      `${styles.dropdownButton} ${styles.activeLink}` : styles.dropdownButton;
+    return paths.some((p) => pathname === p || pathname.startsWith(`${p}/`))
+      ? `${styles.dropdownButton} ${styles.activeLink}`
+      : styles.dropdownButton;
   };
-  
-  // Check if dropdown item is active
+
   const isDropdownItemActive = (path: string) => {
-    return router.pathname === path ? `${styles.dropdownItem} ${styles.activeLink}` : styles.dropdownItem;
+    return pathname === path ? `${styles.dropdownItem} ${styles.activeLink}` : styles.dropdownItem;
   };
 
   const toggleMobileMenu = () => {
@@ -93,6 +96,18 @@ const Header = () => {
               </div>
 
               <Link href="/neighborhoods" className={isActive('/neighborhoods')}><span>Neighborhoods</span></Link>
+
+              <div className={styles.navDropdown}>
+                <span className={isDropdownActive(['/about', '/faq', '/service-area'])}>
+                  About <span className={styles.chevronIcon}>▼</span>
+                </span>
+                <div className={styles.dropdownContent}>
+                  <Link href="/about" className={isDropdownItemActive('/about')}>About Dr. Jan</Link>
+                  <Link href="/faq" className={isDropdownItemActive('/faq')}>FAQ</Link>
+                  <Link href="/service-area" className={isDropdownItemActive('/service-area')}>Service area</Link>
+                </div>
+              </div>
+
               <Link href="/blog" className={isActive('/blog')}><span>Blog</span></Link>
               <Link href="/testimonials" className={isActive('/testimonials')}><span>Testimonials</span></Link>
               <Link href="/contact" className={isActive('/contact')}><span>Contact</span></Link>
@@ -102,9 +117,9 @@ const Header = () => {
           </nav>
 
           <div className={styles.headerActions}>
-            <a href="tel:7027180043" className={styles.phoneButton}>
+            <a href={phone.telHref} className={styles.phoneButton}>
               <span className={styles.phoneIcon}>📞</span>
-              <span className={styles.phoneNumber}>(702) 718-0043</span>
+              <span className={styles.phoneNumber}>{phone.display}</span>
             </a>
             <button 
               className={styles.mobileMenuButton} 

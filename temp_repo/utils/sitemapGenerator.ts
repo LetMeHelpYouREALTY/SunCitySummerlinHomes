@@ -64,7 +64,6 @@ export async function writeSitemap() {
   }
 }
 
-// Execute the function if running directly (not imported)
-if (require.main === module) {
-  writeSitemap();
+if (process.env.npm_lifecycle_event === 'generate-sitemap') {
+  void writeSitemap();
 }

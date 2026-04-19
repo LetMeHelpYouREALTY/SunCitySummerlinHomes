@@ -28,6 +28,9 @@ async function generateSitemap() {
     { url: '/zipcodes', changefreq: 'monthly', priority: 0.7, lastmod: today },
     { url: '/testimonials', changefreq: 'weekly', priority: 0.6, lastmod: today },
     { url: '/contact', changefreq: 'monthly', priority: 0.8, lastmod: today },
+    { url: '/about', changefreq: 'monthly', priority: 0.85, lastmod: today },
+    { url: '/faq', changefreq: 'monthly', priority: 0.85, lastmod: today },
+    { url: '/service-area', changefreq: 'monthly', priority: 0.85, lastmod: today },
     { url: '/search', changefreq: 'weekly', priority: 0.9, lastmod: today },
     { url: '/blog', changefreq: 'daily', priority: 0.9, lastmod: today },
 
@@ -91,7 +94,6 @@ export async function writeSitemap() {
   }
 }
 
-// Execute the function if running directly (not imported)
-if (require.main === module) {
-  writeSitemap();
+if (process.env.npm_lifecycle_event === 'generate-sitemap') {
+  void writeSitemap();
 }

@@ -1,57 +1,44 @@
-
 import React from 'react';
 import StructuredData from './StructuredData';
+import {
+  SITE_ORIGIN,
+  address,
+  businessName,
+  email,
+  geo,
+  jsonLdIds,
+  NEVADA_REALTOR_LICENSE,
+  openingHoursSpecification,
+  phone,
+  sameAsUrls,
+} from '@/lib/site-contact';
 
 const RealEstateAgentSchema: React.FC = () => {
   const realEstateAgentData = {
-    name: "Dr. Jan Duffy, REALTOR",
-    image: "/drjan-logo.png",
-    url: "https://suncitysummerlin.com",
-    telephone: "+17027180043",
+    '@id': jsonLdIds.realEstateAgent,
+    name: businessName.realEstateAgent,
+    worksFor: { '@id': jsonLdIds.organization },
+    image: `${SITE_ORIGIN}/drjan-logo.png`,
+    url: SITE_ORIGIN,
+    email: email.display,
+    telephone: phone.e164,
     slogan: "Your Sun City Summerlin 55+ Community Specialist",
     description: "Specialized real estate services for the Sun City Summerlin 55+ community in Las Vegas, NV. Expert in senior home buying and selling with focus on accessibility, lifestyle, and community needs.",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "9406 Del Webb Boulevard",
-      addressLocality: "Las Vegas",
-      addressRegion: "NV",
-      postalCode: "89134",
-      addressCountry: "US"
+      streetAddress: address.streetAddress,
+      addressLocality: address.addressLocality,
+      addressRegion: address.addressRegion,
+      postalCode: address.postalCode,
+      addressCountry: address.addressCountry
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 36.2060,
-      longitude: -115.2960
+      latitude: geo.latitude,
+      longitude: geo.longitude
     },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "17:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Saturday"],
-        opens: "10:00",
-        closes: "15:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Sunday"],
-        opens: "00:00",
-        closes: "00:00",
-        description: "By appointment only"
-      }
-    ],
-    sameAs: [
-      "https://www.facebook.com/drduffyrealtorhenderson/",
-      "https://www.linkedin.com/company/centennialhills",
-      "https://www.instagram.com/centennialhillsrealtor/",
-      "https://x.com/drjanduffy",
-      "https://www.tiktok.com/@dr.janduffy",
-      "https://www.pinterest.com/bhhsluxury/"
-    ],
+    openingHoursSpecification,
+    sameAs: [...sameAsUrls],
     brand: {
       "@type": "Brand",
       name: "Berkshire Hathaway HomeServices Nevada Properties"
@@ -110,7 +97,7 @@ const RealEstateAgentSchema: React.FC = () => {
       {
         "@type": "EducationalOccupationalCredential",
         credentialCategory: "professional",
-        name: "REALTOR License #S.0197614.LLC",
+        name: `REALTOR License #${NEVADA_REALTOR_LICENSE}`,
         educationalLevel: "Professional License"
       },
       {
