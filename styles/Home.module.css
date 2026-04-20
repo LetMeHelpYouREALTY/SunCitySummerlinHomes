@@ -201,6 +201,14 @@
   transform: translateY(-2px);
 }
 
+button.secondaryButton,
+button.primaryButton {
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  text-align: center;
+}
+
 /* Intro Section */
 .introSection {
   max-width: 1200px;
@@ -1201,6 +1209,10 @@
     display: none;
   }
 
+  .scheduleHeaderButton {
+    display: none;
+  }
+
   .features,
   .propertyGrid,
   .testimonials,
@@ -1573,6 +1585,25 @@
   background: var(--color-clay-600);
 }
 
+.scheduleHeaderButton {
+  background: transparent;
+  color: var(--color-sage-700);
+  border: 2px solid var(--color-sage-500);
+  min-height: 48px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.scheduleHeaderButton:hover {
+  background: var(--color-sage-500);
+  color: var(--color-surface-base);
+}
+
 .footer {
   background: var(--color-ink-900);
   color: var(--color-sand-200);
@@ -1716,6 +1747,20 @@
 .contactSection {
   background: var(--color-sand-100);
   border: 1px solid var(--color-border-subtle);
+}
+
+.contactCalendlyActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: center;
+  margin: var(--space-4) 0;
+}
+
+.contactCalendlyEmbed {
+  margin: var(--space-6) auto;
+  max-width: min(100%, 1040px);
+  padding: 0 var(--space-2);
 }
 
 @media (max-width: 768px) {

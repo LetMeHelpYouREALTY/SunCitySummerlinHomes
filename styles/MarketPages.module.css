@@ -177,3 +177,13 @@
   color: var(--color-sage-600);
   border-color: var(--color-sage-500);
 }
+
+button.primaryAction,
+button.secondaryAction {
+  cursor: pointer;
+  font: inherit;
+}
+
+button.primaryAction {
+  border: none;
+}

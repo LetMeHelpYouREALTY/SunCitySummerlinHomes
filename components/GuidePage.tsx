@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import Header from '@/components/Header';
+import ScheduleButton from '@/components/ScheduleButton';
 import BackToTop from '@/components/BackToTop';
 import RelatedPages from '@/components/RelatedPages';
 import Breadcrumbs from '@/components/seo/Breadcrumbs';
@@ -41,9 +41,9 @@ export default function GuidePage({
           <h1>{title}</h1>
           <p>{summary}</p>
           <div className={styles.heroActions}>
-            <Link href="/contact" className={styles.primaryAction}>
+            <ScheduleButton type="button" className={styles.primaryAction}>
               Get Personal Strategy
-            </Link>
+            </ScheduleButton>
             <a href={phone.telHref} className={styles.secondaryAction}>
               Call {phone.display}
             </a>

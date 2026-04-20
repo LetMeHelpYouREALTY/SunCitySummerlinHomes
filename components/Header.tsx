@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import styles from "../styles/Home.module.css";
 import { useEffect, useState } from "react";
 import { phone } from "@/lib/site-contact";
+import ScheduleButton from "@/components/ScheduleButton";
 
 const Header = () => {
   const pathname = usePathname() ?? '';
@@ -123,6 +124,13 @@ const Header = () => {
           </nav>
 
           <div className={styles.headerActions}>
+            <ScheduleButton
+              type="button"
+              className={styles.scheduleHeaderButton}
+              aria-label="Schedule a 15-minute conversation with Dr. Jan Duffy"
+            >
+              Schedule
+            </ScheduleButton>
             <a href={phone.telHref} className={styles.phoneButton}>
               <span className={styles.phoneIcon}>📞</span>
               <span className={styles.phoneNumber}>{phone.display}</span>

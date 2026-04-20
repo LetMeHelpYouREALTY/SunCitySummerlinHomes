@@ -232,3 +232,47 @@
 .resetButton:hover {
   background: var(--color-sand-100);
 }
+
+.ctaCopy {
+  text-align: center;
+  color: var(--color-ink-700);
+  line-height: var(--leading-relaxed);
+  margin-bottom: var(--space-4);
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  justify-content: center;
+  align-items: center;
+}
+
+.primaryCta {
+  min-height: 48px;
+  padding: 0 var(--space-6);
+  background: var(--color-clay-500);
+  color: var(--color-surface-base);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.primaryCta:hover {
+  background: var(--color-clay-600);
+}
+
+.secondaryCta {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-sage-700);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { ReactNode } from 'react';
+import ScheduleButton from '@/components/ScheduleButton';
 import { gbpLinks, phone } from '@/lib/site-contact';
 
 type RouteContent = {
@@ -329,6 +330,29 @@ function getRouteContent(pathname: string): RouteContent {
   return routeContentMap[pathname] ?? fallbackContent;
 }
 
+function RouteCta({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className: string;
+  children: ReactNode;
+}) {
+  if (href === '/contact') {
+    return (
+      <ScheduleButton type="button" className={className}>
+        {children}
+      </ScheduleButton>
+    );
+  }
+  return (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  );
+}
+
 export default function SitewidePageFrame({ children }: { children: ReactNode }) {
   const pathname = usePathname() ?? '/';
   const content = getRouteContent(pathname);
@@ -341,12 +365,12 @@ export default function SitewidePageFrame({ children }: { children: ReactNode })
           <h2 className="sitewide-title">{content.title}</h2>
           <p className="sitewide-summary">{content.summary}</p>
           <div className="sitewide-actions">
-            <Link href={content.primaryHref} className="sitewide-primary-action">
+            <RouteCta href={content.primaryHref} className="sitewide-primary-action">
               {content.primaryLabel}
-            </Link>
-            <Link href={content.secondaryHref} className="sitewide-secondary-action">
+            </RouteCta>
+            <RouteCta href={content.secondaryHref} className="sitewide-secondary-action">
               {content.secondaryLabel}
-            </Link>
+            </RouteCta>
           </div>
           <div className="sitewide-quick-contact">
             <a href={phone.telHref}>Call {phone.display}</a>
@@ -371,9 +395,9 @@ export default function SitewidePageFrame({ children }: { children: ReactNode })
             move in Las Vegas.
           </p>
           <div className="sitewide-actions">
-            <Link href="/contact" className="sitewide-primary-action">
+            <ScheduleButton type="button" className="sitewide-primary-action">
               Schedule Your Call
-            </Link>
+            </ScheduleButton>
             <a href={phone.telHref} className="sitewide-secondary-action">
               Call {phone.display}
             </a>

@@ -3,6 +3,7 @@
 import { useEffect, type ReactNode } from 'react';
 import Script from 'next/script';
 import PageTransition from '@/components/PageTransition';
+import CalendlyProvider from '@/components/CalendlyProvider';
 import styles from '@/styles/Home.module.css';
 import { suppressExtensionWarnings } from '@/utils/suppress-warnings';
 
@@ -70,7 +71,7 @@ export default function AppProviders({ children }: AppProvidersProps) {
   }, []);
 
   return (
-    <>
+    <CalendlyProvider>
       {gaId ? (
         <>
           <Script
@@ -94,6 +95,6 @@ export default function AppProviders({ children }: AppProvidersProps) {
           {children}
         </div>
       </PageTransition>
-    </>
+    </CalendlyProvider>
   );
 }

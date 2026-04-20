@@ -5,6 +5,40 @@
   margin: 0 auto;
 }
 
+.leadCopy {
+  line-height: 1.65;
+  color: var(--color-ink-700, #555);
+  font-size: var(--text-base, 1rem);
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto 1.5rem;
+}
+
+.searchResults {
+  width: 100%;
+}
+
+.searchCtaRow {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.5rem auto 0;
+  max-width: 52rem;
+}
+
+.searchTips {
+  padding: 2rem 0 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.searchTips h2 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--color-ink-900, #1a1a1a);
+}
+
 .searchContainer {
   display: flex;
   flex-direction: column;

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Header from '@/components/Header';
+import ScheduleButton from '@/components/ScheduleButton';
 import { phone } from '@/lib/site-contact';
 import styles from '@/styles/MarketPages.module.css';
 
@@ -59,9 +60,9 @@ export default function MarketHubPage({
             strategy aligned to today&apos;s Sun City Summerlin and Las Vegas market conditions.
           </p>
           <div className={styles.ctaActions}>
-            <Link href="/contact" className={styles.primaryAction}>
+            <ScheduleButton type="button" className={styles.primaryAction}>
               Book a Strategy Call
-            </Link>
+            </ScheduleButton>
             <a href={phone.telHref} className={styles.secondaryAction}>
               Call {phone.display}
             </a>

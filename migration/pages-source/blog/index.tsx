@@ -6,6 +6,7 @@ import Image from "next/image";
 import styles from '@/styles/Home.module.css';
 import blogStyles from '@/styles/Blog.module.css';
 import { useState, useEffect } from "react";
+import ScheduleButton from '@/components/ScheduleButton';
 
 export default function Blog() {
   const [isVisible, setIsVisible] = useState(false);
@@ -159,16 +160,17 @@ export default function Blog() {
 
         <section className={blogStyles.subscribeSection}>
           <h2>Stay Updated on Sun City Summerlin</h2>
-          <p>Subscribe to receive monthly market updates, community news, and exclusive property listings</p>
-          <form className={blogStyles.subscribeForm}>
-            <div className={blogStyles.formInput}>
-              <input type="email" placeholder="Your Email Address" required />
-            </div>
-            <button type="submit" className={blogStyles.subscribeBtn}>
-              Subscribe
-            </button>
-          </form>
-          <p className={blogStyles.privacyNote}>We respect your privacy. Unsubscribe anytime.</p>
+          <p>
+            Book a short call with Dr. Jan for market updates and listing ideas—no email form required.
+          </p>
+          <div className={blogStyles.subscribeCtaRow}>
+            <ScheduleButton type="button" className={blogStyles.subscribeBtn}>
+              Schedule a call
+            </ScheduleButton>
+            <a href="/contact" className={blogStyles.subscribeLink}>
+              Open full scheduling page
+            </a>
+          </div>
         </section>
       </main>
 

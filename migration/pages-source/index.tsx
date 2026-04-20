@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from '@/styles/Home.module.css';
 import Script from 'next/script';
+import ScheduleButton from '@/components/ScheduleButton';
 
 export default function Home() {
   const [realScoutLoaded, setRealScoutLoaded] = useState(false);
@@ -157,9 +158,9 @@ const EnhancedHero = () => {
           <Link href="/search" className={styles.primaryButton}>
             Search Homes
           </Link>
-          <Link href="/contact" className={styles.secondaryButton}>
-            Contact Dr. Jan
-          </Link>
+          <ScheduleButton type="button" className={styles.secondaryButton}>
+            Schedule with Dr. Jan
+          </ScheduleButton>
         </div>
       </div>
     </div>

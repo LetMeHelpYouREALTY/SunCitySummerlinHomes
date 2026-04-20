@@ -270,14 +270,32 @@
   font-size: 1rem;
 }
 
+.subscribeCtaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.subscribeLink {
+  color: var(--color-sage-700, #2d5a4a);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .subscribeBtn {
   background-color: #8e1f41;
   color: white;
   border: none;
+  min-height: 48px;
   padding: 0 1.5rem;
-  border-radius: 0 5px 5px 0;
+  border-radius: var(--radius-md, 8px);
   cursor: pointer;
   transition: background-color 0.2s ease;
+  font-weight: 600;
 }
 
 .subscribeBtn:hover {
