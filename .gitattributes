@@ -17,6 +17,10 @@
 *.svg      text eol=lf
 *.sh       text eol=lf
 
+# Legacy / pasted dumps: leave line endings as stored (overrides *.txt above)
+attached_assets/** -text
+temp_repo/** -text
+
 # Binary assets (do not apply text/CRLF conversion)
 *.png  binary
 *.jpg  binary
