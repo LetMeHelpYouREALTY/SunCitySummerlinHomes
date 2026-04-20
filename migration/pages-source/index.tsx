@@ -26,6 +26,25 @@ export default function Home() {
         {/* New Enhanced Hero */}
         <EnhancedHero />
 
+        <section className={styles.trustBar} aria-label="Sun City Summerlin highlights">
+          <div className={styles.trustItem}>
+            <span className={styles.trustValue}>55+</span>
+            <span className={styles.trustLabel}>Active Adult Community</span>
+          </div>
+          <div className={styles.trustItem}>
+            <span className={styles.trustValue}>3</span>
+            <span className={styles.trustLabel}>Championship Golf Courses</span>
+          </div>
+          <div className={styles.trustItem}>
+            <span className={styles.trustValue}>4</span>
+            <span className={styles.trustLabel}>Community Centers</span>
+          </div>
+          <div className={styles.trustItem}>
+            <span className={styles.trustValue}>702</span>
+            <span className={styles.trustLabel}>Local Guidance: 718-0043</span>
+          </div>
+        </section>
+
         {/* RealScout Listings Section */}
         <div className={styles.listingsSection}>
           {realScoutLoaded && (
@@ -122,12 +141,18 @@ const EnhancedHero = () => {
   return (
     <div className={styles.hero}>
       <div className={styles.heroContent}>
+        <p className={styles.heroEyebrow}>Las Vegas Real Estate Guidance for 55+ Living</p>
         <h1 className={styles.title}>Sun City Summerlin Real Estate</h1>
         <h2 className={styles.subtitle}>Las Vegas&apos; Premier 55+ Community</h2>
         <p className={styles.description}>
           Find your perfect home in this beautiful active adult community with Dr. Jan Duffy, 
           your Sun City Summerlin real estate specialist.
         </p>
+        <div className={styles.heroPills} aria-label="Key benefits">
+          <span className={styles.heroPill}>Golf Course Homes</span>
+          <span className={styles.heroPill}>Single-Story Living</span>
+          <span className={styles.heroPill}>Local Expert Guidance</span>
+        </div>
         <div className={styles.ctaButtons}>
           <Link href="/search" className={styles.primaryButton}>
             Search Homes
