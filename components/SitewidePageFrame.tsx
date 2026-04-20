@@ -267,6 +267,36 @@ const routeContentMap: Record<string, RouteContent> = {
     secondaryHref: '/market-insights',
     secondaryLabel: 'See Strategic Insights',
   },
+  '/estate-collection': {
+    eyebrow: 'Luxury Showcase Pattern',
+    title: 'Estate Collection',
+    summary:
+      'Explore premium listing categories with a luxury-first presentation model adapted from top-tier high-end agent websites.',
+    primaryHref: '/properties',
+    primaryLabel: 'Browse Featured Properties',
+    secondaryHref: '/contact',
+    secondaryLabel: 'Request Curated Access',
+  },
+  '/prestige-neighborhoods': {
+    eyebrow: 'Neighborhood Collection Pattern',
+    title: 'Prestige Neighborhoods',
+    summary:
+      'Compare high-signal neighborhood profiles using a concise collection model designed to speed up local area selection.',
+    primaryHref: '/neighborhoods',
+    primaryLabel: 'Open Neighborhood Hub',
+    secondaryHref: '/contact',
+    secondaryLabel: 'Get Area Guidance',
+  },
+  '/media-highlights': {
+    eyebrow: 'Authority Proof Pattern',
+    title: 'Media Highlights',
+    summary:
+      'Review authority and credibility highlights that reinforce trust before high-intent buyer and seller decisions.',
+    primaryHref: '/about',
+    primaryLabel: 'View Agent Profile',
+    secondaryHref: '/contact',
+    secondaryLabel: 'Start Strategy Call',
+  },
 };
 
 function getRouteContent(pathname: string): RouteContent {

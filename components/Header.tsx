@@ -111,6 +111,7 @@ const Header = () => {
               <Link href="/blog" className={isActive('/blog')}><span>Blog</span></Link>
               <Link href="/market-report" className={isActive('/market-report')}><span>Market</span></Link>
               <Link href="/guides" className={isActive('/guides')}><span>Guides</span></Link>
+              <Link href="/estate-collection" className={isActive('/estate-collection')}><span>Estates</span></Link>
               <Link href="/testimonials" className={isActive('/testimonials')}><span>Testimonials</span></Link>
               <Link href="/contact" className={isActive('/contact')}><span>Contact</span></Link>
 
