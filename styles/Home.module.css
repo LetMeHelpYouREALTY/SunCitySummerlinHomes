@@ -1383,6 +1383,19 @@ button.primaryButton {
   font-size: 0.85rem;
 }
 
+.trustPhoneLink {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(91, 73, 81, 0.45);
+  text-underline-offset: 2px;
+}
+
+.trustPhoneLink:hover {
+  color: var(--color-ink-900);
+  text-decoration-color: var(--color-clay-500);
+}
+
 .listingsSection {
   margin-top: 2.4rem;
 }

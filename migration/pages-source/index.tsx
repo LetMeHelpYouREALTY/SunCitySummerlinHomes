@@ -5,6 +5,7 @@ import Link from 'next/link';
 import styles from '@/styles/Home.module.css';
 import Script from 'next/script';
 import ScheduleButton from '@/components/ScheduleButton';
+import { NEVADA_REALTOR_LICENSE, phone } from '@/lib/site-contact';
 
 export default function Home() {
   const [realScoutLoaded, setRealScoutLoaded] = useState(false);
@@ -42,7 +43,11 @@ export default function Home() {
           </div>
           <div className={styles.trustItem}>
             <span className={styles.trustValue}>702</span>
-            <span className={styles.trustLabel}>Local Guidance: 718-0043</span>
+            <span className={styles.trustLabel}>
+              <a href={phone.telHref} className={styles.trustPhoneLink}>
+                Local guidance: {phone.display}
+              </a>
+            </span>
           </div>
         </section>
 
@@ -130,7 +135,9 @@ export default function Home() {
         </div>
         <div className={styles.footerBottom}>
           <p>© {new Date().getFullYear()} Dr. Jan Duffy. All rights reserved.</p>
-          <p>BHHS Nevada Properties | License #12345</p>
+          <p>
+            BHHS Nevada Properties | Nevada REALTOR® license {NEVADA_REALTOR_LICENSE}
+          </p>
         </div>
       </footer>
     </div>
