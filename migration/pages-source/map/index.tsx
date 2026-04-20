@@ -14,7 +14,7 @@ export default function SunCityMap() {
   useEffect(() => {
     if (typeof window !== 'undefined' && mapLoaded && window.google) {
       // Call the initialization function
-      window.initSunCitySummerlinMap();
+      window.initSunCitySummerlinMap?.();
     }
   }, [mapLoaded]);
 

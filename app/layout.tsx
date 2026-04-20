@@ -16,6 +16,8 @@ const poppins = Poppins({
   display: 'swap',
 });
 
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
@@ -25,6 +27,14 @@ export const metadata: Metadata = {
   description:
     "Sun City Summerlin is Las Vegas' premier 55+ community with homes, golf, and amenities. Dr. Jan Duffy specializes in Sun City Summerlin real estate.",
   icons: { icon: '/favicon.ico' },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
+  ...(googleSiteVerification
+    ? { verification: { google: googleSiteVerification } }
+    : {}),
 };
 
 export const viewport: Viewport = {

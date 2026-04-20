@@ -4,13 +4,26 @@ import Link from "next/link";
 import styles from '@/styles/Home.module.css';
 import { useState, useEffect } from "react";
 
+type SearchProperty = {
+  id: number;
+  title: string;
+  price: number;
+  bedrooms: number;
+  bathrooms: number;
+  sqft: number;
+  propertyType: string;
+  address: string;
+  image: string;
+  features: string[];
+};
+
 export default function PropertySearch() {
   const [isVisible, setIsVisible] = useState(false);
   const [priceRange, setPriceRange] = useState([300000, 800000]);
   const [bedrooms, setBedrooms] = useState("any");
   const [bathrooms, setBathrooms] = useState("any");
   const [propertyType, setPropertyType] = useState("any");
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState<SearchProperty[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -18,7 +31,7 @@ export default function PropertySearch() {
   }, []);
 
   // Mock property data - in a real implementation, this would come from an API
-  const mockProperties = [
+  const mockProperties: SearchProperty[] = [
     {
       id: 1,
       title: "Elegant Single-Story Home",
@@ -76,7 +89,7 @@ export default function PropertySearch() {
     }, 800);
   };
 
-  const formatPrice = (price) => {
+  const formatPrice = (price: number) => {
     return new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: 'USD',
@@ -121,6 +134,8 @@ export default function PropertySearch() {
                     min="200000" 
                     max="1000000" 
                     step="5000"
+                    aria-label="Minimum price"
+                    title="Minimum price"
                     value={priceRange[0]}
                     onChange={(e) => setPriceRange([parseInt(e.target.value), priceRange[1]])}
                     className={styles.rangeSlider}
@@ -131,6 +146,8 @@ export default function PropertySearch() {
                     min="200000" 
                     max="1000000" 
                     step="5000"
+                    aria-label="Maximum price"
+                    title="Maximum price"
                     value={priceRange[1]}
                     onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value)])}
                     className={styles.rangeSlider}
