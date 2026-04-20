@@ -25,10 +25,10 @@ This project is maintained in Replit with GitHub integration. Follow these steps
 ### Development Commands
 
 ```bash
-# Start development server
+# Start production-like local server (Vercel routing/env behavior)
 npm run dev
 
-# Build for production
+# Build for production (local Next.js build)
 npm run build
 
 # Start production server
@@ -43,7 +43,7 @@ npm run generate-sitemap
 - `/pages`: Next.js pages and routes
 - `/components`: Reusable React components
 - `/styles`: CSS modules and global styles
-- `/public`: Static assets
+- `/public`: Static assets (see [`public/README.md`](public/README.md) for image/logo folders and naming)
 - `/utils`: Utility functions
 
 ## Learn More
@@ -53,4 +53,20 @@ npm run generate-sitemap
 
 ## Deployment
 
-This project is deployed using Replit Deployments.
+This project is deployed on Vercel.
+
+### Recommended Vercel workflow
+
+```bash
+# Sync project env vars locally
+vercel pull
+
+# Local production-like dev
+vercel dev
+
+# Build exactly as Vercel would
+vercel build
+
+# Deploy to production
+vercel --prod
+```

@@ -56,3 +56,7 @@ lerna-debug.log*
 .upm/
 .cache/
 .config/
+
+# Design sources — export flattened images into public/ instead of committing heavy working files
+*.psd
+*.psb

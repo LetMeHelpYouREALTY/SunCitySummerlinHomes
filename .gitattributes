@@ -1,0 +1,10 @@
+# Treat binary assets consistently (especially on Windows line-ending conversion)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.avif binary
+*.ico  binary
+*.svg  text eol=lf
+*.pdf  binary
