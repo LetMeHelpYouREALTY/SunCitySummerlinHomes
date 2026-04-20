@@ -1,0 +1,94 @@
+.page {
+  padding: 6.4rem 1rem 3rem;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.hero {
+  border-radius: 18px;
+  background: linear-gradient(145deg, #24121b 0%, #4a2134 100%);
+  color: #fff4f8;
+  padding: 1.35rem 1.2rem;
+  margin: 0.7rem 0 1.2rem;
+}
+
+.hero h1 {
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+  line-height: 1.15;
+}
+
+.hero p {
+  margin-top: 0.65rem;
+  line-height: 1.72;
+}
+
+.heroActions {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.primaryAction,
+.secondaryAction {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 0.54rem 0.92rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.primaryAction {
+  color: #3a1727;
+  background: #fff;
+}
+
+.secondaryAction {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 8px 22px rgba(29, 16, 24, 0.08);
+}
+
+.card h2 {
+  font-size: 1.08rem;
+  color: #2d141f;
+}
+
+.card p {
+  margin-top: 0.48rem;
+  color: #4f3c45;
+  line-height: 1.65;
+}
+
+.card ul {
+  margin-top: 0.55rem;
+  padding-left: 1.1rem;
+  color: #4b3942;
+}
+
+.card li + li {
+  margin-top: 0.28rem;
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -3,6 +3,7 @@
 import { useEffect, type ReactNode } from 'react';
 import Script from 'next/script';
 import PageTransition from '@/components/PageTransition';
+import SitewidePageFrame from '@/components/SitewidePageFrame';
 import styles from '@/styles/Home.module.css';
 import { suppressExtensionWarnings } from '@/utils/suppress-warnings';
 
@@ -107,7 +108,9 @@ export default function AppProviders({ children }: AppProvidersProps) {
         </>
       ) : null}
 
-      <PageTransition>{children}</PageTransition>
+      <PageTransition>
+        <SitewidePageFrame>{children}</SitewidePageFrame>
+      </PageTransition>
     </>
   );
 }
