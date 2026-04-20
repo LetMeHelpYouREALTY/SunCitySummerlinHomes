@@ -16,7 +16,7 @@
   position: relative;
   height: 50vh;
   min-height: 350px;
-  background-image: url('/hero-bg.jpg');
+  background-image: url('/images/hero/SunCitySummerlinOutside.jpg');
   background-size: cover;
   background-position: center;
   display: flex;

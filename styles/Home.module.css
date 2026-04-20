@@ -127,7 +127,8 @@
 .heroSection {
   height: 90vh;
   min-height: 600px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/hero-bg.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/images/hero/SunCitySummerlinOutside.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -1620,7 +1621,7 @@ button.primaryButton {
 .hero {
   background-image:
     linear-gradient(to top, rgba(31, 36, 33, 0.35), rgba(31, 36, 33, 0.15)),
-    url('/hero-bg.jpg');
+    url('/images/hero/SunCitySummerlinOutside.jpg');
   background-size: cover;
   background-position: center;
 }
