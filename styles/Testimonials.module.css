@@ -54,6 +54,7 @@
 .overallRating {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   padding: 1.5rem 3rem;
   border-radius: 12px;
@@ -305,6 +306,80 @@
   animation: fadeInAnimation 0.8s ease forwards;
 }
 
+.container {
+  width: 100%;
+  background: #f5f7fa;
+}
+
+.main {
+  width: 100%;
+}
+
+.footer {
+  margin-top: 2rem;
+  background: #ffffff;
+  border-top: 1px solid #e6eaee;
+  padding: 2rem 1rem 2.5rem;
+}
+
+.footerBranding {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  color: #42505b;
+  line-height: 1.55;
+}
+
+.footerLogo {
+  display: block;
+  width: min(220px, 68vw);
+  height: auto;
+  margin: 0 auto 1rem;
+}
+
+.footerLinks {
+  margin: 1rem auto 0;
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footerLinks a {
+  color: #235d89;
+  font-weight: 600;
+}
+
+.socialLinks {
+  margin: 1.2rem auto 0;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.socialLinks h3 {
+  font-size: 1.05rem;
+  color: #26465f;
+}
+
+.socialIcons {
+  margin-top: 0.7rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.socialIcons a {
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #eef4f9;
+}
+
 @keyframes fadeInAnimation {
   from {
     opacity: 0;
@@ -348,4 +423,56 @@
   .testimonialText {
     font-size: 1.1rem;
   }
+
+  .footer {
+    padding: 1.6rem 0.8rem 2rem;
+  }
+}
+
+/* Tokenized testimonial styling */
+.testimonialHero {
+  background: linear-gradient(140deg, var(--color-ink-900), #2c352f);
+}
+
+.pageTitle {
+  color: var(--color-sand-50);
+  font-family: var(--font-display-loaded), var(--font-display);
+}
+
+.pageSubtitle,
+.ratingText {
+  color: var(--color-sand-100);
+}
+
+.testimonialCard {
+  background: var(--color-sand-50);
+  box-shadow: none;
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  border: 1px solid var(--color-border-subtle);
+}
+
+.testimonialCard::before {
+  content: '“';
+  color: var(--color-sage-500);
+  font-size: 72px;
+}
+
+.testimonialName {
+  color: var(--color-ink-900);
+}
+
+.testimonialLocation {
+  color: var(--color-ink-500);
+}
+
+.primaryBtn {
+  min-height: 48px;
+  background: var(--color-clay-500);
+}
+
+.secondaryBtn {
+  min-height: 48px;
+  color: var(--color-sage-600);
+  border-color: var(--color-sage-500);
 }

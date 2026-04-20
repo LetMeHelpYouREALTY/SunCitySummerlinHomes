@@ -146,3 +146,34 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Tokenized interior styling */
+.title,
+.sectionCard h2 {
+  color: var(--color-ink-900);
+  font-family: var(--font-display-loaded), var(--font-display);
+}
+
+.summary,
+.sectionCard p {
+  color: var(--color-ink-700);
+}
+
+.heroCard,
+.sectionCard,
+.ctaCard {
+  background: var(--color-surface-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.primaryAction {
+  min-height: 48px;
+  background: var(--color-clay-500);
+}
+
+.secondaryAction {
+  min-height: 48px;
+  color: var(--color-sage-600);
+  border-color: var(--color-sage-500);
+}

@@ -92,3 +92,23 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Tokenized interior styling */
+.hero h1,
+.card h2 {
+  color: var(--color-ink-900);
+  font-family: var(--font-display-loaded), var(--font-display);
+}
+
+.hero p,
+.card p,
+.card ul {
+  color: var(--color-ink-700);
+}
+
+.card {
+  background: var(--color-surface-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}

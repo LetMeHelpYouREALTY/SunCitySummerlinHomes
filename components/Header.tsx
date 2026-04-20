@@ -45,7 +45,7 @@ const Header = () => {
       <div className={styles.headerInner}>
         <div className={styles.logoContainer}>
           <div className={styles.logoText}>
-            <h1 className={styles.logo}>Sun City Summerlin</h1>
+            <p className={styles.logo}>Sun City Summerlin</p>
             <div className={styles.subLogoContainer}>
               <img src="/bhhs-quality-seal-black.png" alt="BHHS Logo" className={styles.headerLogo} />
               <p className={styles.subLogo}>Dr. Jan Duffy, REALTOR® | 55+ Specialist</p>
@@ -54,14 +54,17 @@ const Header = () => {
         </div>
 
         <div className={styles.headerRight}>
-          <nav className={styles.nav}>
-            <div className={isMobileMenuOpen ? `${styles.navLinks} ${styles.navLinksActive}` : styles.navLinks}>
+          <nav className={styles.nav} aria-label="Primary navigation">
+            <div
+              id="primary-nav-links"
+              className={isMobileMenuOpen ? `${styles.navLinks} ${styles.navLinksActive}` : styles.navLinks}
+            >
               <Link href="/" className={isActive('/')}><span>Home</span></Link>
 
               <div className={styles.navDropdown}>
-                <span className={isDropdownActive(['/properties', '/search'])}>
+                <button type="button" className={isDropdownActive(['/properties', '/search'])} aria-haspopup="true">
                   Properties <span className={styles.chevronIcon}>▼</span>
-                </span>
+                </button>
                 <div className={styles.dropdownContent}>
                   <Link href="/properties" className={isDropdownItemActive('/properties')}>Featured Listings</Link>
                   <Link href="/search" className={isDropdownItemActive('/search')}>Search Properties</Link>
@@ -73,9 +76,9 @@ const Header = () => {
               <Link href="/services" className={isActive('/services')}><span>Services</span></Link>
 
               <div className={styles.navDropdown}>
-                <span className={isDropdownActive(['/community', '/lifestyle', '/amenities'])}>
+                <button type="button" className={isDropdownActive(['/community', '/lifestyle', '/amenities'])} aria-haspopup="true">
                   Community <span className={styles.chevronIcon}>▼</span>
-                </span>
+                </button>
                 <div className={styles.dropdownContent}>
                   <Link href="/community" className={isDropdownItemActive('/community')}>About Sun City</Link>
                   <Link href="/lifestyle" className={isDropdownItemActive('/lifestyle')}>Lifestyle</Link>
@@ -85,9 +88,9 @@ const Header = () => {
               </div>
 
               <div className={styles.navDropdown}>
-                <span className={isDropdownActive(['/zipcodes'])}>
+                <button type="button" className={isDropdownActive(['/zipcodes'])} aria-haspopup="true">
                   Location <span className={styles.chevronIcon}>▼</span>
-                </span>
+                </button>
                 <div className={styles.dropdownContent}>
                   <Link href="/zipcodes" className={isDropdownItemActive('/zipcodes')}>Zip Codes</Link>
                   <Link href="/zipcodes/89134" className={isDropdownItemActive('/zipcodes/89134')}>89134 Area</Link>
@@ -98,9 +101,9 @@ const Header = () => {
               <Link href="/neighborhoods" className={isActive('/neighborhoods')}><span>Neighborhoods</span></Link>
 
               <div className={styles.navDropdown}>
-                <span className={isDropdownActive(['/about', '/faq', '/service-area'])}>
+                <button type="button" className={isDropdownActive(['/about', '/faq', '/service-area'])} aria-haspopup="true">
                   About <span className={styles.chevronIcon}>▼</span>
-                </span>
+                </button>
                 <div className={styles.dropdownContent}>
                   <Link href="/about" className={isDropdownItemActive('/about')}>About Dr. Jan</Link>
                   <Link href="/faq" className={isDropdownItemActive('/faq')}>FAQ</Link>
@@ -127,6 +130,8 @@ const Header = () => {
             <button 
               className={styles.mobileMenuButton} 
               aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen ? 'true' : 'false'}
+              aria-controls="primary-nav-links"
               onClick={toggleMobileMenu}
             >
               <span className={isMobileMenuOpen ? styles.mobileButtonActive : ''}></span>

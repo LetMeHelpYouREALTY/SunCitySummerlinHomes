@@ -362,7 +362,7 @@ export default function Properties() {
             <p>(702) 718-0043</p>
           </div>
           <div className={styles.footerLinks}>
-            <h4>Quick Links</h4>
+            <h3>Quick Links</h3>
             <ul>
               <li><Link href="/">Home</Link></li>
               <li><Link href="/properties/">Properties</Link></li>
@@ -371,7 +371,7 @@ export default function Properties() {
             </ul>
           </div>
           <div className={styles.footerNewsletter}>
-            <h4>Stay Updated</h4>
+            <h3>Stay Updated</h3>
             <p>Subscribe to receive the latest listings and community news</p>
             <div className={styles.newsletterForm}>
               <input type="email" placeholder="Your Email" />

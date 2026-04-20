@@ -103,21 +103,21 @@ export default function Home() {
           </div>
           <div className={styles.footerLinks}>
             <div className={styles.footerCol}>
-              <h4>Quick Links</h4>
+              <h3>Quick Links</h3>
               <Link href="/search">Search</Link>
               <Link href="/properties">Properties</Link>
               <Link href="/community">Community</Link>
               <Link href="/contact">Contact</Link>
             </div>
             <div className={styles.footerCol}>
-              <h4>Services</h4>
+              <h3>Services</h3>
               <Link href="/services/buying-agent">Buying</Link>
               <Link href="/services/selling-agent">Selling</Link>
               <Link href="/services/relocation">Relocation</Link>
               <Link href="/services/luxury-homes">Luxury Homes</Link>
             </div>
             <div className={styles.footerCol}>
-              <h4>Resources</h4>
+              <h3>Resources</h3>
               <Link href="/about">About Dr. Jan</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/service-area">Service area</Link>

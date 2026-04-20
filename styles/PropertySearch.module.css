@@ -165,3 +165,72 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Tokenized accessibility pass */
+.searchSection {
+  background: var(--color-surface-raised);
+}
+
+.title {
+  color: var(--color-ink-900);
+  font-family: var(--font-display-loaded), var(--font-display);
+}
+
+.subtitle,
+.contactPrompt {
+  color: var(--color-ink-700);
+  font-size: var(--text-lg);
+}
+
+.searchCard {
+  background: var(--color-surface-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.label {
+  color: var(--color-ink-700);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.subLabel {
+  color: var(--color-ink-500);
+}
+
+.select {
+  min-height: 44px;
+  border: 1.5px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-base);
+  color: var(--color-ink-700);
+  font-size: var(--text-base);
+}
+
+.select:focus-visible,
+.checkbox:focus-visible {
+  outline: 0;
+  border-color: var(--color-sage-500);
+  box-shadow: var(--ring-focus);
+}
+
+.checkboxLabel {
+  color: var(--color-ink-700);
+}
+
+.searchButton {
+  min-height: 48px;
+  background: var(--color-clay-500);
+  color: var(--color-surface-base);
+  border-radius: var(--radius-md);
+  letter-spacing: var(--tracking-wide);
+}
+
+.searchButton:hover {
+  background: var(--color-clay-600);
+}
+
+.contactLink {
+  color: var(--color-sage-600);
+}

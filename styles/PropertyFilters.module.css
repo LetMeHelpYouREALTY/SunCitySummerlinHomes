@@ -90,6 +90,13 @@
   margin-top: 1.5rem;
 }
 
+#property-filter-error {
+  min-height: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-danger);
+  font-size: var(--text-sm);
+}
+
 .applyButton, .resetButton {
   flex: 1;
   padding: 10px;
@@ -157,4 +164,71 @@
   .featuresGrid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Tokenized accessibility pass */
+.filtersWrapper {
+  background: var(--color-surface-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.filtersTitle {
+  color: var(--color-ink-900);
+  font-family: var(--font-display-loaded), var(--font-display);
+}
+
+.filterSection h3,
+.inputGroup label {
+  color: var(--color-ink-700);
+  font-weight: 600;
+}
+
+.currencyPrefix {
+  color: var(--color-ink-500);
+}
+
+.inputGroup input,
+.inputGroup select {
+  min-height: 44px;
+  border: 1.5px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  color: var(--color-ink-700);
+  background: var(--color-surface-base);
+}
+
+.inputGroup input:focus-visible,
+.inputGroup select:focus-visible {
+  border-color: var(--color-sage-500);
+  box-shadow: var(--ring-focus);
+  outline: 0;
+}
+
+.applyButton,
+.mobileFilterToggle {
+  min-height: 48px;
+  background: var(--color-clay-500);
+  color: var(--color-surface-base);
+  border-radius: var(--radius-md);
+  letter-spacing: var(--tracking-wide);
+  font-weight: 600;
+}
+
+.applyButton:hover,
+.mobileFilterToggle:hover {
+  background: var(--color-clay-600);
+}
+
+.resetButton {
+  min-height: 48px;
+  background: var(--color-surface-base);
+  color: var(--color-sage-600);
+  border: 2px solid var(--color-sage-500);
+  border-radius: var(--radius-md);
+}
+
+.resetButton:hover {
+  background: var(--color-sand-100);
 }

@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [formStatusMessage, setFormStatusMessage] = useState('');
 
   useEffect(() => {
     setIsVisible(true);
@@ -16,6 +17,7 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real application, you would handle the form submission here
+    setFormStatusMessage('Form submitted successfully. We will get back to you within 24 hours.');
     setFormSubmitted(true);
   };
 
@@ -82,14 +84,17 @@ export default function Contact() {
             </div>
           ) : (
             <div className={styles.contactForm}>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} aria-describedby="contact-form-status">
+                <p id="contact-form-status" aria-live="polite">
+                  {formStatusMessage}
+                </p>
                 <div className={styles.formGroup}>
                   <label htmlFor="name">Name</label>
-                  <input type="text" id="name" placeholder="Your Name" required />
+                  <input type="text" id="name" placeholder="Your Name" required aria-describedby="contact-form-status" />
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="email">Email</label>
-                  <input type="email" id="email" placeholder="Your Email" required />
+                  <input type="email" id="email" placeholder="Your Email" required aria-describedby="contact-form-status" />
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="phone">Phone</label>
@@ -106,7 +111,7 @@ export default function Contact() {
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="message">Message</label>
-                  <textarea id="message" placeholder="Your Message" rows={4} required></textarea>
+                  <textarea id="message" placeholder="Your Message" rows={4} required aria-describedby="contact-form-status"></textarea>
                 </div>
                 <button type="submit" className={styles.submitButton}>Send Message</button>
               </form>

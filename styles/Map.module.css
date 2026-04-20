@@ -281,3 +281,30 @@
   font-weight: 500;
   margin-top: 0.5rem;
 }
+
+/* Tokenized interior styling */
+.title,
+.locationHeader h2 {
+  color: var(--color-ink-900);
+  font-family: var(--font-display-loaded), var(--font-display);
+}
+
+.subtitle,
+.locationCard p,
+.mapContainer :global(.office-info p) {
+  color: var(--color-ink-700);
+}
+
+.mapContainer,
+.locationCard {
+  background: var(--color-surface-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.mapContainer :global(.directions-button) {
+  background: var(--color-clay-500);
+  color: var(--color-surface-base);
+  min-height: 44px;
+}

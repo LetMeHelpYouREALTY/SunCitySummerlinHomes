@@ -1,0 +1,93 @@
+:root {
+  /* Primary — Sandstone */
+  --color-sand-50: #faf6f0;
+  --color-sand-100: #f2eadc;
+  --color-sand-200: #e6d9c2;
+  --color-sand-300: #d2bf9f;
+
+  /* Secondary — Desert Sage */
+  --color-sage-500: #6b8e6f;
+  --color-sage-600: #547056;
+  --color-sage-700: #3e5540;
+
+  /* Accent — Sunset Clay */
+  --color-clay-500: #c96a3e;
+  --color-clay-600: #a85530;
+  --color-clay-700: #853f22;
+
+  /* Neutrals — Charcoal */
+  --color-ink-900: #1f2421;
+  --color-ink-700: #3c433f;
+  --color-ink-500: #6a716d;
+  --color-ink-300: #a8adaa;
+
+  /* Semantic */
+  --color-success: #4f7a52;
+  --color-warning: #c88a1e;
+  --color-danger: #a53e2e;
+  --color-info: #4e6b85;
+
+  /* Surface */
+  --color-surface-base: #ffffff;
+  --color-surface-raised: #faf6f0;
+  --color-surface-sunken: #f2eadc;
+
+  /* Border */
+  --color-border-subtle: #e6d9c2;
+  --color-border-default: #d2bf9f;
+  --color-border-strong: #3c433f;
+
+  /* Focus ring */
+  --color-focus: #c96a3e;
+  --ring-focus: 0 0 0 3px rgba(201, 106, 62, 0.35);
+
+  /* Typography */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.4375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.25rem;
+  --text-4xl: 3rem;
+  --text-5xl: 3.75rem;
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.3;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Elevation */
+  --shadow-sm: 0 1px 2px rgba(31, 36, 33, 0.06);
+  --shadow-md: 0 4px 12px rgba(31, 36, 33, 0.08);
+  --shadow-lg: 0 12px 32px rgba(31, 36, 33, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(201, 106, 62, 0.35);
+}

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
-import { Poppins } from 'next/font/google';
+import { Fraunces, Inter } from 'next/font/google';
 import Script from 'next/script';
+import '@/styles/tokens.css';
 import '@/styles/globals.css';
 import 'aos/dist/aos.css';
 import AppProviders from '@/components/AppProviders';
@@ -10,9 +11,17 @@ import {
   getOrganizationJsonLd,
 } from '@/lib/site-contact';
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '600'],
+  variable: '--font-body-loaded',
+  display: 'swap',
+});
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  weight: ['700'],
+  variable: '--font-display-loaded',
   display: 'swap',
 });
 
@@ -43,7 +52,11 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={poppins.className} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${inter.variable} ${fraunces.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <link rel="preconnect" href="https://em.realscout.com" />
         <link rel="dns-prefetch" href="https://em.realscout.com" />
@@ -59,6 +72,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           strategy="afterInteractive"

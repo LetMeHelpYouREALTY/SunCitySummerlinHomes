@@ -3,7 +3,6 @@
 import { useEffect, type ReactNode } from 'react';
 import Script from 'next/script';
 import PageTransition from '@/components/PageTransition';
-import SitewidePageFrame from '@/components/SitewidePageFrame';
 import styles from '@/styles/Home.module.css';
 import { suppressExtensionWarnings } from '@/utils/suppress-warnings';
 
@@ -49,23 +48,6 @@ export default function AppProviders({ children }: AppProvidersProps) {
 
     window.addEventListener('scroll', handleScroll);
 
-    const setupMobileMenu = () => {
-      const menuButton = document.querySelector(`.${styles.mobileMenuButton}`);
-      const navLinks = document.querySelector(`.${styles.navLinks}`);
-
-      if (menuButton && navLinks) {
-        menuButton.addEventListener('click', () => {
-          navLinks.classList.toggle(styles.navLinksActive);
-          const spans = menuButton.querySelectorAll('span');
-          spans.forEach((span) => {
-            span.classList.toggle(styles.mobileButtonActive);
-          });
-        });
-      }
-    };
-
-    const t = window.setTimeout(setupMobileMenu, 500);
-
     if (typeof window !== 'undefined') {
       const AOS = require('aos');
       AOS.init({
@@ -79,7 +61,6 @@ export default function AppProviders({ children }: AppProvidersProps) {
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.clearTimeout(t);
       if (cleanupWarnings) cleanupWarnings();
     };
   }, []);
@@ -109,7 +90,9 @@ export default function AppProviders({ children }: AppProvidersProps) {
       ) : null}
 
       <PageTransition>
-        <SitewidePageFrame>{children}</SitewidePageFrame>
+        <div id="main-content" tabIndex={-1}>
+          {children}
+        </div>
       </PageTransition>
     </>
   );

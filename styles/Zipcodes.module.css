@@ -521,3 +521,37 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Tokenized interior styling */
+.pageTitle,
+.sectionTitle,
+.zipCard h2 {
+  color: var(--color-ink-900);
+  font-family: var(--font-display-loaded), var(--font-display);
+}
+
+.pageSubtitle,
+.sectionDescription,
+.zipCard p {
+  color: var(--color-ink-700);
+}
+
+.zipCard,
+.demographicsCard,
+.amenityItem,
+.schoolItem {
+  background: var(--color-surface-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.primaryButton {
+  min-height: 48px;
+  background: var(--color-clay-500);
+}
+
+.secondaryButton {
+  min-height: 48px;
+  border-color: var(--color-sage-500);
+  color: var(--color-sage-600);
+}

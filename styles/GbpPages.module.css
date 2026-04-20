@@ -117,3 +117,42 @@
 .ctaSecondary:hover {
   background: rgba(142, 31, 65, 0.06);
 }
+
+/* Tokenized interior styling */
+.card {
+  background: var(--color-surface-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.title,
+.card h2 {
+  color: var(--color-ink-900);
+  font-family: var(--font-display-loaded), var(--font-display);
+}
+
+.card p {
+  color: var(--color-ink-700);
+}
+
+.cta {
+  min-height: 48px;
+  background: var(--color-clay-500);
+  border-radius: var(--radius-md);
+}
+
+.cta:hover {
+  background: var(--color-clay-600);
+}
+
+.ctaSecondary {
+  min-height: 48px;
+  border-color: var(--color-sage-500);
+  color: var(--color-sage-600);
+  border-radius: var(--radius-md);
+}
+
+.ctaSecondary:hover {
+  background: var(--color-sand-100);
+}

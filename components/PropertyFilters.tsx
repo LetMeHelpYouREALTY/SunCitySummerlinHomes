@@ -22,6 +22,7 @@ interface PropertyFiltersProps {
 const PropertyFilters = ({ currentFilters, onApplyFilters }: PropertyFiltersProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [filters, setFilters] = useState(currentFilters);
+  const [formError, setFormError] = useState('');
   
   const featureOptions = [
     'Golf Course View',
@@ -62,6 +63,11 @@ const PropertyFilters = ({ currentFilters, onApplyFilters }: PropertyFiltersProp
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (filters.maxPrice > 0 && filters.minPrice > filters.maxPrice) {
+      setFormError('Minimum price must be lower than maximum price.');
+      return;
+    }
+    setFormError('');
     onApplyFilters(filters);
     if (window.innerWidth < 768) {
       setIsOpen(false);
@@ -77,15 +83,18 @@ const PropertyFilters = ({ currentFilters, onApplyFilters }: PropertyFiltersProp
       features: []
     };
     setFilters(resetFilters);
+    setFormError('');
     onApplyFilters(resetFilters);
   };
 
   return (
     <div className={styles.filtersWrapper}>
       <button 
+        type="button"
         className={styles.mobileFilterToggle}
         onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
+        aria-expanded={isOpen ? 'true' : 'false'}
+        aria-controls="property-filter-form"
       >
         {isOpen ? 'Hide Filters' : 'Show Filters'} 
         <span className={styles.filterIcon}>🔍</span>
@@ -94,7 +103,10 @@ const PropertyFilters = ({ currentFilters, onApplyFilters }: PropertyFiltersProp
       <div className={`${styles.filtersContainer} ${isOpen ? styles.filtersOpen : ''}`}>
         <h2 className={styles.filtersTitle}>Find Your Perfect Home</h2>
         
-        <form onSubmit={handleSubmit}>
+        <form id="property-filter-form" onSubmit={handleSubmit} aria-describedby="property-filter-error">
+          <p id="property-filter-error" aria-live="polite">
+            {formError}
+          </p>
           <div className={styles.filterSection}>
             <h3>Price Range</h3>
             <div className={styles.priceInputs}>
@@ -110,6 +122,8 @@ const PropertyFilters = ({ currentFilters, onApplyFilters }: PropertyFiltersProp
                     step="10000"
                     value={filters.minPrice}
                     onChange={handleInputChange}
+                    aria-invalid={formError ? 'true' : 'false'}
+                    aria-describedby="property-filter-error"
                   />
                 </div>
               </div>
@@ -125,6 +139,8 @@ const PropertyFilters = ({ currentFilters, onApplyFilters }: PropertyFiltersProp
                     step="10000"
                     value={filters.maxPrice}
                     onChange={handleInputChange}
+                    aria-invalid={formError ? 'true' : 'false'}
+                    aria-describedby="property-filter-error"
                   />
                 </div>
               </div>

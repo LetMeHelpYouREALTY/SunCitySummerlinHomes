@@ -353,3 +353,35 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Tokenized interior styling */
+.title,
+.sectionTitle,
+.neighborhoodCard h3 {
+  color: var(--color-ink-900);
+  font-family: var(--font-display-loaded), var(--font-display);
+}
+
+.subtitle,
+.sectionDescription,
+.neighborhoodCard p {
+  color: var(--color-ink-700);
+}
+
+.neighborhoodCard,
+.expertProfile,
+.marketStats {
+  background: var(--color-surface-base);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.primaryButton {
+  min-height: 48px;
+  background: var(--color-clay-500);
+}
+
+.primaryButton:hover {
+  background: var(--color-clay-600);
+}
