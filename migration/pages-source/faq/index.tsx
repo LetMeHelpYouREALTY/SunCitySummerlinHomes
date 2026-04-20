@@ -63,7 +63,7 @@ export default function FaqPage() {
       <StructuredData type="FAQPage" data={{ mainEntity }} />
       <Header />
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <article className={gb.wrap}>
           <h1 className={gb.h1}>Frequently asked questions</h1>
           <p className={gb.lead}>
@@ -98,7 +98,7 @@ export default function FaqPage() {
             </Link>
           </div>
         </article>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>

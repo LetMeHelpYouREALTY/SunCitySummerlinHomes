@@ -1,7 +1,7 @@
 'use client';
 
 import { CALENDLY_EVENT_URL } from '@/lib/calendly-config';
-import type { ButtonHTMLAttributes, MouseEvent } from 'react';
+import { forwardRef, type ButtonHTMLAttributes, type MouseEvent } from 'react';
 
 const POPUP_RETRY_MS = 120;
 const POPUP_RETRY_CAP = 120;
@@ -31,26 +31,30 @@ export function openCalendlyPopup(): void {
   }, POPUP_RETRY_MS);
 }
 
-type ScheduleButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+export type ScheduleButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   children?: React.ReactNode;
 };
 
-export default function ScheduleButton({
-  children = 'Schedule time with me',
-  onClick,
-  type = 'button',
-  ...rest
-}: ScheduleButtonProps) {
-  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    onClick?.(e);
-    if (!e.defaultPrevented) {
-      openCalendlyPopup();
-    }
-  };
+const ScheduleButton = forwardRef<HTMLButtonElement, ScheduleButtonProps>(
+  function ScheduleButton(
+    { children = 'Schedule time with me', onClick, type = 'button', ...rest },
+    ref,
+  ) {
+    const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+      onClick?.(e);
+      if (!e.defaultPrevented) {
+        openCalendlyPopup();
+      }
+    };
 
-  return (
-    <button type={type} onClick={handleClick} {...rest}>
-      {children}
-    </button>
-  );
-}
+    return (
+      <button ref={ref} type={type} onClick={handleClick} {...rest}>
+        {children}
+      </button>
+    );
+  },
+);
+
+ScheduleButton.displayName = 'ScheduleButton';
+
+export default ScheduleButton;

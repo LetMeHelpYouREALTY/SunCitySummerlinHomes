@@ -12,7 +12,7 @@ export default function Error({
 }) {
   return (
     <div className={styles.container}>
-      <main className={styles.main}>
+      <div className={styles.main}>
         <h1 className={styles.title}>Something went wrong</h1>
         <p className={styles.description}>{error.message}</p>
         <div className={styles.grid}>
@@ -25,7 +25,7 @@ export default function Error({
             <p>Go back to the homepage</p>
           </Link>
         </div>
-      </main>
+      </div>
     </div>
   );
 }

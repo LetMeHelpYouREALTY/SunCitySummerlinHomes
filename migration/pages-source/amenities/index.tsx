@@ -44,7 +44,7 @@ export default function Amenities() {
         </nav>
       </header>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <h1 className={styles.pageTitle}>Community Amenities</h1>
 
         <section className={`${styles.amenitiesSection} ${isVisible ? styles.fadeIn : ''}`}>
@@ -94,7 +94,7 @@ export default function Amenities() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>

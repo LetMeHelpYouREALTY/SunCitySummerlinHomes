@@ -28,7 +28,7 @@ export default function MarketHubPage({
   return (
     <div className={styles.marketPage}>
       <Header />
-      <main className={styles.container}>
+      <div className={styles.container}>
         <nav className={styles.breadcrumb} aria-label="Breadcrumb">
           <Link href="/">Home</Link> / <span>{breadcrumbLabel}</span>
         </nav>
@@ -68,7 +68,7 @@ export default function MarketHubPage({
             </a>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 }

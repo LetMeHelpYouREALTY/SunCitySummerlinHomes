@@ -33,7 +33,7 @@ export default function DelWebbNorthRanch() {
         </nav>
       </header>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <section className={`${styles.hero} ${isVisible ? styles.fadeIn : ''} ${neighborhoodStyles.neighborhoodHero}`}>
           <div className={styles.dualLogoContainer}>
             <Image 
@@ -150,7 +150,7 @@ export default function DelWebbNorthRanch() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>

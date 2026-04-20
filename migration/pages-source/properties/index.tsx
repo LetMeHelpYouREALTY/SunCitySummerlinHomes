@@ -143,7 +143,7 @@ export default function Properties() {
 
       <Header />
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <div className={styles.heroSection}>
           <div className={styles.heroOverlay}></div>
           <div className={styles.heroContent}>
@@ -253,7 +253,7 @@ export default function Properties() {
             </div>
           )}
         </div>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerContent}>

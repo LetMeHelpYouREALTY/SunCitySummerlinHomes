@@ -8,7 +8,7 @@ import StructuredData from '@/components/StructuredData';
 export default function LuxuryHomesPage() {
   return (
     <div className={styles.container}>
-        <main className={styles.main}>
+        <div className={styles.main}>
           <section className={styles.heroSection}>
             <div className={styles.heroContent}>
               <h1 className={styles.title}>Luxury Home Services</h1>
@@ -96,7 +96,7 @@ export default function LuxuryHomesPage() {
             <p>Contact Dr. Jan Duffy today for a private consultation about Sun City Summerlin's luxury home market.</p>
             <Link href="/contact" className={styles.primaryButton}>Contact Now</Link>
           </section>
-        </main>
+        </div>
 
         <StructuredData
           type="Service"

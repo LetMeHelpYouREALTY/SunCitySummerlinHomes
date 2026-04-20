@@ -95,7 +95,7 @@ export default function PropertySearch() {
         </nav>
       </header>
 
-      <main className={`${styles.main} ${isVisible ? styles.fadeIn : ''}`}>
+      <div className={`${styles.main} ${isVisible ? styles.fadeIn : ''}`}>
         <section className={searchStyles.searchSection}>
           <h1 className={styles.pageTitle}>Find Your Dream Home in Sun City Summerlin</h1>
           <p className={searchStyles.leadCopy}>
@@ -180,7 +180,7 @@ export default function PropertySearch() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>

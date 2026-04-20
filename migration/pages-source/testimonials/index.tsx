@@ -112,7 +112,7 @@ export default function Testimonials() {
 
       <Header />
 
-      <main className={`${styles.main} ${isVisible ? styles.fadeIn : ''}`}>
+      <div className={`${styles.main} ${isVisible ? styles.fadeIn : ''}`}>
         <section className={styles.testimonialHero}>
           <h1 className={styles.pageTitle}>Client Success Stories</h1>
           <p className={styles.pageSubtitle}>
@@ -170,7 +170,7 @@ export default function Testimonials() {
             </Link>
           </div>
         </section>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>

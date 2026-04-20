@@ -8,7 +8,7 @@ import StructuredData from '@/components/StructuredData';
 export default function SellingAgentPage() {
   return (
     <div className={styles.container}>
-        <main className={styles.main}>
+        <div className={styles.main}>
           <section className={styles.heroSection}>
             <div className={styles.heroContent}>
               <h1 className={styles.title}>Selling Agent Services</h1>
@@ -127,7 +127,7 @@ export default function SellingAgentPage() {
             <p>Contact Dr. Jan Duffy today for a complimentary home valuation and personalized selling strategy.</p>
             <Link href="/contact" className={styles.primaryButton}>Contact Now</Link>
           </section>
-        </main>
+        </div>
 
         <StructuredData
           type="Service"

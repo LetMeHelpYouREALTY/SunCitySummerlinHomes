@@ -32,7 +32,7 @@ export default function MediaHighlightsPage() {
   return (
     <div className={styles.page}>
       <Header />
-      <main className={styles.container}>
+      <div className={styles.container}>
         <section className={styles.hero}>
           <span className={styles.eyebrow}>Authority Proof Pattern</span>
           <h1>Media & Industry Highlights</h1>
@@ -66,7 +66,7 @@ export default function MediaHighlightsPage() {
             </Link>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 }

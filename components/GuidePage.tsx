@@ -35,7 +35,7 @@ export default function GuidePage({
   return (
     <div className={styles.page}>
       <Header />
-      <main className={styles.container}>
+      <div className={styles.container}>
         <Breadcrumbs items={breadcrumbs} />
         <section className={styles.hero}>
           <h1>{title}</h1>
@@ -71,7 +71,7 @@ export default function GuidePage({
         />
 
         <RelatedPages path={path} />
-      </main>
+      </div>
       <BackToTop />
     </div>
   );

@@ -41,7 +41,7 @@ export default function PrestigeNeighborhoodsPage() {
   return (
     <div className={styles.page}>
       <Header />
-      <main className={styles.container}>
+      <div className={styles.container}>
         <section className={styles.hero}>
           <span className={styles.eyebrow}>Featured Neighborhood Pattern</span>
           <h1>Prestige Neighborhoods</h1>
@@ -76,7 +76,7 @@ export default function PrestigeNeighborhoodsPage() {
             </Link>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 }

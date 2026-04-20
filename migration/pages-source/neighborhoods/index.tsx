@@ -45,7 +45,7 @@ export default function Neighborhoods() {
         </nav>
       </header>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <section className={`${styles.hero} ${isVisible ? styles.fadeIn : ''} ${neighborhoodStyles.heroSection}`}>
           <div className={neighborhoodStyles.heroContent}>
             <h1 className={neighborhoodStyles.title}>Las Vegas 55+ Communities & Neighborhoods</h1>
@@ -92,7 +92,7 @@ export default function Neighborhoods() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>

@@ -32,7 +32,7 @@ export default function Community() {
         </nav>
       </header>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <section className={`${styles.hero} ${isVisible ? styles.fadeIn : ''}`}>
           <div className={styles.logoContainer}>
             <div className={styles.dualLogoContainer}>
@@ -97,7 +97,7 @@ export default function Community() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>

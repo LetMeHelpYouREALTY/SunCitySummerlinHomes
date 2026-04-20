@@ -9,7 +9,7 @@ export default function ServiceAreaPage() {
     <div className={styles.container}>
       <Header />
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <article className={gb.wrap}>
           <h1 className={gb.h1}>Real estate service area</h1>
           <p className={gb.lead}>
@@ -62,7 +62,7 @@ export default function ServiceAreaPage() {
             </Link>
           </div>
         </article>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>

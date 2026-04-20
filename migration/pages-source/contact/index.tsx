@@ -37,7 +37,7 @@ export default function Contact() {
         </nav>
       </header>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <section className={`${styles.contactSection} ${isVisible ? styles.fadeIn : ''}`}>
           <div className={styles.logoContainer}>
             <div className={styles.dualLogoContainer}>
@@ -123,7 +123,7 @@ export default function Contact() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>

@@ -118,7 +118,7 @@ export default function Zipcodes() {
         </nav>
       </header>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <div className={styles.zipcodeHeader}>
           <div className={styles.breadcrumbs}>
             <Link href="/" passHref legacyBehavior><a>Home</a></Link> &gt; Zipcodes
@@ -153,7 +153,7 @@ export default function Zipcodes() {
             <a className={styles.contactButton}>Contact Dr. Jan Duffy</a>
           </Link>
         </section>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <p>&copy; {new Date().getFullYear()} Dr. Jan Duffy, REALTOR®. All rights reserved.</p>

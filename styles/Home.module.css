@@ -335,6 +335,12 @@ button.primaryButton {
   object-fit: cover;
 }
 
+.propertyCard > .propertyImage {
+  height: auto;
+  aspect-ratio: 4 / 3;
+  display: block;
+}
+
 .propertyPrice {
   position: absolute;
   bottom: 0;
@@ -746,12 +752,7 @@ button.primaryButton {
   border: 1px solid rgba(0,0,0,0.05);
 }
 
-.navDropdown:hover .dropdownContent {
-  display: block;
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible;
-}
+/* Desktop disclosure is click-controlled via [data-open] (see below); hover-only removed for touch/keyboard parity */
 
 .dropdownItem {
   color: #333;
@@ -818,6 +819,7 @@ button.primaryButton {
 }
 
 .navLinksActive .dropdownContent {
+  display: block !important;
   position: relative;
   width: 100%;
   box-shadow: none;
@@ -825,6 +827,9 @@ button.primaryButton {
   margin-bottom: 0.5rem;
   border: none;
   background-color: #f9f9f9;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
 }
 
 .navLinksActive .dropdownItem {
@@ -846,12 +851,61 @@ button.primaryButton {
 
 /* Modern UI refresh for shared header + homepage sections */
 .headerInner {
+  position: relative;
+  z-index: 1;
   max-width: 1320px;
   margin: 0 auto;
+  padding: 0 var(--space-3, 0.75rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+}
+
+.logoHomeLink {
+  display: block;
+  min-width: 0;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logoHomeLink:focus-visible {
+  outline: 2px solid var(--color-clay-500, #c45c3a);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm, 6px);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.logoText .logo {
+  height: auto;
+  width: auto;
+  margin: 0;
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  color: var(--color-ink-900, #1f1419);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.subLogo {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--color-ink-600, #5b4951);
+  font-weight: 500;
+  line-height: 1.25;
 }
 
 .headerLogo {
@@ -877,6 +931,7 @@ button.primaryButton {
 }
 
 .nav {
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -923,10 +978,16 @@ button.primaryButton {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background:
+  background-color: #170c12;
+  background-image:
     radial-gradient(circle at 14% 20%, rgba(255, 214, 102, 0.18), transparent 30%),
     radial-gradient(circle at 84% 14%, rgba(142, 31, 65, 0.22), transparent 34%),
-    linear-gradient(130deg, #170c12 0%, #2d1420 45%, #3b1a29 100%);
+    linear-gradient(130deg, rgba(23, 12, 18, 0.88) 0%, rgba(45, 20, 32, 0.82) 45%, rgba(59, 26, 41, 0.78) 100%),
+    linear-gradient(to top, rgba(31, 36, 33, 0.45), rgba(31, 36, 33, 0.12)),
+    url('/images/hero/SunCitySummerlinOutside.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #fef7f9;
   position: relative;
   overflow: hidden;
@@ -1198,6 +1259,10 @@ button.primaryButton {
     padding: 3.2rem 1rem;
   }
 
+  .homeWithGlobalNav .hero {
+    margin-top: 0;
+  }
+
   .headerInner {
     gap: 0.5rem;
   }
@@ -1211,7 +1276,9 @@ button.primaryButton {
   }
 
   .scheduleHeaderButton {
-    display: none;
+    padding: 0 var(--space-3);
+    font-size: var(--text-xs);
+    min-height: 44px;
   }
 
   .features,
@@ -1275,17 +1342,7 @@ button.primaryButton {
   transition: transform 0.2s ease;
 }
 
-.navDropdown:hover .chevronIcon,
-.navDropdown:focus-within .chevronIcon {
-  transform: translateY(-1px) rotate(180deg);
-}
-
-.navDropdown:focus-within .dropdownContent {
-  display: block;
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible;
-}
+/* Chevron rotation when open is driven by [data-open='true'] on .navDropdown */
 
 .dropdownContent {
   border-radius: 14px;
@@ -1408,6 +1465,10 @@ button.primaryButton {
 
 .homeWithGlobalNav .main {
   flex: 1;
+}
+
+.homeWithGlobalNav .hero {
+  margin-top: 0;
 }
 
 .listingsSkeleton {
@@ -1611,13 +1672,34 @@ button.primaryButton {
   }
 }
 
-/* 2026 desert-luxury accessibility overrides */
-.header {
+/* 2026 desert-luxury: main site chrome (do not reuse .header — migration pages keep fixed bar rules) */
+.siteNav {
   position: sticky;
   top: 0;
+  z-index: 300;
+  width: 100%;
+  isolation: isolate;
   background: var(--color-surface-base);
   border-bottom: 1px solid var(--color-border-subtle);
   box-shadow: var(--shadow-sm);
+}
+
+.siteNav .dropdownContent {
+  z-index: 320;
+}
+
+/* Nav dropdown disclosure: desktop uses [data-open]; mobile sheet always shows panels via .navLinksActive rules */
+@media (min-width: 769px) {
+  .navLinks:not(.navLinksActive) .navDropdown[data-open='true'] .dropdownContent {
+    display: block;
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navLinks:not(.navLinksActive) .navDropdown[data-open='true'] .chevronIcon {
+    transform: translateY(-1px) rotate(180deg);
+  }
 }
 
 .navLink,
@@ -1708,14 +1790,6 @@ button.primaryButton {
 
 .footerCol a:hover {
   color: var(--color-clay-500);
-}
-
-.hero {
-  background-image:
-    linear-gradient(to top, rgba(31, 36, 33, 0.35), rgba(31, 36, 33, 0.15)),
-    url('/images/hero/SunCitySummerlinOutside.jpg');
-  background-size: cover;
-  background-position: center;
 }
 
 .hero .title,

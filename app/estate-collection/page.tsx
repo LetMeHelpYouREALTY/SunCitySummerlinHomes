@@ -48,7 +48,7 @@ export default function EstateCollectionPage() {
   return (
     <div className={styles.page}>
       <Header />
-      <main className={styles.container}>
+      <div className={styles.container}>
         <section className={styles.hero}>
           <span className={styles.eyebrow}>Exclusive Collection Pattern</span>
           <h1>Estate Collection Showcase</h1>
@@ -97,7 +97,7 @@ export default function EstateCollectionPage() {
             </a>
           </div>
         </section>
-      </main>
+      </div>
     </div>
   );
 }

@@ -31,7 +31,7 @@ export default function Lifestyle() {
         </nav>
       </header>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <h1 className={styles.pageTitle}>Active Adult Lifestyle</h1>
 
         <section className={`${styles.lifestyleSection} ${isVisible ? styles.fadeIn : ''}`}>
@@ -107,7 +107,7 @@ export default function Lifestyle() {
             </div>
           </div>
         </section>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>

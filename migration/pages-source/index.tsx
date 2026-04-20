@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className={`${styles.container} ${styles.homeWithGlobalNav}`}>
       <Header />
-      <main className={styles.main}>
+      <div className={styles.main}>
         {/* New Enhanced Hero */}
         <EnhancedHero />
 
@@ -86,7 +86,7 @@ export default function Home() {
 
         {/* Testimonial Section */}
         <TestimonialSection />
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerContent}>

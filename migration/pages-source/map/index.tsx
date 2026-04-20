@@ -283,7 +283,7 @@ export default function SunCityMap() {
           `}
         </Script>
 
-        <main className={styles.main}>
+        <div className={styles.main}>
           <h1 className={styles.title}>Sun City Summerlin Interactive Map</h1>
           <p className={styles.subtitle}>Explore neighborhoods, amenities, and properties in Las Vegas' premier 55+ community</p>
 
@@ -363,7 +363,7 @@ export default function SunCityMap() {
               </Link>
             </div>
           </div>
-        </main>
+        </div>
       </div>
   );
 }

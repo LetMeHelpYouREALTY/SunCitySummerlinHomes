@@ -7,7 +7,7 @@ import StructuredData from '@/components/StructuredData';
 export default function ServiceOfferings() {
   return (
     <div className={styles.container}>
-        <main className={styles.main}>
+        <div className={styles.main}>
           <section className={styles.heroSection}>
             <div className={styles.heroContent}>
               <h1 className={styles.title}>Specialized Services</h1>
@@ -87,7 +87,7 @@ export default function ServiceOfferings() {
             <p>Contact Dr. Jan Duffy today for a personalized consultation about your real estate needs in Las Vegas' premier 55+ community.</p>
             <Link href="/contact" className={styles.primaryButton}>Contact Now</Link>
           </section>
-        </main>
+        </div>
 
         <StructuredData
           type="LocalBusiness"

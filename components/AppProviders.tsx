@@ -37,7 +37,7 @@ export default function AppProviders({ children }: AppProvidersProps) {
     document.documentElement.lang = 'en';
 
     const handleScroll = () => {
-      const header = document.querySelector('header');
+      const header = document.querySelector('header[data-app-header]') ?? document.querySelector('header');
       if (header) {
         if (window.scrollY > 50) {
           header.classList.add(styles.scrolledHeader);
@@ -91,9 +91,9 @@ export default function AppProviders({ children }: AppProvidersProps) {
       ) : null}
 
       <PageTransition>
-        <div id="main-content" tabIndex={-1}>
+        <main id="main-content" tabIndex={-1}>
           {children}
-        </div>
+        </main>
       </PageTransition>
     </CalendlyProvider>
   );

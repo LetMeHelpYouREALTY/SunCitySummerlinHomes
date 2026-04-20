@@ -20,7 +20,7 @@ export default function AboutPage() {
       <RealEstateAgentSchema />
       <Header />
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <article className={gb.wrap}>
           <h1 className={gb.h1}>About Dr. Jan Duffy</h1>
           <p className={gb.lead}>
@@ -79,7 +79,7 @@ export default function AboutPage() {
             </Link>
           </div>
         </article>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>

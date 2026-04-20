@@ -8,7 +8,7 @@ import StructuredData from '@/components/StructuredData';
 export default function RelocationPage() {
   return (
     <div className={styles.container}>
-        <main className={styles.main}>
+        <div className={styles.main}>
           <section className={styles.heroSection}>
             <div className={styles.heroContent}>
               <h1 className={styles.title}>Relocation Services</h1>
@@ -97,7 +97,7 @@ export default function RelocationPage() {
             <p>Contact Dr. Jan Duffy today for a personalized consultation about relocating from California to Sun City Summerlin.</p>
             <Link href="/contact" className={styles.primaryButton}>Contact Now</Link>
           </section>
-        </main>
+        </div>
 
         <StructuredData
           type="Service"

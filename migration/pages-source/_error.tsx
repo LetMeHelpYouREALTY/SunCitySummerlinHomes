@@ -15,7 +15,7 @@ export default function Error({ statusCode }) {
         <meta name="description" content="Error page" />
       </Head>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <h1 className={styles.title}>
           {statusCode ? `Error ${statusCode}` : 'An Error Occurred'}
         </h1>
@@ -32,7 +32,7 @@ export default function Error({ statusCode }) {
             <p>Go back to the homepage</p>
           </Link>
         </div>
-      </main>
+      </div>
     </div>
   );
 };

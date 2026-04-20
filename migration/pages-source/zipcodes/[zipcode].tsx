@@ -27,7 +27,7 @@ export default function ZipcodePage({ zipcodeData, nearbyZipcodes }: ZipcodePage
         </nav>
       </header>
 
-      <main className={styles.main}>
+      <div className={styles.main}>
         <div className={styles.zipcodeHeader}>
           <div className={styles.breadcrumbs}>
             <Link href="/zipcodes">Zipcodes</Link> &gt; {zipcodeData.code}
@@ -148,7 +148,7 @@ export default function ZipcodePage({ zipcodeData, nearbyZipcodes }: ZipcodePage
             </div>
           </section>
         </div>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>

@@ -92,7 +92,7 @@ export default function Blog() {
         </nav>
       </header>
 
-      <main className={`${styles.main} ${isVisible ? styles.fadeIn : ''}`}>
+      <div className={`${styles.main} ${isVisible ? styles.fadeIn : ''}`}>
         <section className={blogStyles.blogHero}>
           <div className={blogStyles.blogHeroContent}>
             <h1>Sun City Summerlin Real Estate Insights</h1>
@@ -172,7 +172,7 @@ export default function Blog() {
             </a>
           </div>
         </section>
-      </main>
+      </div>
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>
