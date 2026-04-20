@@ -3,27 +3,24 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from '@/styles/Home.module.css';
-import Script from 'next/script';
+import Header from '@/components/Header';
 import ScheduleButton from '@/components/ScheduleButton';
 import { NEVADA_REALTOR_LICENSE, phone } from '@/lib/site-contact';
 
 export default function Home() {
   const [realScoutLoaded, setRealScoutLoaded] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
-    setIsVisible(true);
-
-    // Set a small delay to ensure hydration is complete before loading RealScout
+    // Short delay so layout skeleton shows before RealScout web component mounts
     const timer = setTimeout(() => {
       setRealScoutLoaded(true);
-    }, 1000);
+    }, 400);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${styles.homeWithGlobalNav}`}>
+      <Header />
       <main className={styles.main}>
         {/* New Enhanced Hero */}
         <EnhancedHero />
@@ -53,16 +50,30 @@ export default function Home() {
 
         {/* RealScout Listings Section */}
         <div className={styles.listingsSection}>
-          {realScoutLoaded && (
+          {!realScoutLoaded ? (
+            <div
+              className={styles.listingsSkeleton}
+              aria-busy="true"
+              aria-live="polite"
+              aria-label="Loading featured listings"
+            >
+              <div className={styles.listingsSkeletonBar} />
+              <div className={styles.listingsSkeletonGrid}>
+                <div className={styles.listingsSkeletonCard} />
+                <div className={styles.listingsSkeletonCard} />
+                <div className={styles.listingsSkeletonCard} />
+              </div>
+            </div>
+          ) : (
             <div suppressHydrationWarning>
-              <realscout-office-listings 
-                agent-encoded-id="QWdlbnQtMjI1MDUw" 
-                sort-order="NEWEST" 
-                listing-status="For Sale" 
-                property-types="SFR,MF" 
-                price-min="800000" 
-                price-max="4000000">
-              </realscout-office-listings>
+              <realscout-office-listings
+                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                sort-order="NEWEST"
+                listing-status="For Sale"
+                property-types="SFR,MF"
+                price-min="800000"
+                price-max="4000000"
+              ></realscout-office-listings>
             </div>
           )}
         </div>
@@ -76,30 +87,6 @@ export default function Home() {
         {/* Testimonial Section */}
         <TestimonialSection />
       </main>
-
-      {/* RealScout script */}
-      <Script 
-        id="realscout-listings-init" 
-        strategy="lazyOnload"
-      >
-        {`
-          document.addEventListener('realscout-web-components-ready', () => {
-            const container = document.querySelector('.${styles.listingsSection}');
-            if (container) {
-              const listingsElement = document.createElement('realscout-office-listings');
-              if (listingsElement && listingsElement.setAttribute) {
-                listingsElement.setAttribute('agent-encoded-id', 'QWdlbnQtMjI1MDUw');
-                listingsElement.setAttribute('sort-order', 'NEWEST');
-                listingsElement.setAttribute('listing-status', 'For Sale');
-                listingsElement.setAttribute('property-types','SFR,MF');
-                listingsElement.setAttribute('price-min', '800000');
-                listingsElement.setAttribute('price-max', '4000000');
-                container.appendChild(listingsElement);
-              }
-            }
-          });
-        `}
-      </Script>
 
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
@@ -202,7 +189,15 @@ const PropertySearch = () => {
       <h2 className={styles.sectionTitle}>Featured Properties</h2>
       <div className={styles.propertyGrid}>
         <div className={styles.propertyCard}>
-          <img src="/property1.jpg" alt="Sun City Summerlin Home" className={styles.propertyImage} />
+          <img
+            src="/property1.jpg"
+            alt="Sun City Summerlin Home"
+            className={styles.propertyImage}
+            width={640}
+            height={480}
+            loading="lazy"
+            decoding="async"
+          />
           <h3>Beautiful Single Story</h3>
           <p>2 bed | 2 bath | 1,400 sq ft</p>
           <Link href="/properties" className={styles.propertyLink}>
@@ -210,7 +205,15 @@ const PropertySearch = () => {
           </Link>
         </div>
         <div className={styles.propertyCard}>
-          <img src="/property2.jpg" alt="Sun City Summerlin Home" className={styles.propertyImage} />
+          <img
+            src="/property2.jpg"
+            alt="Sun City Summerlin Home"
+            className={styles.propertyImage}
+            width={640}
+            height={480}
+            loading="lazy"
+            decoding="async"
+          />
           <h3>Golf Course Home</h3>
           <p>3 bed | 2.5 bath | 1,800 sq ft</p>
           <Link href="/properties" className={styles.propertyLink}>
@@ -218,7 +221,15 @@ const PropertySearch = () => {
           </Link>
         </div>
         <div className={styles.propertyCard}>
-          <img src="/property3.jpg" alt="Sun City Summerlin Home" className={styles.propertyImage} />
+          <img
+            src="/property3.jpg"
+            alt="Sun City Summerlin Home"
+            className={styles.propertyImage}
+            width={640}
+            height={480}
+            loading="lazy"
+            decoding="async"
+          />
           <h3>Luxury Villa</h3>
           <p>2 bed | 2 bath | 1,600 sq ft</p>
           <Link href="/properties" className={styles.propertyLink}>

@@ -1400,6 +1400,85 @@ button.primaryButton {
   margin-top: 2.4rem;
 }
 
+.homeWithGlobalNav {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.homeWithGlobalNav .main {
+  flex: 1;
+}
+
+.listingsSkeleton {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-surface-base);
+  padding: var(--space-6);
+  min-height: 420px;
+  max-width: 1220px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.listingsSkeletonBar {
+  height: 12px;
+  width: min(40%, 280px);
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--color-sand-100),
+    var(--color-sand-200),
+    var(--color-sand-100)
+  );
+  background-size: 200% 100%;
+  animation: listingsShimmer 1.2s ease-in-out infinite;
+  margin-bottom: var(--space-6);
+}
+
+.listingsSkeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.listingsSkeletonCard {
+  min-height: 220px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(
+    90deg,
+    var(--color-sand-50),
+    var(--color-sand-100),
+    var(--color-sand-50)
+  );
+  background-size: 200% 100%;
+  animation: listingsShimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes listingsShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listingsSkeletonBar,
+  .listingsSkeletonCard {
+    animation: none;
+    background: var(--color-sand-100);
+  }
+}
+
+@media (max-width: 900px) {
+  .listingsSkeletonGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .featuresSection,
 .propertiesSection,
 .testimonialsSection {
@@ -1637,6 +1716,13 @@ button.primaryButton {
     url('/images/hero/SunCitySummerlinOutside.jpg');
   background-size: cover;
   background-position: center;
+}
+
+.hero .title,
+.hero .subtitle,
+.hero .description,
+.hero .heroEyebrow {
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.55);
 }
 
 .title {
