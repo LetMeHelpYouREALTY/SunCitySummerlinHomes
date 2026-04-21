@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styles from '@/styles/Services.module.css';
 import StructuredData from '@/components/StructuredData';
 import ScheduleButton from '@/components/ScheduleButton';
+import { SITE_ORIGIN } from '@/lib/site-contact';
 
 export default function ServiceOfferings() {
   return (
@@ -27,7 +28,7 @@ export default function ServiceOfferings() {
             <div className={`${styles.servicesContainer} services-container`} itemScope itemType="http://schema.org/LocalBusiness">
               <meta itemProp="name" content="Dr. Jan Duffy, REALTOR - 55+ Community Specialist" />
               <meta itemProp="telephone" content="(702) 718-0043" />
-              <meta itemProp="url" content="https://suncitysummerlinhomesforsale.com" />
+              <meta itemProp="url" content={SITE_ORIGIN} />
               
               <div className="service-item" itemProp="hasOfferCatalog" itemScope itemType="http://schema.org/OfferCatalog">
                 <div className={styles.serviceCard}>
@@ -105,7 +106,7 @@ export default function ServiceOfferings() {
           data={{
             name: "Dr. Jan Duffy, REALTOR® - Sun City Summerlin 55+ Community Specialist",
             telephone: "(702) 718-0043",
-            url: "https://suncitysummerlin.com",
+            url: SITE_ORIGIN,
             address: {
               "@type": "PostalAddress",
               streetAddress: "9406 Del Webb Boulevard",

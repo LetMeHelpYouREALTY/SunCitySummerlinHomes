@@ -1,7 +1,7 @@
 /**
  * Optional: writes public/sitemap.xml for offline tools.
- * Production crawlers should use the dynamic route from app/sitemap.ts
- * (same URL: https://suncitysummerlin.com/sitemap.xml).
+ * Production crawlers should use the dynamic route
+ * `https://www.suncitysummerlinhomesforsale.com/sitemap.xml`.
  */
 import fs from 'fs';
 import path from 'path';

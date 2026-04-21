@@ -4,6 +4,7 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 import styles from '@/styles/Zipcodes.module.css';
+import { canonicalPath } from '@/lib/site-contact';
 
 // Data for the zipcodes
 const zipcodes = [
@@ -83,13 +84,13 @@ export default function Zipcodes() {
           '@type': 'ListItem',
           'position': 1,
           'name': 'Home',
-          'item': 'https://suncitysummerlin.com/'
+          'item': canonicalPath('/'),
         },
         {
           '@type': 'ListItem',
           'position': 2,
           'name': 'Zipcodes',
-          'item': 'https://suncitysummerlin.com/zipcodes/'
+          'item': canonicalPath('/zipcodes'),
         }
       ]
     });

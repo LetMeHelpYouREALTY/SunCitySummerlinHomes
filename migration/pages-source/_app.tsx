@@ -11,6 +11,7 @@ import styles from '@/styles/Home.module.css'
 import 'aos/dist/aos.css'
 import { suppressExtensionWarnings } from '@/utils/suppress-warnings';
 import { AnimatePresence } from 'framer-motion';
+import { SITE_ORIGIN } from '@/lib/site-contact';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -148,7 +149,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               "@type": "LocalBusiness",
               "name": "Dr. Jan Duffy - Sun City Summerlin REALTOR®",
               "image": "/drjan-logo.png",
-              "url": "https://suncitysummerlin.com",
+              "url": "${SITE_ORIGIN}",
               "telephone": "(702) 718-0043",
               "priceRange": "$$$",
               "address": {

@@ -1,5 +1,9 @@
 const path = require('path');
 
+/** Canonical host — keep aligned with `lib/site-contact.ts` SITE_ORIGIN */
+const CANONICAL_ORIGIN = 'https://www.suncitysummerlinhomesforsale.com';
+const APEX_HOST = 'suncitysummerlinhomesforsale.com';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   outputFileTracingRoot: path.join(__dirname),
@@ -19,6 +23,16 @@ const nextConfig = {
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
+  },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: APEX_HOST }],
+        destination: `${CANONICAL_ORIGIN}/:path*`,
+        permanent: true,
+      },
+    ];
   },
   async headers() {
     return [
