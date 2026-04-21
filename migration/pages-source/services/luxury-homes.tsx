@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '@/styles/Services.module.css';
 import StructuredData from '@/components/StructuredData';
+import ScheduleButton from '@/components/ScheduleButton';
 
 export default function LuxuryHomesPage() {
   return (
@@ -94,7 +95,13 @@ export default function LuxuryHomesPage() {
           <section className={styles.ctaSection}>
             <h2>Ready to Buy or Sell a Luxury Property?</h2>
             <p>Contact Dr. Jan Duffy today for a private consultation about Sun City Summerlin's luxury home market.</p>
-            <Link href="/contact" className={styles.primaryButton}>Contact Now</Link>
+            <ScheduleButton
+              type="button"
+              className={styles.primaryButton}
+              aria-label="Contact Dr. Jan Duffy — open scheduling"
+            >
+              Contact Now
+            </ScheduleButton>
           </section>
         </div>
 

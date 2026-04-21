@@ -7,6 +7,7 @@ import styles from '@/styles/Home.module.css';
 import neighborhoodStyles from '@/styles/Neighborhoods.module.css';
 import { useState, useEffect } from 'react';
 import StructuredData from '@/components/StructuredData';
+import ScheduleButton from '@/components/ScheduleButton';
 
 export default function DelWebbNorthRanch() {
   const [isVisible, setIsVisible] = useState(false);
@@ -143,9 +144,13 @@ export default function DelWebbNorthRanch() {
                 <Link href="/properties?community=Del+Webb+North+Ranch" className={neighborhoodStyles.primaryButton}>
                   View Available Homes
                 </Link>
-                <Link href="/contact" className={neighborhoodStyles.secondaryButton}>
+                <ScheduleButton
+                  type="button"
+                  className={neighborhoodStyles.secondaryButton}
+                  aria-label="Schedule a community tour — open Calendly"
+                >
                   Schedule a Tour
-                </Link>
+                </ScheduleButton>
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import styles from '@/styles/Services.module.css';
 import StructuredData from '@/components/StructuredData';
+import ScheduleButton from '@/components/ScheduleButton';
 
 export default function ServicesPage() {
   return (
@@ -72,7 +73,13 @@ export default function ServicesPage() {
           <section className={styles.ctaSection}>
             <h2>Ready to start your real estate journey?</h2>
             <p>Contact Dr. Jan Duffy today for a personalized consultation about your real estate needs in Sun City Summerlin.</p>
-            <Link href="/contact" className={styles.primaryButton}>Contact Now</Link>
+            <ScheduleButton
+              type="button"
+              className={styles.primaryButton}
+              aria-label="Contact Dr. Jan Duffy — open scheduling"
+            >
+              Contact Now
+            </ScheduleButton>
           </section>
         </div>
 

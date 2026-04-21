@@ -12,9 +12,9 @@ export default function Error({
 }) {
   return (
     <div className={styles.container}>
-      <div className={styles.main}>
-        <h1 className={styles.title}>Something went wrong</h1>
-        <p className={styles.description}>{error.message}</p>
+      <div className={`${styles.main} ${styles.plainPageMain}`}>
+        <h1 className={styles.plainPageTitle}>Something went wrong</h1>
+        <p className={styles.plainPageDescription}>{error.message}</p>
         <div className={styles.grid}>
           <button type="button" className={styles.card} onClick={() => reset()}>
             <h2>Try again</h2>

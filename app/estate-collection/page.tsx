@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
+import ScheduleButton from '@/components/ScheduleButton';
 import { phone } from '@/lib/site-contact';
 import styles from '@/styles/JadePatterns.module.css';
 
@@ -89,9 +90,13 @@ export default function EstateCollectionPage() {
             preferred location, budget, and lifestyle priorities.
           </p>
           <div className={styles.actions}>
-            <Link href="/contact" className={styles.primaryAction}>
+            <ScheduleButton
+              type="button"
+              className={styles.primaryAction}
+              aria-label="Request a curated list — open Calendly"
+            >
               Request Curated List
-            </Link>
+            </ScheduleButton>
             <a href={phone.telHref} className={styles.secondaryAction}>
               Call {phone.display}
             </a>

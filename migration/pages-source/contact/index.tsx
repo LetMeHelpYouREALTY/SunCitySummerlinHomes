@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import CalendlyInline from '@/components/CalendlyInline';
 import ScheduleButton from '@/components/ScheduleButton';
 import { address, email, gbpLinks, phone } from '@/lib/site-contact';
+import RealScoutHomeSearchLink from '@/components/RealScoutHomeSearchLink';
 
 export default function Contact() {
   const [isVisible, setIsVisible] = useState(false);
@@ -137,9 +138,7 @@ export default function Contact() {
           </p>
           <p>
             Real Estate Las Vegas, NV{' '}
-            <a href="https://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener noreferrer">
-              drjanduffy.realscout.com/onboarding
-            </a>
+            <RealScoutHomeSearchLink>Live MLS search (RealScout)</RealScoutHomeSearchLink>
           </p>
         </div>
         <div className={styles.footerLinks}>

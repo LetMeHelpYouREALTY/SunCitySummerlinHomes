@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import Script from 'next/script';
 import Link from 'next/link';
+import ScheduleButton from '@/components/ScheduleButton';
 import styles from '@/styles/Map.module.css';
 
 export default function SunCityMap() {
@@ -358,9 +359,13 @@ export default function SunCityMap() {
               <Link href="/properties" className={styles.actionButton}>
                 View Available Properties
               </Link>
-              <Link href="/contact" className={styles.actionButton}>
+              <ScheduleButton
+                type="button"
+                className={styles.actionButton}
+                aria-label="Schedule a community tour — open Calendly"
+              >
                 Schedule a Community Tour
-              </Link>
+              </ScheduleButton>
             </div>
           </div>
         </div>

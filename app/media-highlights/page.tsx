@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
+import ScheduleButton from '@/components/ScheduleButton';
 import styles from '@/styles/JadePatterns.module.css';
 
 export const metadata: Metadata = {
@@ -61,9 +62,13 @@ export default function MediaHighlightsPage() {
             <Link href="/about" className={styles.primaryAction}>
               Learn More About Dr. Jan
             </Link>
-            <Link href="/contact" className={styles.secondaryAction}>
+            <ScheduleButton
+              type="button"
+              className={styles.secondaryAction}
+              aria-label="Start a conversation — open Calendly"
+            >
               Start Conversation
-            </Link>
+            </ScheduleButton>
           </div>
         </section>
       </div>

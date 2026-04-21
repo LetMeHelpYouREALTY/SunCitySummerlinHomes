@@ -419,6 +419,13 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+button.primaryButton {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-family: inherit;
+}
+
 .nearbyZipcodesSection {
   margin: 3rem 0;
 }

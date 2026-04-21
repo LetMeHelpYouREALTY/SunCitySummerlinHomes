@@ -5,6 +5,8 @@ import styles from '@/styles/Home.module.css';
 import searchStyles from '@/styles/Search.module.css';
 import { useEffect, useState } from 'react';
 import ScheduleButton from '@/components/ScheduleButton';
+import RealScoutHomeSearchLink from '@/components/RealScoutHomeSearchLink';
+import { realScoutAgentEncodedId } from '@/lib/realscout-config';
 
 type SearchProperty = {
   id: number;
@@ -109,10 +111,24 @@ export default function PropertySearch() {
             <Link href="/properties" className={styles.secondaryButton}>
               View all properties
             </Link>
-            <Link href="/contact" className={styles.secondaryButton}>
-              Full scheduling page
+            <Link href="/contact" className={searchStyles.contactPageLink}>
+              Contact page (hours, address &amp; map)
             </Link>
           </div>
+
+          <section className={searchStyles.advancedSearchSection} aria-label="RealScout MLS search">
+            <h2 className={searchStyles.advancedSearchHeading}>Search MLS listings</h2>
+            <p className={searchStyles.advancedSearchIntro}>
+              Filter live inventory from Dr. Jan&apos;s office feed. For the full portal in a new tab,{' '}
+              <RealScoutHomeSearchLink className={searchStyles.advancedSearchPortalLink}>
+                open RealScout home search
+              </RealScoutHomeSearchLink>
+              .
+            </p>
+            <div className={searchStyles.advancedSearchWidget}>
+              <realscout-advanced-search agent-encoded-id={realScoutAgentEncodedId} />
+            </div>
+          </section>
 
           <div className={searchStyles.searchResults} style={{ marginTop: '2rem' }}>
             <div className={searchStyles.resultsGrid}>
@@ -194,9 +210,7 @@ export default function PropertySearch() {
           </p>
           <p>
             Real Estate Las Vegas, NV{' '}
-            <a href="https://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener noreferrer">
-              drjanduffy.realscout.com/onboarding
-            </a>
+            <RealScoutHomeSearchLink>Live MLS search (RealScout)</RealScoutHomeSearchLink>
           </p>
         </div>
         <div className={styles.footerLinks}>

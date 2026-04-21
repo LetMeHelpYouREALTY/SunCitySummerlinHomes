@@ -18,8 +18,8 @@ export default function PropertyFilters() {
           <ScheduleButton type="button" className={styles.primaryCta}>
             Schedule a consultation
           </ScheduleButton>
-          <Link href="/contact" className={styles.secondaryCta}>
-            Open full scheduler page
+          <Link href="/contact" className={styles.contactPageLink}>
+            Contact page (hours, address &amp; map)
           </Link>
         </div>
       </div>

@@ -6,7 +6,10 @@ const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
-  experimental: {},
+  // Smaller client bundles for libraries that export many modules (Next.js 15+).
+  experimental: {
+    optimizePackageImports: ['framer-motion'],
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 31536000,
@@ -15,7 +18,6 @@ const nextConfig = {
     ],
   },
   compiler: {
-    styledComponents: true,
     removeConsole: process.env.NODE_ENV === 'production',
   },
   async headers() {

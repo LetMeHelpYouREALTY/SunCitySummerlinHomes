@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ScheduleButton from '@/components/ScheduleButton';
 import styles from '@/styles/Zipcodes.module.css';
 import type { ZipcodeData } from '@/lib/zipcodes-data';
 
@@ -126,9 +127,13 @@ export default function ZipcodePage({ zipcodeData, nearbyZipcodes }: ZipcodePage
               knowledge of this zipcode and surrounding communities, Dr. Jan can help you find the perfect property.
             </p>
             <div className={styles.ctaButtons}>
-              <Link href="/contact" className={styles.primaryButton}>
+              <ScheduleButton
+                type="button"
+                className={styles.primaryButton}
+                aria-label="Contact Dr. Jan Duffy — open scheduling"
+              >
                 Contact Dr. Jan
-              </Link>
+              </ScheduleButton>
               <Link href="/properties" className={styles.secondaryButton}>
                 View Properties
               </Link>

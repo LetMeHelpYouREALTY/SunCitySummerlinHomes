@@ -60,6 +60,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://em.realscout.com" />
         <link rel="dns-prefetch" href="https://em.realscout.com" />
+        <link rel="preconnect" href="https://www.realscout.com" />
+        <link rel="dns-prefetch" href="https://www.realscout.com" />
         <link rel="preconnect" href="https://assets.calendly.com" />
         <link rel="preconnect" href="https://calendly.com" />
         <link rel="dns-prefetch" href="https://assets.calendly.com" />
@@ -86,6 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
           strategy="afterInteractive"
         />
         <AppProviders>{children}</AppProviders>

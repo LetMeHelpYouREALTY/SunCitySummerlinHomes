@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Header from '@/components/Header';
+import ScheduleButton from '@/components/ScheduleButton';
 import StructuredData from '@/components/StructuredData';
 import styles from '@/styles/Home.module.css';
 import gb from '@/styles/GbpPages.module.css';
@@ -90,9 +91,9 @@ export default function FaqPage() {
           </div>
 
           <div className={gb.ctaRow}>
-            <Link href="/contact" className={gb.cta}>
+            <ScheduleButton type="button" className={gb.cta} aria-label="Contact Dr. Jan Duffy — open scheduling">
               Contact
-            </Link>
+            </ScheduleButton>
             <Link href="/about" className={gb.ctaSecondary}>
               About
             </Link>

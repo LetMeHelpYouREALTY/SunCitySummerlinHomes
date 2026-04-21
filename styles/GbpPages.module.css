@@ -156,3 +156,19 @@
 .ctaSecondary:hover {
   background: var(--color-sand-100);
 }
+
+button.cta,
+button.ctaSecondary {
+  cursor: pointer;
+  font: inherit;
+  text-align: center;
+}
+
+button.cta {
+  border: none;
+}
+
+button.ctaSecondary {
+  border: 2px solid #8e1f41;
+  background: #fff;
+}

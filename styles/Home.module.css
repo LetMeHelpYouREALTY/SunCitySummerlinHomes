@@ -2021,3 +2021,90 @@ button.primaryButton {
 .footerCol h4 {
   color: var(--color-sand-50);
 }
+
+/* 404 + app/error: plain layout (avoid hero-sized .title / .description) */
+.plainPageMain {
+  padding: 3rem 1.5rem 4rem;
+  max-width: 960px;
+  margin: 0 auto;
+  min-height: auto;
+  text-align: center;
+}
+
+.plainPageTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+  text-shadow: none;
+}
+
+.plainPageDescription {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  text-shadow: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  text-align: left;
+}
+
+.card {
+  display: block;
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+button.card {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.card h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
+  color: #235d89;
+}
+
+.card p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.notFoundActionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.notFoundContactLink {
+  font-size: 0.9rem;
+  color: #235d89;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.notFoundContactLink:hover {
+  color: #1a4a6e;
+}

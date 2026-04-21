@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '@/styles/Services.module.css';
 import StructuredData from '@/components/StructuredData';
+import ScheduleButton from '@/components/ScheduleButton';
 
 export default function BuyingAgentPage() {
   return (
@@ -95,7 +96,13 @@ export default function BuyingAgentPage() {
           <section className={styles.ctaSection}>
             <h2>Ready to Find Your Dream Home?</h2>
             <p>Contact Dr. Jan Duffy today for a personalized consultation about buying a home in Sun City Summerlin.</p>
-            <Link href="/contact" className={styles.primaryButton}>Contact Now</Link>
+            <ScheduleButton
+              type="button"
+              className={styles.primaryButton}
+              aria-label="Contact Dr. Jan Duffy — open scheduling"
+            >
+              Contact Now
+            </ScheduleButton>
           </section>
         </div>
 

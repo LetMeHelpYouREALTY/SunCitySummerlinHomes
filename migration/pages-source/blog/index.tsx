@@ -7,6 +7,7 @@ import styles from '@/styles/Home.module.css';
 import blogStyles from '@/styles/Blog.module.css';
 import { useState, useEffect } from "react";
 import ScheduleButton from '@/components/ScheduleButton';
+import RealScoutHomeSearchLink from '@/components/RealScoutHomeSearchLink';
 
 export default function Blog() {
   const [isVisible, setIsVisible] = useState(false);
@@ -181,7 +182,10 @@ export default function Blog() {
           <p>Sun City Summerlin REALTOR® Dr. Jan Duffy - Serving Las Vegas since 2013</p>
           <p>Dr Jan Duffy REALTOR® | CA to LV Relocation Expert @DrJanDuffy</p>
           <p>Dr. Jan Duffy is a Nevada REALTOR® Making Dreams Come True in Las Vegas, Summerlin, Henderson, North Las Vegas, and Spring Valley Nevada. S.0197614.LL</p>
-          <p>Real Estate Las Vegas, NV <a href="https://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener noreferrer">drjanduffy.realscout.com/onboarding</a></p>
+          <p>
+            Real Estate Las Vegas, NV{' '}
+            <RealScoutHomeSearchLink>Live MLS search (RealScout)</RealScoutHomeSearchLink>
+          </p>
         </div>
         <div className={styles.footerLinks}>
           <a href="https://www.bhhs.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>

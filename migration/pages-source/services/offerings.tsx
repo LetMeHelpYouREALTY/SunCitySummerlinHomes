@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import styles from '@/styles/Services.module.css';
 import StructuredData from '@/components/StructuredData';
+import ScheduleButton from '@/components/ScheduleButton';
 
 export default function ServiceOfferings() {
   return (
@@ -65,7 +66,9 @@ export default function ServiceOfferings() {
                       <span itemProp="name">Veterans Housing Benefits Expert</span>
                     </h3>
                     <p itemProp="description">Specialized assistance for senior veterans using VA loan benefits for Sun City Summerlin properties. Expert in navigating VA requirements for 55+ communities, securing COE verification, and maximizing entitlement benefits for Las Vegas retirement homes.</p>
-                    <Link href="/contact" className={styles.ctaButton}>Contact For Details</Link>
+                    <ScheduleButton type="button" className={styles.ctaButton} aria-label="Contact for details — open scheduling">
+                      Contact For Details
+                    </ScheduleButton>
                   </div>
                 </div>
                 
@@ -75,7 +78,9 @@ export default function ServiceOfferings() {
                       <span itemProp="name">HOA Navigation Specialist</span>
                     </h3>
                     <p itemProp="description">Expert guidance for understanding Sun City Summerlin's HOA structure, fees, and regulations. Services include HOA financial health assessment, age-verification requirement assistance, and architectural guideline review for 55+ community buyers.</p>
-                    <Link href="/contact" className={styles.ctaButton}>Contact For Details</Link>
+                    <ScheduleButton type="button" className={styles.ctaButton} aria-label="Contact for details — open scheduling">
+                      Contact For Details
+                    </ScheduleButton>
                   </div>
                 </div>
               </div>
@@ -85,7 +90,13 @@ export default function ServiceOfferings() {
           <section className={styles.ctaSection}>
             <h2>Ready to work with Sun City Summerlin's most experienced REALTOR®?</h2>
             <p>Contact Dr. Jan Duffy today for a personalized consultation about your real estate needs in Las Vegas' premier 55+ community.</p>
-            <Link href="/contact" className={styles.primaryButton}>Contact Now</Link>
+            <ScheduleButton
+              type="button"
+              className={styles.primaryButton}
+              aria-label="Contact Dr. Jan Duffy — open scheduling"
+            >
+              Contact Now
+            </ScheduleButton>
           </section>
         </div>
 

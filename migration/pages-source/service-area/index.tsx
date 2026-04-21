@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Header from '@/components/Header';
+import ScheduleButton from '@/components/ScheduleButton';
 import styles from '@/styles/Home.module.css';
 import gb from '@/styles/GbpPages.module.css';
 import { address, footerLicenseDisclaimer, gbpLinks, phone, serviceAreaLinks } from '@/lib/site-contact';
@@ -54,9 +55,9 @@ export default function ServiceAreaPage() {
           </div>
 
           <div className={gb.ctaRow}>
-            <Link href="/contact" className={gb.cta}>
+            <ScheduleButton type="button" className={gb.cta} aria-label="Get local help — open scheduling with Dr. Jan Duffy">
               Get local help
-            </Link>
+            </ScheduleButton>
             <Link href="/faq" className={gb.ctaSecondary}>
               FAQ
             </Link>

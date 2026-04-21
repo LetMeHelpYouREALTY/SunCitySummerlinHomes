@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
+import ScheduleButton from '@/components/ScheduleButton';
 import styles from '@/styles/JadePatterns.module.css';
 
 export const metadata: Metadata = {
@@ -71,9 +72,13 @@ export default function PrestigeNeighborhoodsPage() {
             <Link href="/neighborhoods" className={styles.primaryAction}>
               View Neighborhood Hub
             </Link>
-            <Link href="/contact" className={styles.secondaryAction}>
+            <ScheduleButton
+              type="button"
+              className={styles.secondaryAction}
+              aria-label="Schedule an area consultation — open Calendly"
+            >
               Schedule Area Consultation
-            </Link>
+            </ScheduleButton>
           </div>
         </section>
       </div>

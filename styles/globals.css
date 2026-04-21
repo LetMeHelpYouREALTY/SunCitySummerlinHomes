@@ -233,6 +233,16 @@ iframe[src*='google.com/maps'] {
   border: 0;
 }
 
+/* RealScout advanced search (widget tokens — keep in sync with embed / layout head if duplicated) */
+realscout-advanced-search {
+  --rs-as-button-text-color: #ffffff;
+  --rs-as-background-color: #ffffff;
+  --rs-as-button-color: #4a90e2;
+  --rs-as-widget-width: 500px !important;
+  display: block;
+  max-width: 100%;
+}
+
 .sitewide-frame {
   display: flex;
   flex-direction: column;

@@ -202,6 +202,44 @@
   color: #555;
 }
 
+.footerCtaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.scheduleCta {
+  background-color: #8e1f41;
+  color: #fff;
+  padding: 0.65rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s ease;
+}
+
+.scheduleCta:hover {
+  background-color: #7a1b38;
+}
+
+.contactPageLink {
+  color: #235d89;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contactPageLink:hover {
+  color: #1a4a6e;
+}
+
 .contactLink {
   color: #8e1f41;
   text-decoration: none;

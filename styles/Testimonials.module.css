@@ -302,6 +302,11 @@
   box-shadow: 0 8px 20px rgba(35, 93, 137, 0.2);
 }
 
+button.secondaryBtn {
+  cursor: pointer;
+  font: inherit;
+}
+
 .fadeIn {
   animation: fadeInAnimation 0.8s ease forwards;
 }

@@ -6,6 +6,7 @@ import styles from '@/styles/Home.module.css';
 import Header from '@/components/Header';
 import ScheduleButton from '@/components/ScheduleButton';
 import { NEVADA_REALTOR_LICENSE, phone } from '@/lib/site-contact';
+import { realScoutAgentEncodedId } from '@/lib/realscout-config';
 
 export default function Home() {
   const [realScoutLoaded, setRealScoutLoaded] = useState(false);
@@ -67,7 +68,7 @@ export default function Home() {
           ) : (
             <div suppressHydrationWarning>
               <realscout-office-listings
-                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                agent-encoded-id={realScoutAgentEncodedId}
                 sort-order="NEWEST"
                 listing-status="For Sale"
                 property-types="SFR,MF"

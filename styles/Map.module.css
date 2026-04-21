@@ -169,6 +169,13 @@
   background-color: #1a4a6e;
 }
 
+button.actionButton {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 500;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .title {

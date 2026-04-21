@@ -5,6 +5,7 @@ import Image from "next/image";
 import styles from '@/styles/Home.module.css';
 import { useState, useEffect } from 'react';
 import CommunityStructuredData from '@/components/CommunityStructuredData';
+import RealScoutHomeSearchLink from '@/components/RealScoutHomeSearchLink';
 
 export default function Community() {
   const [isVisible, setIsVisible] = useState(false);
@@ -105,7 +106,10 @@ export default function Community() {
           <p>&copy; {new Date().getFullYear()} Berkshire Hathaway HomeServices. All rights reserved.</p>
           <p>Dr Jan Duffy REALTOR® | CA to LV Relocation Expert @DrJanDuffy</p>
           <p>Dr. Jan Duffy is a Nevada REALTOR® Making Dreams Come True in Las Vegas, Summerlin, Henderson, North Las Vegas, and Spring Valley Nevada. S.0197614.LL</p>
-          <p>Real Estate Las Vegas, NV <a href="https://drjanduffy.realscout.com/onboarding" target="_blank" rel="noopener noreferrer">drjanduffy.realscout.com/onboarding</a></p>
+          <p>
+            Real Estate Las Vegas, NV{' '}
+            <RealScoutHomeSearchLink>Live MLS search (RealScout)</RealScoutHomeSearchLink>
+          </p>
         </div>
         <div className={styles.footerLinks}>
           <a href="https://www.bhhs.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>

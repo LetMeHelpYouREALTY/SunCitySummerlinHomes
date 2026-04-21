@@ -10,6 +10,7 @@ import PropertyListingSchema from '@/components/PropertyListingSchema';
 import Link from 'next/link';
 import ScheduleButton from '@/components/ScheduleButton';
 import { phone } from '@/lib/site-contact';
+import { realScoutAgentEncodedId } from '@/lib/realscout-config';
 
 const propertiesData = [
   {
@@ -243,7 +244,7 @@ export default function Properties() {
           {realScoutLoaded && (
             <div suppressHydrationWarning>
               <realscout-office-listings
-                agent-encoded-id="QWdlbnQtMjI1MDUw"
+                agent-encoded-id={realScoutAgentEncodedId}
                 sort-order="NEWEST"
                 listing-status="For Sale"
                 property-types="SFR,MF"

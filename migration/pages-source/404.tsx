@@ -1,14 +1,15 @@
 
 import Link from 'next/link';
+import ScheduleButton from '@/components/ScheduleButton';
 import styles from '@/styles/Home.module.css';
 
 export default function Custom404() {
   return (
     <div className={styles.container}>
-      <div className={styles.main}>
-        <h1 className={styles.title}>404 - Page Not Found</h1>
-        <p className={styles.description}>
-          Sorry, the page you're looking for doesn't exist or has been moved.
+      <div className={`${styles.main} ${styles.plainPageMain}`}>
+        <h1 className={styles.plainPageTitle}>404 - Page Not Found</h1>
+        <p className={styles.plainPageDescription}>
+          Sorry, the page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
         <div className={styles.grid}>
           <Link href="/" className={styles.card}>
@@ -19,13 +20,22 @@ export default function Custom404() {
             <h2>View Properties &rarr;</h2>
             <p>Browse available Sun City Summerlin homes</p>
           </Link>
-          <Link href="/contact" className={styles.card}>
-            <h2>Contact Us &rarr;</h2>
-            <p>Get in touch for assistance</p>
-          </Link>
+          <div className={`${styles.card} ${styles.notFoundActionCard}`}>
+            <h2>Talk with Dr. Jan</h2>
+            <p>Schedule a call or open the contact page for hours, address, and map.</p>
+            <ScheduleButton
+              type="button"
+              className={styles.primaryButton}
+              aria-label="Schedule a call — open Calendly"
+            >
+              Schedule a call
+            </ScheduleButton>
+            <Link href="/contact" className={styles.notFoundContactLink}>
+              Contact page (hours, address &amp; map)
+            </Link>
+          </div>
         </div>
       </div>
     </div>
   );
 }
-

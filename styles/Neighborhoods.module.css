@@ -328,6 +328,11 @@
   background-color: #f0f7fc;
 }
 
+button.secondaryButton {
+  cursor: pointer;
+  font: inherit;
+}
+
 /* Responsive Styles */
 @media (min-width: 768px) {
   .expertProfile {

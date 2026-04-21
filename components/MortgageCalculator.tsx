@@ -1,5 +1,8 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import ScheduleButton from '@/components/ScheduleButton';
 import styles from '../styles/MortgageCalculator.module.css';
 
 interface MortgageCalculatorProps {
@@ -330,11 +333,15 @@ const MortgageCalculator: React.FC<MortgageCalculatorProps> = ({
       <div className={styles.calculatorFooter}>
         <p>
           Get pre-approved for a mortgage and explore Sun City Summerlin properties with Dr. Jan Duffy.
-          <br />
-          <Link href="/contact/" legacyBehavior>
-            <a className={styles.contactLink}>Contact Dr. Jan for financing options →</a>
-          </Link>
         </p>
+        <div className={styles.footerCtaRow}>
+          <ScheduleButton type="button" className={styles.scheduleCta} aria-label="Discuss financing — open Calendly">
+            Discuss financing with Dr. Jan
+          </ScheduleButton>
+          <Link href="/contact" className={styles.contactPageLink}>
+            Contact page (hours, address &amp; map)
+          </Link>
+        </div>
       </div>
     </div>
   );

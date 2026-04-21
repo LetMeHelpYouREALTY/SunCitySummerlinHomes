@@ -15,12 +15,12 @@ export default function Error({ statusCode }) {
         <meta name="description" content="Error page" />
       </Head>
 
-      <div className={styles.main}>
-        <h1 className={styles.title}>
+      <div className={`${styles.main} ${styles.plainPageMain}`}>
+        <h1 className={styles.plainPageTitle}>
           {statusCode ? `Error ${statusCode}` : 'An Error Occurred'}
         </h1>
 
-        <p className={styles.description}>
+        <p className={styles.plainPageDescription}>
           {statusCode
             ? `A server-side error occurred (${statusCode})`
             : 'An error occurred on the client'}

@@ -115,6 +115,14 @@
   background-color: #005288;
 }
 
+button.ctaButton {
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 /* Service Intro Section */
 .serviceIntro {
   display: flex;
@@ -416,4 +424,11 @@
 
 .primaryButton:hover {
   background: var(--color-clay-600);
+}
+
+button.primaryButton {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-family: inherit;
 }

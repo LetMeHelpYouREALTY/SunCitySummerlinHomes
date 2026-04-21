@@ -20,6 +20,8 @@ export default function AppProviders({ children }: AppProvidersProps) {
     const links = [
       { rel: 'preconnect', href: 'https://em.realscout.com' },
       { rel: 'dns-prefetch', href: 'https://em.realscout.com' },
+      { rel: 'preconnect', href: 'https://www.realscout.com' },
+      { rel: 'dns-prefetch', href: 'https://www.realscout.com' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' as const },
     ];

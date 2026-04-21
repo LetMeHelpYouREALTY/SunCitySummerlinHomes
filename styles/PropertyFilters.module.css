@@ -276,3 +276,17 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+.contactPageLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-sage-700);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contactPageLink:hover {
+  color: var(--color-sage-800, #3d4f42);
+}
