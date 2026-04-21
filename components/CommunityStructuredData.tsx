@@ -1,6 +1,6 @@
-
 import React from 'react';
 import StructuredData from './StructuredData';
+import { canonicalPath } from '@/lib/site-contact';
 
 const CommunityStructuredData: React.FC = () => {
   const communityData = {
@@ -66,9 +66,9 @@ const CommunityStructuredData: React.FC = () => {
         description: "Executive par-60 course, perfect for shorter playing time."
       }
     ],
-    photo: "https://suncitysummerlin.com/golf-course.jpg",
+    photo: canonicalPath('/golf-course.jpg'),
     publicAccess: false,
-    tourBookingPage: "https://suncitysummerlin.com/contact",
+    tourBookingPage: canonicalPath('/contact'),
     isAccessibleForFree: false,
     maximumAttendeeCapacity: 15000,
     amenityFeature: [

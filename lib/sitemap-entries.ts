@@ -1,3 +1,5 @@
+import { getAllBlogSlugs } from '@/lib/blog-posts';
+import { getSamplePropertyIds } from '@/lib/sample-properties';
 import { SITE_ORIGIN } from '@/lib/site-contact';
 import { ZIP_CODE_SLUGS } from '@/lib/zipcodes-data';
 
@@ -102,9 +104,21 @@ export function getMarketingSitemapRoutes(): RouteSpec[] {
     priority: 0.7,
   }));
 
+  const samplePropertyRoutes = getSamplePropertyIds().map((id) => ({
+    path: `/properties/${id}`,
+    changeFrequency: 'monthly' as ChangeFrequency,
+    priority: 0.72,
+  }));
+
+  const blogArticleRoutes = getAllBlogSlugs().map((slug) => ({
+    path: `/blog/${slug}`,
+    changeFrequency: 'monthly' as ChangeFrequency,
+    priority: 0.72,
+  }));
+
   // De-duplicate while preserving first occurrence order.
   const seen = new Set<string>();
-  return [...marketingRoutes, ...zipRoutes].filter((route) => {
+  return [...marketingRoutes, ...zipRoutes, ...samplePropertyRoutes, ...blogArticleRoutes].filter((route) => {
     if (seen.has(route.path)) return false;
     seen.add(route.path);
     return true;

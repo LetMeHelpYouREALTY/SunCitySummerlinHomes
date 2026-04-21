@@ -6,7 +6,7 @@ import styles from '@/styles/Home.module.css';
 import Header from '@/components/Header';
 import ScheduleButton from '@/components/ScheduleButton';
 import { NEVADA_REALTOR_LICENSE, phone } from '@/lib/site-contact';
-import { realScoutAgentEncodedId } from '@/lib/realscout-config';
+import { realScoutAgentEncodedId, realScoutHomeSearchUrl } from '@/lib/realscout-config';
 
 export default function Home() {
   const [realScoutLoaded, setRealScoutLoaded] = useState(false);
@@ -98,7 +98,9 @@ export default function Home() {
           <div className={styles.footerLinks}>
             <div className={styles.footerCol}>
               <h3>Quick Links</h3>
-              <Link href="/search">Search</Link>
+              <a href={realScoutHomeSearchUrl} target="_blank" rel="noopener noreferrer">
+                Search homes (RealScout)
+              </a>
               <Link href="/properties">Properties</Link>
               <Link href="/community">Community</Link>
               <Link href="/contact">Contact</Link>
@@ -150,9 +152,14 @@ const EnhancedHero = () => {
           <span className={styles.heroPill}>Local Expert Guidance</span>
         </div>
         <div className={styles.ctaButtons}>
-          <Link href="/search" className={styles.primaryButton}>
+          <a
+            href={realScoutHomeSearchUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.primaryButton}
+          >
             Search Homes
-          </Link>
+          </a>
           <ScheduleButton type="button" className={styles.secondaryButton}>
             Schedule with Dr. Jan
           </ScheduleButton>

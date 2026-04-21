@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { ReactNode } from 'react';
 import ScheduleButton from '@/components/ScheduleButton';
+import { realScoutHomeSearchUrl } from '@/lib/realscout-config';
 import { gbpLinks, phone } from '@/lib/site-contact';
 
 type RouteContent = {
@@ -23,8 +24,8 @@ const fallbackContent: RouteContent = {
     'Get clear, local guidance for buying or selling in Sun City Summerlin with Dr. Jan Duffy and Berkshire Hathaway HomeServices Nevada Properties.',
   primaryHref: '/contact',
   primaryLabel: 'Talk with Dr. Jan',
-  secondaryHref: '/search',
-  secondaryLabel: 'Browse Homes',
+  secondaryHref: realScoutHomeSearchUrl,
+  secondaryLabel: 'Browse Homes (RealScout)',
 };
 
 const routeContentMap: Record<string, RouteContent> = {
@@ -33,7 +34,7 @@ const routeContentMap: Record<string, RouteContent> = {
     title: 'Sun City Summerlin Homes and Lifestyle',
     summary:
       'Explore homes, neighborhood insights, and retirement-focused real estate guidance tailored to Sun City Summerlin and nearby Summerlin communities.',
-    primaryHref: '/search',
+    primaryHref: realScoutHomeSearchUrl,
     primaryLabel: 'Start Home Search',
     secondaryHref: '/contact',
     secondaryLabel: 'Schedule Consultation',
@@ -53,7 +54,7 @@ const routeContentMap: Record<string, RouteContent> = {
     title: 'Contact Dr. Jan Duffy',
     summary:
       'Call, email, or request a consultation for buying, selling, downsizing, and relocation support in Sun City Summerlin and surrounding areas.',
-    primaryHref: '/search',
+    primaryHref: realScoutHomeSearchUrl,
     primaryLabel: 'Search Available Homes',
     secondaryHref: '/services',
     secondaryLabel: 'Explore Services',
@@ -83,7 +84,7 @@ const routeContentMap: Record<string, RouteContent> = {
     title: 'Sun City Summerlin Properties',
     summary:
       'Browse listings aligned to your budget, accessibility needs, and preferred lifestyle, including golf course and single-story home opportunities.',
-    primaryHref: '/search',
+    primaryHref: realScoutHomeSearchUrl,
     primaryLabel: 'Refine Your Search',
     secondaryHref: '/contact',
     secondaryLabel: 'Request Private Tour',
@@ -145,7 +146,7 @@ const routeContentMap: Record<string, RouteContent> = {
       'Compare key zip codes for pricing, lifestyle, and home inventory so you can focus your search on areas that match your priorities.',
     primaryHref: '/zipcodes/89134',
     primaryLabel: 'View 89134 Insights',
-    secondaryHref: '/search',
+    secondaryHref: realScoutHomeSearchUrl,
     secondaryLabel: 'Search by Preferences',
   },
   '/neighborhoods': {
@@ -183,7 +184,7 @@ const routeContentMap: Record<string, RouteContent> = {
     title: 'Sun City Summerlin Real Estate Blog',
     summary:
       'Stay current with neighborhood updates, market trends, and practical guidance to support smart home decisions in Las Vegas.',
-    primaryHref: '/search',
+    primaryHref: realScoutHomeSearchUrl,
     primaryLabel: 'Search Current Listings',
     secondaryHref: '/contact',
     secondaryLabel: 'Get Local Advice',
@@ -233,7 +234,7 @@ const routeContentMap: Record<string, RouteContent> = {
     title: 'Buy with Local Strategy',
     summary:
       'Follow a structured process for search, evaluation, and offer execution in Sun City Summerlin to reduce uncertainty and improve outcomes.',
-    primaryHref: '/search',
+    primaryHref: realScoutHomeSearchUrl,
     primaryLabel: 'Browse Listings',
     secondaryHref: '/contact',
     secondaryLabel: 'Get Buyer Guidance',
@@ -273,10 +274,10 @@ const routeContentMap: Record<string, RouteContent> = {
     title: 'Estate Collection',
     summary:
       'Explore premium listing categories with a luxury-first presentation model adapted from top-tier high-end agent websites.',
-    primaryHref: '/properties',
-    primaryLabel: 'Browse Featured Properties',
-    secondaryHref: '/contact',
-    secondaryLabel: 'Request Curated Access',
+    primaryHref: realScoutHomeSearchUrl,
+    primaryLabel: 'Search Live MLS',
+    secondaryHref: '/properties',
+    secondaryLabel: 'Sample homes on this site',
   },
   '/prestige-neighborhoods': {
     eyebrow: 'Neighborhood Collection Pattern',
@@ -307,7 +308,7 @@ function getRouteContent(pathname: string): RouteContent {
       title: `Living in ${pathname.replace('/zipcodes/', '')}`,
       summary:
         'Review home options, nearby amenities, and neighborhood context in this Las Vegas zip code to narrow your search with confidence.',
-      primaryHref: '/search',
+      primaryHref: realScoutHomeSearchUrl,
       primaryLabel: 'Search This Area',
       secondaryHref: '/contact',
       secondaryLabel: 'Request Area Guidance',
@@ -344,6 +345,13 @@ function RouteCta({
       <ScheduleButton type="button" className={className}>
         {children}
       </ScheduleButton>
+    );
+  }
+  if (/^https?:\/\//i.test(href)) {
+    return (
+      <a href={href} className={className} target="_blank" rel="noopener noreferrer">
+        {children}
+      </a>
     );
   }
   return (

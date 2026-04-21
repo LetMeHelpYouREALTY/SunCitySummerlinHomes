@@ -1,3 +1,5 @@
+import { realScoutHomeSearchUrl } from '@/lib/realscout-config';
+
 export type RelatedPage = {
   href: string;
   title: string;
@@ -29,9 +31,9 @@ const relatedPagesMap: Record<string, RelatedPage[]> = {
   ],
   '/guides/buyers': [
     {
-      href: '/search',
+      href: realScoutHomeSearchUrl,
       title: 'Search Homes',
-      description: 'Browse active listings and refine by your criteria.',
+      description: 'Browse active MLS listings on Dr. Jan’s RealScout portal (opens in a new tab).',
     },
     {
       href: '/community',

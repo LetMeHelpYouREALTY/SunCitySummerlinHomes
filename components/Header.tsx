@@ -7,6 +7,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import styles from '@/styles/Home.module.css';
 import { phone } from '@/lib/site-contact';
 import ScheduleButton from '@/components/ScheduleButton';
+import { realScoutHomeSearchUrl } from '@/lib/realscout-config';
 
 const MOBILE_NAV_MAX_PX = 768;
 
@@ -187,24 +188,37 @@ function NavDisclosure({
         onKeyDown={onMenuKeyDown}
         onBlur={onMenuBlur}
       >
-        {items.map((item, i) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            role="menuitem"
-            className={isDropdownItemActive(item.pathKey)}
-            tabIndex={useRovingMenu ? (i === activeIndex ? 0 : -1) : 0}
-            onClick={onNavActivate}
-            onFocus={() => {
+        {items.map((item, i) => {
+          const isExternal = /^https?:\/\//i.test(item.href);
+          const className = isDropdownItemActive(item.pathKey);
+          const rovingProps = {
+            role: 'menuitem' as const,
+            className,
+            tabIndex: useRovingMenu ? (i === activeIndex ? 0 : -1) : 0,
+            onClick: onNavActivate,
+            onFocus: () => {
               if (useRovingMenu) {
                 activeIndexRef.current = i;
                 setActiveIndex(i);
               }
-            }}
-          >
-            {item.label}
-          </Link>
-        ))}
+            },
+          };
+          return isExternal ? (
+            <a
+              key={`${item.href}-${item.label}`}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              {...rovingProps}
+            >
+              {item.label}
+            </a>
+          ) : (
+            <Link key={item.href} href={item.href} {...rovingProps}>
+              {item.label}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );
@@ -378,9 +392,9 @@ export default function Header() {
                 onClose={closeDropdown}
                 items={[
                   { href: '/properties', pathKey: '/properties', label: 'Featured Listings' },
-                  { href: '/search', pathKey: '/search', label: 'Search Properties' },
-                  { href: '/properties/golf-course', pathKey: '/properties/golf-course', label: 'Golf Course Homes' },
-                  { href: '/properties/new-listings', pathKey: '/properties/new-listings', label: 'New Listings' },
+                  { href: realScoutHomeSearchUrl, pathKey: '/search', label: 'Search Properties' },
+                  { href: realScoutHomeSearchUrl, pathKey: '/search', label: 'Golf Course Homes' },
+                  { href: realScoutHomeSearchUrl, pathKey: '/search', label: 'New Listings' },
                 ]}
               />
 

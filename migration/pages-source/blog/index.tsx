@@ -8,6 +8,9 @@ import blogStyles from '@/styles/Blog.module.css';
 import { useState, useEffect } from "react";
 import ScheduleButton from '@/components/ScheduleButton';
 import RealScoutHomeSearchLink from '@/components/RealScoutHomeSearchLink';
+import { BLOG_POSTS } from '@/lib/blog-posts';
+
+const blogPosts = BLOG_POSTS;
 
 export default function Blog() {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,60 +18,6 @@ export default function Blog() {
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  const blogPosts = [
-    {
-      id: 1,
-      title: "2023 Sun City Summerlin Real Estate Market Trends",
-      excerpt: "The latest market analysis shows continued demand for Sun City Summerlin properties, with prices increasing by 8.5% year-over-year despite broader market fluctuations.",
-      date: "October 15, 2023",
-      author: "Dr. Jan Duffy",
-      image: "/property1.jpg",
-      category: "Market Trends",
-      slug: "2023-market-trends"
-    },
-    {
-      id: 2,
-      title: "Top 5 Renovations That Increase Home Value in Sun City Summerlin",
-      excerpt: "Looking to sell your Sun City Summerlin home for top dollar? These five strategic renovations have consistently shown the highest ROI in our 55+ community.",
-      date: "September 28, 2023",
-      author: "Dr. Jan Duffy",
-      image: "/property2.jpg",
-      category: "Home Improvement",
-      slug: 'top-renovations-home-value',
-    },
-    {
-      id: 3,
-      title: 'Understanding HOA Rules: A Guide for New Sun City Summerlin Residents',
-      excerpt:
-        "Moving to Sun City Summerlin? Here is everything you need to know about the community HOA regulations, fees, and governance structure.",
-      date: "September 12, 2023",
-      author: "Dr. Jan Duffy",
-      image: "/property3.jpg",
-      category: "Community Living",
-      slug: "hoa-rules-guide"
-    },
-    {
-      id: 4,
-      title: "Golf Course Living: Pros and Cons in Sun City Summerlin",
-      excerpt: "While golf course properties offer stunning views and convenient access to recreation, there are important considerations before purchasing one in our community.",
-      date: "August 25, 2023",
-      author: "Dr. Jan Duffy",
-      image: "/golf-course.jpg",
-      category: "Lifestyle",
-      slug: "golf-course-living"
-    },
-    {
-      id: 5,
-      title: "Moving from California to Sun City Summerlin: Tax Benefits and Lifestyle Changes",
-      excerpt: "Many of my clients relocate from California to enjoy Nevada's tax advantages and Sun City's amenities. Here's what you should know about the transition.",
-      date: "August 10, 2023",
-      author: "Dr. Jan Duffy",
-      image: "/community-center.jpg",
-      category: "Relocation",
-      slug: "california-nevada-relocation"
-    }
-  ];
 
   return (
     <div className={styles.container}>
@@ -114,21 +63,22 @@ export default function Blog() {
 
         <section className={blogStyles.featuredPost}>
           <div className={blogStyles.featuredImage}>
-            <img src="/property1.jpg" alt="Featured blog post on Sun City Summerlin market trends" />
+            <img
+              src={blogPosts[0]?.image ?? '/property1.jpg'}
+              alt={blogPosts[0]?.title ?? 'Featured Sun City Summerlin article'}
+            />
           </div>
           <div className={blogStyles.featuredContent}>
-            <span className={blogStyles.featuredLabel}>Featured Article</span>
-            <h2>2023 Sun City Summerlin Real Estate Market Trends</h2>
+            <span className={blogStyles.featuredLabel}>Featured article</span>
+            <h2>{blogPosts[0]?.title}</h2>
             <p className={blogStyles.postMeta}>
-              <span className={blogStyles.postDate}>October 15, 2023</span>
-              <span className={blogStyles.postAuthor}>By Dr. Jan Duffy</span>
-              <span className={blogStyles.postCategory}>Market Trends</span>
+              <span className={blogStyles.postDate}>{blogPosts[0]?.date}</span>
+              <span className={blogStyles.postAuthor}>By {blogPosts[0]?.author}</span>
+              <span className={blogStyles.postCategory}>{blogPosts[0]?.category}</span>
             </p>
-            <p className={blogStyles.postExcerpt}>
-              The latest market analysis shows continued demand for Sun City Summerlin properties, with prices increasing by 8.5% year-over-year despite broader market fluctuations. Low inventory continues to favor sellers, while buyers benefit from stable interest rates and exceptional community amenities.
-            </p>
-            <Link href="/blog/2023-market-trends" className={blogStyles.readMoreBtn}>
-              Read Full Article
+            <p className={blogStyles.postExcerpt}>{blogPosts[0]?.excerpt}</p>
+            <Link href={`/blog/${blogPosts[0]?.slug ?? '2023-market-trends'}`} className={blogStyles.readMoreBtn}>
+              Read full article
             </Link>
           </div>
         </section>
@@ -168,9 +118,9 @@ export default function Blog() {
             <ScheduleButton type="button" className={blogStyles.subscribeBtn}>
               Schedule a call
             </ScheduleButton>
-            <a href="/contact" className={blogStyles.subscribeLink}>
+            <Link href="/contact" className={blogStyles.subscribeLink}>
               Open full scheduling page
-            </a>
+            </Link>
           </div>
         </section>
       </div>
@@ -207,5 +157,5 @@ export default function Blog() {
       </footer>
     </div>
   );
-};
+}
 

@@ -36,12 +36,12 @@ export default function Neighborhoods() {
         </div>
         <nav className={styles.nav}>
           <Link href="/">Home</Link>
-          <Link href="/properties/">Properties</Link>
-          <Link href="/community/">Community</Link>
-          <Link href="/neighborhoods/">Neighborhoods</Link>
-          <Link href="/services/">Services</Link>
+          <Link href="/properties">Properties</Link>
+          <Link href="/community">Community</Link>
+          <Link href="/neighborhoods">Neighborhoods</Link>
+          <Link href="/services">Services</Link>
           <Link href="/testimonials">Testimonials</Link>
-          <Link href='/contact/'>Contact</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
       </header>
 

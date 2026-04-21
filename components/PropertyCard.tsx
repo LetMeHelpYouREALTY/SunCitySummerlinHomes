@@ -37,9 +37,9 @@ const PropertyCard = ({
   };
 
   return (
-    <Link href={`/properties/${id}`} passHref>
+    <Link href={`/properties/${id}`} className={styles.cardLink}>
       <div className={styles.card}>
-        {isNew && <span className={styles.newBadge}>New Listing</span>}
+        {isNew && <span className={styles.newBadge}>Featured sample</span>}
         <div className={styles.imageContainer}>
           <Image 
             src={image} 

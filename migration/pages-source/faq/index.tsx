@@ -45,7 +45,7 @@ const faqItems = [
   },
   {
     q: 'Can I browse listings online?',
-    a: 'Yes. Use the search and properties sections of this site to explore listings and connect when you are ready for the next step.',
+    a: 'Yes. Use Dr. Jan’s live MLS search on RealScout (link in the site footer on most pages), the search page on this site, or the properties section for sample layouts—then call or use the contact page when you are ready for the next step.',
   },
 ];
 

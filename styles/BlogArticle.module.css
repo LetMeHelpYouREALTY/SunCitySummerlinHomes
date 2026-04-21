@@ -1,0 +1,59 @@
+.pageShell {
+  min-height: 100vh;
+  background: #f7fafc;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  color: #1a202c;
+}
+
+.hero {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1.25rem 0 1.75rem;
+  aspect-ratio: 16 / 9;
+  max-height: 380px;
+  background: #e8eef4;
+}
+
+.body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #2d3748;
+}
+
+.body p {
+  margin: 0 0 1rem;
+}
+
+.nav {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.nav a {
+  color: #2b6cb0;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}

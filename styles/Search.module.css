@@ -251,7 +251,17 @@
   border-radius: 15px;
 }
 
+.cardCtaRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
 .viewPropertyBtn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
   background-color: #235d89;
   color: white;
   border: none;
@@ -260,10 +270,33 @@
   cursor: pointer;
   transition: background-color 0.2s ease;
   width: 100%;
+  box-sizing: border-box;
+  font-size: inherit;
 }
 
 .viewPropertyBtn:hover {
   background-color: #1a4b6d;
+}
+
+.viewPropertyBtnSecondary {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  background-color: #fff;
+  color: #235d89;
+  border: 2px solid #235d89;
+  padding: 0.65rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: inherit;
+  font-weight: 600;
+}
+
+.viewPropertyBtnSecondary:hover {
+  background-color: #e6f0f9;
 }
 
 .noResults {

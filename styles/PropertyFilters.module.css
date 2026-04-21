@@ -277,6 +277,25 @@
   text-underline-offset: 3px;
 }
 
+.realScoutCta {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--space-5);
+  background: var(--color-surface-base);
+  color: var(--color-clay-600);
+  border: 2px solid var(--color-clay-500);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.realScoutCta:hover {
+  background: var(--color-sand-100);
+}
+
 .contactPageLink {
   display: inline-flex;
   align-items: center;

@@ -1,6 +1,6 @@
-
 import React from 'react';
 import StructuredData from './StructuredData';
+import { SITE_ORIGIN } from '@/lib/site-contact';
 
 const SeniorRealEstateService: React.FC = () => {
   const seniorServiceData = {
@@ -9,7 +9,7 @@ const SeniorRealEstateService: React.FC = () => {
     provider: {
       "@type": "RealEstateAgent",
       name: "Dr. Jan Duffy, REALTOR",
-      url: "https://suncitysummerlin.com",
+      url: SITE_ORIGIN,
       telephone: "+17027180043"
     },
     description: "Specialized real estate services tailored to the needs of active adults 55+ in Sun City Summerlin, featuring accessibility-focused property searches and senior-friendly home evaluations.",

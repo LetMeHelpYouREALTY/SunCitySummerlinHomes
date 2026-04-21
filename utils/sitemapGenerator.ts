@@ -8,7 +8,7 @@ import path from 'path';
 import { Readable } from 'stream';
 import { SitemapStream, streamToPromise } from 'sitemap';
 
-const SITE_ORIGIN = 'https://suncitysummerlin.com';
+const SITE_ORIGIN = 'https://www.suncitysummerlinhomesforsale.com';
 
 type ChangeFrequency = 'daily' | 'weekly' | 'monthly';
 

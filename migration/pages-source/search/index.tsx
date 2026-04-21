@@ -153,9 +153,14 @@ export default function PropertySearch() {
                         </span>
                       ))}
                     </div>
-                    <Link href="/properties" className={searchStyles.viewPropertyBtn}>
-                      View listings hub
-                    </Link>
+                    <div className={searchStyles.cardCtaRow}>
+                      <Link href="/properties" className={searchStyles.viewPropertyBtn}>
+                        Sample homes hub
+                      </Link>
+                      <RealScoutHomeSearchLink className={searchStyles.viewPropertyBtnSecondary}>
+                        Live MLS on RealScout
+                      </RealScoutHomeSearchLink>
+                    </div>
                   </div>
                 </div>
               ))}

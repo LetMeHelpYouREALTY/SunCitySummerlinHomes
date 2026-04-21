@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Header from '@/components/Header';
 import PropertyCard from '@/components/PropertyCard';
 import PropertyFilters from '@/components/PropertyFilters';
@@ -9,129 +9,64 @@ import StructuredData from '@/components/StructuredData';
 import PropertyListingSchema from '@/components/PropertyListingSchema';
 import Link from 'next/link';
 import ScheduleButton from '@/components/ScheduleButton';
-import { phone } from '@/lib/site-contact';
+import { canonicalPath, phone } from '@/lib/site-contact';
+import { SAMPLE_PROPERTIES } from '@/lib/sample-properties';
 import { realScoutAgentEncodedId } from '@/lib/realscout-config';
-
-const propertiesData = [
-  {
-    id: 'prop1',
-    title: 'Elegant Single-Story Villa',
-    price: 548175,
-    address: '1234 Sun Valley Dr, Las Vegas, NV 89134',
-    bedrooms: 3,
-    bathrooms: 2,
-    sqft: 1850,
-    image: '/property1.jpg',
-    features: ['Golf Course View', 'Pool'],
-    isNew: true,
-  },
-  {
-    id: 'prop2',
-    title: 'Modern Desert Retreat',
-    price: 615000,
-    address: '5678 Canyon Ridge Ln, Las Vegas, NV 89134',
-    bedrooms: 2,
-    bathrooms: 2.5,
-    sqft: 2100,
-    image: '/property2.jpg',
-    features: ['Single Story', 'Renovated'],
-  },
-  {
-    id: 'prop3',
-    title: 'Spacious Golf Course Home',
-    price: 729000,
-    address: '9101 Fairway View Dr, Las Vegas, NV 89134',
-    bedrooms: 4,
-    bathrooms: 3,
-    sqft: 2600,
-    image: '/property3.jpg',
-    features: ['Premium View', 'Large Lot'],
-  },
-  {
-    id: 'prop4',
-    title: 'Charming Villa with Mountain Views',
-    price: 499000,
-    address: '2468 Red Rock Way, Las Vegas, NV 89134',
-    bedrooms: 2,
-    bathrooms: 2,
-    sqft: 1650,
-    image: '/property1.jpg',
-    features: ['Mountain View', 'Updated Kitchen'],
-    isNew: true,
-  },
-  {
-    id: 'prop5',
-    title: 'Luxurious Desert Oasis',
-    price: 875000,
-    address: '1357 Palm Spring Ct, Las Vegas, NV 89134',
-    bedrooms: 3,
-    bathrooms: 3.5,
-    sqft: 2800,
-    image: '/property2.jpg',
-    features: ['Premium Lot', 'Custom Design'],
-  },
-  {
-    id: 'prop6',
-    title: 'Cozy Single Family Home',
-    price: 425000,
-    address: '3691 Vista Dr, Las Vegas, NV 89134',
-    bedrooms: 2,
-    bathrooms: 2,
-    sqft: 1450,
-    image: '/property3.jpg',
-    features: ['Great Value', 'Move-in Ready'],
-  },
-];
-
-const schemaData = {
-  '@context': 'https://schema.org',
-  '@type': 'RealEstateAgent',
-  name: 'Dr. Jan Duffy - Sun City Summerlin Specialist',
-  description:
-    "Browse luxury homes for sale in Sun City Summerlin, Las Vegas' premier 55+ community with Dr. Jan Duffy, REALTOR® specialist with 25+ years of experience.",
-  url: 'https://suncitysummerlin.com/properties',
-  telephone: '(702) 718-0043',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '9406 Del Webb Boulevard',
-    addressLocality: 'Las Vegas',
-    addressRegion: 'NV',
-    postalCode: '89134',
-    addressCountry: 'US',
-  },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Sun City Summerlin Properties',
-    itemListElement: propertiesData.map((property, index) => ({
-      '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Residence',
-        name: property.title,
-        description: `${property.bedrooms} bed, ${property.bathrooms} bath, ${property.sqft} sq ft home in Sun City Summerlin`,
-        numberOfRooms: property.bedrooms,
-        floorSize: {
-          '@type': 'QuantitativeValue',
-          value: property.sqft,
-          unitCode: 'SQF',
-        },
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Las Vegas',
-          addressRegion: 'NV',
-          postalCode: '89134',
-        },
-        offers: {
-          '@type': 'Offer',
-          price: property.price,
-          priceCurrency: 'USD',
-        },
-      },
-    })),
-  },
-};
 
 export default function Properties() {
   const [realScoutLoaded, setRealScoutLoaded] = useState(false);
+
+  const schemaData = useMemo(
+    () => ({
+      '@context': 'https://schema.org',
+      '@type': 'RealEstateAgent',
+      name: 'Dr. Jan Duffy - Sun City Summerlin Specialist',
+      description:
+        "Browse luxury homes for sale in Sun City Summerlin, Las Vegas' premier 55+ community with Dr. Jan Duffy, REALTOR® specialist with 25+ years of experience.",
+      url: canonicalPath('/properties'),
+      telephone: phone.e164,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '9406 Del Webb Boulevard',
+        addressLocality: 'Las Vegas',
+        addressRegion: 'NV',
+        postalCode: '89134',
+        addressCountry: 'US',
+      },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Sun City Summerlin sample property profiles',
+        itemListElement: SAMPLE_PROPERTIES.map((property) => ({
+          '@type': 'Offer',
+          url: canonicalPath(`/properties/${property.id}`),
+          itemOffered: {
+            '@type': 'Residence',
+            name: property.title,
+            url: canonicalPath(`/properties/${property.id}`),
+            description: `${property.bedrooms} bed, ${property.bathrooms} bath, ${property.sqft} sq ft illustrative sample in Sun City Summerlin area`,
+            numberOfRooms: property.bedrooms,
+            floorSize: {
+              '@type': 'QuantitativeValue',
+              value: property.sqft,
+              unitCode: 'SQF',
+            },
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Las Vegas',
+              addressRegion: 'NV',
+              postalCode: '89134',
+            },
+            offers: {
+              '@type': 'Offer',
+              price: property.price,
+              priceCurrency: 'USD',
+            },
+          },
+        })),
+      },
+    }),
+    []
+  );
 
   useEffect(() => {
     setRealScoutLoaded(true);
@@ -164,12 +99,12 @@ export default function Properties() {
             <div className={styles.resultsHeader}>
               <h2>
                 Sample properties
-                <span className={styles.resultCount}>({propertiesData.length} Homes)</span>
+                <span className={styles.resultCount}>({SAMPLE_PROPERTIES.length} sample profiles)</span>
               </h2>
             </div>
 
             <div className={styles.propertiesGrid}>
-              {propertiesData.map((property, index) => (
+              {SAMPLE_PROPERTIES.map((property, index) => (
                 <div
                   key={property.id}
                   className={styles.propertyCardWrapper}
@@ -270,13 +205,13 @@ export default function Properties() {
                 <Link href="/">Home</Link>
               </li>
               <li>
-                <Link href="/properties/">Properties</Link>
+                <Link href="/properties">Properties</Link>
               </li>
               <li>
-                <Link href="/community/">Community</Link>
+                <Link href="/community">Community</Link>
               </li>
               <li>
-                <Link href="/contact/">Contact</Link>
+                <Link href="/contact">Contact</Link>
               </li>
             </ul>
           </div>
