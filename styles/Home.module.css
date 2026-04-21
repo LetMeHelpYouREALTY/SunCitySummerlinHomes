@@ -978,13 +978,11 @@ button.primaryButton {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #3a3430;
+  background-color: #2b2f35;
   background-image:
-    radial-gradient(circle at 14% 20%, rgba(255, 214, 102, 0.12), transparent 34%),
-    radial-gradient(circle at 84% 14%, rgba(142, 31, 65, 0.14), transparent 38%),
-    linear-gradient(125deg, rgba(45, 32, 38, 0.5) 0%, rgba(70, 40, 52, 0.4) 50%, rgba(40, 32, 36, 0.46) 100%),
-    linear-gradient(to top, rgba(32, 28, 30, 0.22), rgba(32, 28, 30, 0.06)),
-    url('/community-center.jpg');
+    linear-gradient(120deg, rgba(20, 24, 32, 0.38) 0%, rgba(20, 24, 32, 0.22) 55%, rgba(20, 24, 32, 0.18) 100%),
+    linear-gradient(to top, rgba(12, 14, 18, 0.14), rgba(12, 14, 18, 0.04)),
+    url('/golf-course.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -997,7 +995,7 @@ button.primaryButton {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.02));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0));
   pointer-events: none;
 }
 

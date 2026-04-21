@@ -67,7 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://assets.calendly.com" />
         <link
           rel="preload"
-          href="/community-center.jpg"
+          href="/golf-course.jpg"
           as="image"
           fetchPriority="high"
         />

@@ -198,7 +198,7 @@ const PropertySearch = () => {
       <div className={styles.propertyGrid}>
         <div className={styles.propertyCard}>
           <img
-            src="/property1.jpg"
+            src="/community-center.jpg"
             alt="Sun City Summerlin Home"
             className={styles.propertyImage}
             width={640}
@@ -214,7 +214,7 @@ const PropertySearch = () => {
         </div>
         <div className={styles.propertyCard}>
           <img
-            src="/property2.jpg"
+            src="/golf-course.jpg"
             alt="Sun City Summerlin Home"
             className={styles.propertyImage}
             width={640}
@@ -230,7 +230,7 @@ const PropertySearch = () => {
         </div>
         <div className={styles.propertyCard}>
           <img
-            src="/property3.jpg"
+            src="/golf-cart-path.jpg"
             alt="Sun City Summerlin Home"
             className={styles.propertyImage}
             width={640}
