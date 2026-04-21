@@ -11,6 +11,7 @@ updates:
         patterns:
           - 'next'
           - 'eslint-config-next'
+          - 'eslint'
       react:
         patterns:
           - 'react'

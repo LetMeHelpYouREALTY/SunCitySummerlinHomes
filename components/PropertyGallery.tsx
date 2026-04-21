@@ -14,8 +14,10 @@ const PropertyGallery = ({ images, features = [], alt = "Property image" }: Prop
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
-    
+    queueMicrotask(() => {
+      setIsVisible(true);
+    });
+
     // Auto-rotate property images
     const interval = setInterval(() => {
       setActiveImage((prev) => (prev + 1) % images.length);

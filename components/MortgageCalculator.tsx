@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import ScheduleButton from '@/components/ScheduleButton';
 import styles from '../styles/MortgageCalculator.module.css';
@@ -20,13 +20,17 @@ const MortgageCalculator: React.FC<MortgageCalculatorProps> = ({
 }) => {
   const [price, setPrice] = useState(defaultPrice);
   const [downPayment, setDownPayment] = useState(defaultDownPayment);
-  const [downPaymentPercent, setDownPaymentPercent] = useState(20);
   const [interestRate, setInterestRate] = useState(defaultInterestRate);
   const [loanTerm, setLoanTerm] = useState(defaultLoanTerm);
   const [monthlyPayment, setMonthlyPayment] = useState(0);
   const [showAmortization, setShowAmortization] = useState(false);
   const [taxRate, setTaxRate] = useState(0.77); // Clark County property tax rate per $100
   const [insuranceRate, setInsuranceRate] = useState(0.35); // Average insurance rate per $100
+
+  const downPaymentPercent = useMemo(() => {
+    if (price <= 0) return 0;
+    return parseFloat(((downPayment / price) * 100).toFixed(1));
+  }, [downPayment, price]);
 
   useEffect(() => {
     // Calculate mortgage when relevant values change
@@ -59,17 +63,11 @@ const MortgageCalculator: React.FC<MortgageCalculatorProps> = ({
     calculateMortgage();
   }, [price, downPayment, interestRate, loanTerm, taxRate, insuranceRate]);
 
-  useEffect(() => {
-    // Update downPaymentPercent when downPayment changes
-    const percent = (downPayment / price) * 100;
-    setDownPaymentPercent(parseFloat(percent.toFixed(1)));
-  }, [downPayment, price]);
-
   const handlePriceChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newPrice = parseFloat(e.target.value);
+    const priorPercent = price > 0 ? (downPayment / price) * 100 : 20;
     setPrice(newPrice);
-    // Keep the same percentage
-    const newDownPayment = (newPrice * downPaymentPercent) / 100;
+    const newDownPayment = (newPrice * priorPercent) / 100;
     setDownPayment(parseFloat(newDownPayment.toFixed(2)));
   };
 
@@ -80,7 +78,6 @@ const MortgageCalculator: React.FC<MortgageCalculatorProps> = ({
 
   const handleDownPaymentPercentChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newPercent = parseFloat(e.target.value);
-    setDownPaymentPercent(newPercent);
     const newDownPayment = (price * newPercent) / 100;
     setDownPayment(parseFloat(newDownPayment.toFixed(2)));
   };

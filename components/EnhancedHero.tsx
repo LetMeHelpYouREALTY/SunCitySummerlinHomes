@@ -28,7 +28,9 @@ const EnhancedHero = () => {
   ];
   
   useEffect(() => {
-    setIsLoaded(true);
+    queueMicrotask(() => {
+      setIsLoaded(true);
+    });
     const interval = setInterval(() => {
       setActiveSlide(prev => (prev + 1) % heroProperties.length);
     }, 5000);

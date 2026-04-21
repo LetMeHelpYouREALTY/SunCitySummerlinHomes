@@ -249,8 +249,10 @@ export default function Header() {
   const mobileMenuExpanded: 'true' | 'false' = isMobileMenuOpen ? 'true' : 'false';
 
   useEffect(() => {
-    closeMobileMenu();
-    setOpenDropdownId(null);
+    queueMicrotask(() => {
+      closeMobileMenu();
+      setOpenDropdownId(null);
+    });
   }, [pathname, closeMobileMenu]);
 
   useEffect(() => {
