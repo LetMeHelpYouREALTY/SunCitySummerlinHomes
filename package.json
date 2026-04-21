@@ -2,7 +2,7 @@
   "name": "suncitysummerlinhomes",
   "private": true,
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=22.0.0 <23"
   },
   "scripts": {
     "dev": "vercel dev",

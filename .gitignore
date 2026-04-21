@@ -12,7 +12,9 @@
 /.next/
 /out/
 .next/
-next-env.d.ts
+
+# TypeScript incremental (do not commit)
+*.tsbuildinfo
 
 # production
 /build
