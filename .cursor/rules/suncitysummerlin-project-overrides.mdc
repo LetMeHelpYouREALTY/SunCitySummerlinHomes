@@ -1,0 +1,32 @@
+---
+description: Sun City Summerlin Homes — project overrides (Node, TS, RealScout paths) atop global portfolio rules
+globs: "**/*.{tsx,ts,js,css}"
+alwaysApply: false
+---
+
+# Sun City Summerlin Homes — local overrides
+
+Global rules live in **`%USERPROFILE%\.cursor\rules\`**. This file only
+records **paths and versions for this repo** so agents do not guess wrong.
+
+## Runtime & install
+
+- **Node:** `>=22.0.0 <23` (`package.json` `engines`, **`.nvmrc`**, CI/Vercel 22.x).
+- **`.npmrc`:** `engine-strict=true` — use Node 22 locally or installs fail by design.
+
+## TypeScript
+
+- **`@/*`** maps to repo **root** (no `src/` folder): e.g. `@/lib/site-contact`.
+- **`declare module '*.css'`** in `types.d.ts` — required for TS 6+ + side-effect CSS in `app/layout.tsx`.
+- Web component JSX: **`realscout-jsx.d.ts`**.
+
+## RealScout (this site)
+
+- **Config:** `lib/realscout-config.ts` — `realScoutAgentEncodedId`, `realScoutHomeSearchUrl` (`NEXT_PUBLIC_REALSCOUT_*`).
+- **Portal link component:** `components/RealScoutHomeSearchLink.tsx` — never link buyers to **`/onboarding`**.
+- **Script:** single `next/script` in `app/layout.tsx` → `realscout-web-components.umd.js` with **`type="module"`**.
+- **Widgets:** `migration/pages-source/index.tsx`, `properties/index.tsx`, `search/index.tsx` (`realscout-advanced-search`).
+
+## IDX
+
+- Do not edit **`components/idx/**`** without explicit approval (MLS compliance).
