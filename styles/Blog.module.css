@@ -1,7 +1,7 @@
 
 .blogHero {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('/images/hero/SunCitySummerlinOutside.jpg');
+  background: linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)),
+    url('/community-center.jpg');
   background-size: cover;
   background-position: center;
   color: white;

@@ -127,8 +127,8 @@
 .heroSection {
   height: 90vh;
   min-height: 600px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('/images/hero/SunCitySummerlinOutside.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url('/community-center.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -978,13 +978,13 @@ button.primaryButton {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: #170c12;
+  background-color: #3a3430;
   background-image:
-    radial-gradient(circle at 14% 20%, rgba(255, 214, 102, 0.18), transparent 30%),
-    radial-gradient(circle at 84% 14%, rgba(142, 31, 65, 0.22), transparent 34%),
-    linear-gradient(130deg, rgba(23, 12, 18, 0.88) 0%, rgba(45, 20, 32, 0.82) 45%, rgba(59, 26, 41, 0.78) 100%),
-    linear-gradient(to top, rgba(31, 36, 33, 0.45), rgba(31, 36, 33, 0.12)),
-    url('/images/hero/SunCitySummerlinOutside.jpg');
+    radial-gradient(circle at 14% 20%, rgba(255, 214, 102, 0.12), transparent 34%),
+    radial-gradient(circle at 84% 14%, rgba(142, 31, 65, 0.14), transparent 38%),
+    linear-gradient(125deg, rgba(45, 32, 38, 0.5) 0%, rgba(70, 40, 52, 0.4) 50%, rgba(40, 32, 36, 0.46) 100%),
+    linear-gradient(to top, rgba(32, 28, 30, 0.22), rgba(32, 28, 30, 0.06)),
+    url('/community-center.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -997,7 +997,7 @@ button.primaryButton {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.05));
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.02));
   pointer-events: none;
 }
 
