@@ -1,0 +1,19 @@
+---
+description: After code changes, always git add, commit, and push to origin (production pipeline)
+globs: "**/*"
+alwaysApply: true
+---
+
+# Git: add, commit, push (production workflow)
+
+When you **finish a task** that changes the repo (code, config, or assets this session), **unless the user explicitly says not to** or there is **nothing to commit**:
+
+1. Run **`git add -A`** (or stage only relevant paths if the user asked for a minimal commit).
+2. Run **`git commit -m "..."`** with a **clear, complete-sentence** message describing what changed and why.
+3. Run **`git push`** to **`origin`** for the **current branch** (e.g. `git push -u origin <branch>` if upstream is missing).
+
+**Production:** Vercel/production deploys usually follow **`main`** (or the project’s default branch). Pushing the **current feature branch** updates the remote for CI and PRs; merging to **`main`** is what typically triggers production—do that when the user asks to ship to prod or open/merge the PR.
+
+**Do not** force-push to **`main`** or rewrite shared history unless the user explicitly requests it.
+
+If **`git status`** is clean, skip commit/push and say so briefly.
