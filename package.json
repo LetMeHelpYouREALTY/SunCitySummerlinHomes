@@ -22,7 +22,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@types/aos": "^3.0.4",
+    "@types/aos": "^3.0.8",
     "@types/node": "^22.13.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
