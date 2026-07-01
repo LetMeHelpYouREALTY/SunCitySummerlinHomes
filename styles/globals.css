@@ -220,6 +220,17 @@ img.loaded {
 }
 
 /* Third-party listing container wrappers */
+.realscout-widget-host {
+  display: block;
+  width: 100%;
+}
+
+.realscout-widget-host realscout-office-listings,
+.realscout-widget-host realscout-advanced-search {
+  display: block;
+  width: 100%;
+}
+
 .listingsSection,
 .mapContainer {
   border-radius: var(--radius-lg);

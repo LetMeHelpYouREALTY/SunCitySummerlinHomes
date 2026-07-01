@@ -1,24 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from '@/styles/Home.module.css';
 import Header from '@/components/Header';
 import ScheduleButton from '@/components/ScheduleButton';
+import RealScoutOfficeListings from '@/components/RealScoutOfficeListings';
 import { NEVADA_REALTOR_LICENSE, phone } from '@/lib/site-contact';
-import { realScoutAgentEncodedId } from '@/lib/realscout-config';
 
 export default function Home() {
-  const [realScoutLoaded, setRealScoutLoaded] = useState(false);
-  useEffect(() => {
-    // Short delay so layout skeleton shows before RealScout web component mounts
-    const timer = setTimeout(() => {
-      setRealScoutLoaded(true);
-    }, 400);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <div className={`${styles.container} ${styles.homeWithGlobalNav}`}>
       <Header />
@@ -50,33 +39,8 @@ export default function Home() {
         </section>
 
         {/* RealScout Listings Section */}
-        <div className={styles.listingsSection}>
-          {!realScoutLoaded ? (
-            <div
-              className={styles.listingsSkeleton}
-              aria-busy="true"
-              aria-live="polite"
-              aria-label="Loading featured listings"
-            >
-              <div className={styles.listingsSkeletonBar} />
-              <div className={styles.listingsSkeletonGrid}>
-                <div className={styles.listingsSkeletonCard} />
-                <div className={styles.listingsSkeletonCard} />
-                <div className={styles.listingsSkeletonCard} />
-              </div>
-            </div>
-          ) : (
-            <div suppressHydrationWarning>
-              <realscout-office-listings
-                agent-encoded-id={realScoutAgentEncodedId}
-                sort-order="NEWEST"
-                listing-status="For Sale"
-                property-types="SFR,MF"
-                price-min="800000"
-                price-max="4000000"
-              ></realscout-office-listings>
-            </div>
-          )}
+        <div className={styles.listingsSection} suppressHydrationWarning>
+          <RealScoutOfficeListings />
         </div>
 
         {/* Feature Section */}

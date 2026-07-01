@@ -1,16 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import PropertyCard from '@/components/PropertyCard';
 import PropertyFilters from '@/components/PropertyFilters';
+import RealScoutOfficeListings from '@/components/RealScoutOfficeListings';
 import styles from '@/styles/Properties.module.css';
 import StructuredData from '@/components/StructuredData';
 import PropertyListingSchema from '@/components/PropertyListingSchema';
 import Link from 'next/link';
 import ScheduleButton from '@/components/ScheduleButton';
 import { phone } from '@/lib/site-contact';
-import { realScoutAgentEncodedId } from '@/lib/realscout-config';
 
 const propertiesData = [
   {
@@ -131,12 +130,6 @@ const schemaData = {
 };
 
 export default function Properties() {
-  const [realScoutLoaded, setRealScoutLoaded] = useState(false);
-
-  useEffect(() => {
-    setRealScoutLoaded(true);
-  }, []);
-
   return (
     <div className={styles.container}>
       <StructuredData type="RealEstateAgent" data={schemaData} />
@@ -240,19 +233,8 @@ export default function Properties() {
           </div>
         </section>
 
-        <div className={styles.listingsSection}>
-          {realScoutLoaded && (
-            <div suppressHydrationWarning>
-              <realscout-office-listings
-                agent-encoded-id={realScoutAgentEncodedId}
-                sort-order="NEWEST"
-                listing-status="For Sale"
-                property-types="SFR,MF"
-                price-min="800000"
-                price-max="4000000"
-              ></realscout-office-listings>
-            </div>
-          )}
+        <div className={styles.listingsSection} suppressHydrationWarning>
+          <RealScoutOfficeListings />
         </div>
       </div>
 

@@ -23,6 +23,23 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* Legacy migration pages: logo + inline nav inside fixed header */
+.header:has(> .nav) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+
+.container > .header + .main {
+  padding-top: 5.5rem;
+}
+
 .scrolledHeader {
   padding: 0.5rem 1.5rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -880,6 +897,39 @@ button.primaryButton {
   display: flex;
   align-items: center;
   min-width: 0;
+}
+
+/* Legacy migration page headers (search, blog, contact, etc.) */
+.bhsLogo {
+  height: 40px;
+  width: auto;
+  max-width: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.header .logoContainer {
+  gap: 0.75rem;
+}
+
+.header > .nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1.25rem;
+  margin-left: auto;
+}
+
+.header > .nav a {
+  color: var(--color-ink-700, #5b4951);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.header > .nav a:hover {
+  color: var(--color-brand-primary, #8e1f41);
 }
 
 .logoText {

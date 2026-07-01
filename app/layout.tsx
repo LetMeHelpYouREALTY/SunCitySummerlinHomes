@@ -74,7 +74,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <style
           dangerouslySetInnerHTML={{
             __html: `
-            realscout-office-listings {
+            realscout-office-listings,
+            realscout-advanced-search {
               --rs-listing-divider-color: rgb(101, 141, 172);
               width: 100%;
             }

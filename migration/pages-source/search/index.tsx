@@ -6,7 +6,7 @@ import searchStyles from '@/styles/Search.module.css';
 import { useEffect, useState } from 'react';
 import ScheduleButton from '@/components/ScheduleButton';
 import RealScoutHomeSearchLink from '@/components/RealScoutHomeSearchLink';
-import { realScoutAgentEncodedId } from '@/lib/realscout-config';
+import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 
 type SearchProperty = {
   id: number;
@@ -125,8 +125,8 @@ export default function PropertySearch() {
               </RealScoutHomeSearchLink>
               .
             </p>
-            <div className={searchStyles.advancedSearchWidget}>
-              <realscout-advanced-search agent-encoded-id={realScoutAgentEncodedId} />
+            <div className={searchStyles.advancedSearchWidget} suppressHydrationWarning>
+              <RealScoutAdvancedSearch />
             </div>
           </section>
 
