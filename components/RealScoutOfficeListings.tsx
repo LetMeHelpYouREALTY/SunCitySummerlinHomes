@@ -1,5 +1,6 @@
 'use client';
 
+import RealScoutWidgetHost from '@/components/RealScoutWidgetHost';
 import {
   realScoutAgentEncodedId,
   realScoutOfficeListingsDefaults,
@@ -13,10 +14,6 @@ type RealScoutOfficeListingsProps = {
   priceMax?: string;
 };
 
-/**
- * Office listings feed — rendered via innerHTML so React does not manage the
- * custom element lifecycle (required for RealScout web components).
- */
 export default function RealScoutOfficeListings({
   sortOrder = realScoutOfficeListingsDefaults.sortOrder,
   listingStatus = realScoutOfficeListingsDefaults.listingStatus,
@@ -24,20 +21,14 @@ export default function RealScoutOfficeListings({
   priceMin = realScoutOfficeListingsDefaults.priceMin,
   priceMax = realScoutOfficeListingsDefaults.priceMax,
 }: RealScoutOfficeListingsProps) {
-  const html = `<realscout-office-listings
-    agent-encoded-id="${realScoutAgentEncodedId}"
-    sort-order="${sortOrder}"
-    listing-status="${listingStatus}"
-    property-types="${propertyTypes}"
-    price-min="${priceMin}"
-    price-max="${priceMax}"
-  ></realscout-office-listings>`;
+  const attributes = {
+    'agent-encoded-id': realScoutAgentEncodedId,
+    'sort-order': sortOrder,
+    'listing-status': listingStatus,
+    'property-types': propertyTypes,
+    'price-min': priceMin,
+    'price-max': priceMax,
+  };
 
-  return (
-    <div
-      className="realscout-widget-host"
-      suppressHydrationWarning
-      dangerouslySetInnerHTML={{ __html: html }}
-    />
-  );
+  return <RealScoutWidgetHost tagName="realscout-office-listings" attributes={attributes} />;
 }

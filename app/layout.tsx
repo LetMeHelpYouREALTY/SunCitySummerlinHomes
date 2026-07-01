@@ -90,6 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to main content
         </a>
         <Script
+          id="realscout-web-components"
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
           strategy="afterInteractive"

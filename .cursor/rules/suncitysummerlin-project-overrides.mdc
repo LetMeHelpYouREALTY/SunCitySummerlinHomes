@@ -24,8 +24,10 @@ records **paths and versions for this repo** so agents do not guess wrong.
 
 - **Config:** `lib/realscout-config.ts` — `realScoutAgentEncodedId`, `realScoutHomeSearchUrl` (`NEXT_PUBLIC_REALSCOUT_*`).
 - **Portal link component:** `components/RealScoutHomeSearchLink.tsx` — never link buyers to **`/onboarding`**.
-- **Script:** single `next/script` in `app/layout.tsx` → `realscout-web-components.umd.js` with **`type="module"`**.
-- **Widgets:** `migration/pages-source/index.tsx`, `properties/index.tsx`, `search/index.tsx` (`realscout-advanced-search`).
+- **Script:** single `next/script` in `app/layout.tsx` → `realscout-web-components.umd.js` with **`type="module"`** and **`id="realscout-web-components"`**.
+- **Mount:** `lib/realscout-mount.ts` + `components/RealScoutWidgetHost.tsx` — wait for **`realscout-web-components-ready`**, then `createElement` + `appendChild`. **Never** JSX tags or render-time `dangerouslySetInnerHTML` (React re-renders wipe upgraded widgets → “appears then fails”).
+- **CSP:** `next.config.js` must allow **`em.realscout.com`** (script) and **`www.realscout.com`** (API) in `script-src` and `connect-src`.
+- **Widgets:** `migration/pages-source/index.tsx`, `properties/index.tsx`, `search/index.tsx` via `RealScoutOfficeListings` / `RealScoutAdvancedSearch`.
 
 ## IDX
 
