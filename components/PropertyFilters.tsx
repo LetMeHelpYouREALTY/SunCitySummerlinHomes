@@ -11,8 +11,9 @@ export default function PropertyFilters() {
       <div className={styles.filtersContainer}>
         <h2 className={styles.filtersTitle}>Tour and search with Dr. Jan</h2>
         <p className={styles.ctaCopy}>
-          Book a private 15-minute call to discuss your criteria, or browse all sample homes below. For live MLS
-          search, use the office listings embed on this page.
+          Book a private 15-minute call to discuss your criteria, or browse live MLS listings by price range below.
+          For advanced filters, visit the{' '}
+          <Link href="/search">property search page</Link>.
         </p>
         <div className={styles.ctaRow}>
           <ScheduleButton type="button" className={styles.primaryCta}>

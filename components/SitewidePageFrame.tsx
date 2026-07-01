@@ -95,8 +95,8 @@ const routeContentMap: Record<string, RouteContent> = {
       'Filter by price, features, and home style to quickly identify listings that match your 55+ lifestyle priorities and long-term plans.',
     primaryHref: '/contact',
     primaryLabel: 'Get Listing Alerts',
-    secondaryHref: '/properties',
-    secondaryLabel: 'View Featured Homes',
+    secondaryHref: '/properties#live-listings',
+    secondaryLabel: 'Browse Live Listings',
   },
   '/community': {
     eyebrow: 'Community Highlights',
@@ -125,7 +125,7 @@ const routeContentMap: Record<string, RouteContent> = {
       'Review golf, fitness, clubhouse, and recreation offerings that support an active, social, and convenient 55+ lifestyle in Las Vegas.',
     primaryHref: '/community',
     primaryLabel: 'Community Overview',
-    secondaryHref: '/properties',
+    secondaryHref: '/properties#live-listings',
     secondaryLabel: 'Find Homes Nearby',
   },
   '/map': {
@@ -273,8 +273,8 @@ const routeContentMap: Record<string, RouteContent> = {
     title: 'Estate Collection',
     summary:
       'Explore premium listing categories with a luxury-first presentation model adapted from top-tier high-end agent websites.',
-    primaryHref: '/properties',
-    primaryLabel: 'Browse Featured Properties',
+    primaryHref: '/search',
+    primaryLabel: 'Search Luxury Listings',
     secondaryHref: '/contact',
     secondaryLabel: 'Request Curated Access',
   },

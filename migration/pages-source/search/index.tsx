@@ -7,58 +7,7 @@ import { useEffect, useState } from 'react';
 import ScheduleButton from '@/components/ScheduleButton';
 import RealScoutHomeSearchLink from '@/components/RealScoutHomeSearchLink';
 import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
-
-type SearchProperty = {
-  id: number;
-  title: string;
-  price: number;
-  bedrooms: number;
-  bathrooms: number;
-  sqft: number;
-  propertyType: string;
-  address: string;
-  image: string;
-  features: string[];
-};
-
-const sampleProperties: SearchProperty[] = [
-  {
-    id: 1,
-    title: 'Elegant Single-Story Home',
-    price: 548175,
-    bedrooms: 3,
-    bathrooms: 2,
-    sqft: 1850,
-    propertyType: 'Single-Story',
-    address: '10243 Sun City Blvd, Las Vegas, NV 89134',
-    image: '/property1.jpg',
-    features: ['Golf Course View', 'Patio', 'Updated Kitchen'],
-  },
-  {
-    id: 2,
-    title: 'Golf Course Paradise',
-    price: 625000,
-    bedrooms: 2,
-    bathrooms: 2.5,
-    sqft: 2100,
-    propertyType: 'Single-Story',
-    address: '9876 Del Webb Blvd, Las Vegas, NV 89134',
-    image: '/property2.jpg',
-    features: ['Pool', 'Spa', 'Mountain View'],
-  },
-  {
-    id: 3,
-    title: 'Contemporary Desert Oasis',
-    price: 485000,
-    bedrooms: 3,
-    bathrooms: 2,
-    sqft: 1750,
-    propertyType: 'Patio Home',
-    address: '2468 Sunshine Way, Las Vegas, NV 89134',
-    image: '/property3.jpg',
-    features: ['Updated Flooring', 'Open Floor Plan', 'Desert Landscaping'],
-  },
-];
+import FeaturedPropertiesListings from '@/components/FeaturedPropertiesListings';
 
 export default function PropertySearch() {
   const [isVisible, setIsVisible] = useState(false);
@@ -66,14 +15,6 @@ export default function PropertySearch() {
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: 'USD',
-      maximumFractionDigits: 0,
-    }).format(price);
-  };
 
   return (
     <div className={styles.container}>
@@ -101,8 +42,8 @@ export default function PropertySearch() {
         <section className={searchStyles.searchSection}>
           <h1 className={styles.pageTitle}>Find Your Dream Home in Sun City Summerlin</h1>
           <p className={searchStyles.leadCopy}>
-            Search filters have been replaced with personal guidance. Schedule a call to refine your criteria, browse
-            featured sample homes below, or open the full properties page and live office listings.
+            Use the live MLS search below, browse listings by price range, or schedule a call with Dr. Jan to refine
+            your Sun City Summerlin home search.
           </p>
           <div className={`${styles.ctaButtons} ${searchStyles.searchCtaRow}`}>
             <ScheduleButton type="button" className={styles.primaryButton}>
@@ -129,39 +70,13 @@ export default function PropertySearch() {
               <RealScoutAdvancedSearch />
             </div>
           </section>
-
-          <div className={searchStyles.searchResults} style={{ marginTop: '2rem' }}>
-            <div className={searchStyles.resultsGrid}>
-              {sampleProperties.map((property) => (
-                <div key={property.id} className={searchStyles.propertyCard}>
-                  <div className={searchStyles.propertyImage}>
-                    <img src={property.image} alt="" />
-                  </div>
-                  <div className={searchStyles.propertyInfo}>
-                    <h3>{property.title}</h3>
-                    <p className={searchStyles.propertyPrice}>{formatPrice(property.price)}</p>
-                    <p className={searchStyles.propertyAddress}>{property.address}</p>
-                    <div className={searchStyles.propertyStats}>
-                      <span>{property.bedrooms} bd</span>
-                      <span>{property.bathrooms} ba</span>
-                      <span>{property.sqft.toLocaleString()} sqft</span>
-                    </div>
-                    <div className={searchStyles.propertyFeatures}>
-                      {property.features.map((feature, i) => (
-                        <span key={i} className={searchStyles.featureTag}>
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                    <Link href="/properties" className={searchStyles.viewPropertyBtn}>
-                      View listings hub
-                    </Link>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </section>
+
+        <FeaturedPropertiesListings
+          title="Browse by Price Range"
+          viewAllHref="/properties"
+          viewAllLabel="View full properties hub"
+        />
 
         <section className={searchStyles.searchTips}>
           <h2>Home Search Tips for Sun City Summerlin</h2>

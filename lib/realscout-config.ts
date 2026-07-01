@@ -42,8 +42,15 @@ export const realScoutOfficeListingsDefaults = {
   priceMax: '1000000',
 } as const;
 
-/** Homepage “Featured Properties” — three live MLS tiers by price range. */
-export const realScoutFeaturedPriceTiers = [
+export type RealScoutPriceTier = {
+  label: string;
+  description: string;
+  priceMin: string;
+  priceMax: string;
+};
+
+/** Site-wide price tiers for live MLS office-listings widgets. */
+export const realScoutFeaturedPriceTiers: readonly RealScoutPriceTier[] = [
   {
     label: 'Single-Story Homes',
     description: '$450K – $650K',
@@ -62,4 +69,8 @@ export const realScoutFeaturedPriceTiers = [
     priceMin: '1000000',
     priceMax: '4000000',
   },
-] as const;
+];
+
+export const realScoutLuxuryPriceTiers: readonly RealScoutPriceTier[] = [
+  realScoutFeaturedPriceTiers[2],
+];

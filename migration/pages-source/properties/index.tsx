@@ -1,86 +1,13 @@
 'use client';
 
 import Header from '@/components/Header';
-import PropertyCard from '@/components/PropertyCard';
 import PropertyFilters from '@/components/PropertyFilters';
-import RealScoutOfficeListings from '@/components/RealScoutOfficeListings';
+import FeaturedPropertiesListings from '@/components/FeaturedPropertiesListings';
 import styles from '@/styles/Properties.module.css';
 import StructuredData from '@/components/StructuredData';
-import PropertyListingSchema from '@/components/PropertyListingSchema';
 import Link from 'next/link';
 import ScheduleButton from '@/components/ScheduleButton';
 import { phone } from '@/lib/site-contact';
-
-const propertiesData = [
-  {
-    id: 'prop1',
-    title: 'Elegant Single-Story Villa',
-    price: 548175,
-    address: '1234 Sun Valley Dr, Las Vegas, NV 89134',
-    bedrooms: 3,
-    bathrooms: 2,
-    sqft: 1850,
-    image: '/property1.jpg',
-    features: ['Golf Course View', 'Pool'],
-    isNew: true,
-  },
-  {
-    id: 'prop2',
-    title: 'Modern Desert Retreat',
-    price: 615000,
-    address: '5678 Canyon Ridge Ln, Las Vegas, NV 89134',
-    bedrooms: 2,
-    bathrooms: 2.5,
-    sqft: 2100,
-    image: '/property2.jpg',
-    features: ['Single Story', 'Renovated'],
-  },
-  {
-    id: 'prop3',
-    title: 'Spacious Golf Course Home',
-    price: 729000,
-    address: '9101 Fairway View Dr, Las Vegas, NV 89134',
-    bedrooms: 4,
-    bathrooms: 3,
-    sqft: 2600,
-    image: '/property3.jpg',
-    features: ['Premium View', 'Large Lot'],
-  },
-  {
-    id: 'prop4',
-    title: 'Charming Villa with Mountain Views',
-    price: 499000,
-    address: '2468 Red Rock Way, Las Vegas, NV 89134',
-    bedrooms: 2,
-    bathrooms: 2,
-    sqft: 1650,
-    image: '/property1.jpg',
-    features: ['Mountain View', 'Updated Kitchen'],
-    isNew: true,
-  },
-  {
-    id: 'prop5',
-    title: 'Luxurious Desert Oasis',
-    price: 875000,
-    address: '1357 Palm Spring Ct, Las Vegas, NV 89134',
-    bedrooms: 3,
-    bathrooms: 3.5,
-    sqft: 2800,
-    image: '/property2.jpg',
-    features: ['Premium Lot', 'Custom Design'],
-  },
-  {
-    id: 'prop6',
-    title: 'Cozy Single Family Home',
-    price: 425000,
-    address: '3691 Vista Dr, Las Vegas, NV 89134',
-    bedrooms: 2,
-    bathrooms: 2,
-    sqft: 1450,
-    image: '/property3.jpg',
-    features: ['Great Value', 'Move-in Ready'],
-  },
-];
 
 const schemaData = {
   '@context': 'https://schema.org',
@@ -98,42 +25,12 @@ const schemaData = {
     postalCode: '89134',
     addressCountry: 'US',
   },
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Sun City Summerlin Properties',
-    itemListElement: propertiesData.map((property, index) => ({
-      '@type': 'Offer',
-      itemOffered: {
-        '@type': 'Residence',
-        name: property.title,
-        description: `${property.bedrooms} bed, ${property.bathrooms} bath, ${property.sqft} sq ft home in Sun City Summerlin`,
-        numberOfRooms: property.bedrooms,
-        floorSize: {
-          '@type': 'QuantitativeValue',
-          value: property.sqft,
-          unitCode: 'SQF',
-        },
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Las Vegas',
-          addressRegion: 'NV',
-          postalCode: '89134',
-        },
-        offers: {
-          '@type': 'Offer',
-          price: property.price,
-          priceCurrency: 'USD',
-        },
-      },
-    })),
-  },
 };
 
 export default function Properties() {
   return (
     <div className={styles.container}>
       <StructuredData type="RealEstateAgent" data={schemaData} />
-      <PropertyListingSchema />
 
       <Header />
 
@@ -153,37 +50,11 @@ export default function Properties() {
             <PropertyFilters />
           </div>
 
-          <div className={styles.propertiesResults}>
-            <div className={styles.resultsHeader}>
-              <h2>
-                Sample properties
-                <span className={styles.resultCount}>({propertiesData.length} Homes)</span>
-              </h2>
-            </div>
-
-            <div className={styles.propertiesGrid}>
-              {propertiesData.map((property, index) => (
-                <div
-                  key={property.id}
-                  className={styles.propertyCardWrapper}
-                  style={{ '--index': index } as React.CSSProperties}
-                >
-                  <PropertyCard
-                    id={property.id}
-                    title={property.title}
-                    price={property.price}
-                    address={property.address}
-                    bedrooms={property.bedrooms}
-                    bathrooms={property.bathrooms}
-                    sqft={property.sqft}
-                    image={property.image}
-                    features={property.features}
-                    isNew={property.isNew}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
+          <FeaturedPropertiesListings
+            id="live-listings"
+            title="Live MLS Listings"
+            showViewAll={false}
+          />
         </section>
 
         <section className={styles.callToAction}>
@@ -232,10 +103,6 @@ export default function Properties() {
             </div>
           </div>
         </section>
-
-        <div className={styles.listingsSection} suppressHydrationWarning>
-          <RealScoutOfficeListings />
-        </div>
       </div>
 
       <footer className={styles.footer}>

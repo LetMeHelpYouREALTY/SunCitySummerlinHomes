@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import ScheduleButton from '@/components/ScheduleButton';
+import FeaturedPropertiesListings from '@/components/FeaturedPropertiesListings';
+import { realScoutLuxuryPriceTiers } from '@/lib/realscout-config';
 import { phone } from '@/lib/site-contact';
 import styles from '@/styles/JadePatterns.module.css';
 
@@ -83,6 +85,12 @@ export default function EstateCollectionPage() {
           ))}
         </section>
 
+        <FeaturedPropertiesListings
+          title="Live luxury estate listings"
+          tiers={realScoutLuxuryPriceTiers}
+          showViewAll={false}
+        />
+
         <section className={styles.cta}>
           <h2>Want private access to matching homes?</h2>
           <p>
@@ -97,6 +105,9 @@ export default function EstateCollectionPage() {
             >
               Request Curated List
             </ScheduleButton>
+            <Link href="/search" className={styles.secondaryAction}>
+              Search luxury MLS listings
+            </Link>
             <a href={phone.telHref} className={styles.secondaryAction}>
               Call {phone.display}
             </a>

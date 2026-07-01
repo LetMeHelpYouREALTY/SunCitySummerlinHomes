@@ -2,15 +2,38 @@
 
 import Link from 'next/link';
 import RealScoutOfficeListings from '@/components/RealScoutOfficeListings';
-import { realScoutFeaturedPriceTiers } from '@/lib/realscout-config';
+import {
+  realScoutFeaturedPriceTiers,
+  type RealScoutPriceTier,
+} from '@/lib/realscout-config';
 import styles from '@/styles/Home.module.css';
 
-export default function FeaturedPropertiesListings() {
+type FeaturedPropertiesListingsProps = {
+  title?: string;
+  tiers?: readonly RealScoutPriceTier[];
+  showViewAll?: boolean;
+  viewAllHref?: string;
+  viewAllLabel?: string;
+  id?: string;
+};
+
+export default function FeaturedPropertiesListings({
+  title = 'Featured Properties',
+  tiers = realScoutFeaturedPriceTiers,
+  showViewAll = true,
+  viewAllHref = '/properties',
+  viewAllLabel = 'View All Properties',
+  id,
+}: FeaturedPropertiesListingsProps) {
   return (
-    <section className={styles.propertiesSection} aria-label="Featured properties by price range">
-      <h2 className={styles.sectionTitle}>Featured Properties</h2>
+    <section
+      id={id}
+      className={styles.propertiesSection}
+      aria-label={title}
+    >
+      <h2 className={styles.sectionTitle}>{title}</h2>
       <div className={styles.featuredListingsStack}>
-        {realScoutFeaturedPriceTiers.map((tier) => (
+        {tiers.map((tier) => (
           <article key={tier.label} className={styles.featuredTier}>
             <header className={styles.featuredTierHeader}>
               <h3 className={styles.featuredTierTitle}>{tier.label}</h3>
@@ -22,11 +45,13 @@ export default function FeaturedPropertiesListings() {
           </article>
         ))}
       </div>
-      <div className={styles.viewAllContainer}>
-        <Link href="/properties" className={styles.viewAllButton}>
-          View All Properties
-        </Link>
-      </div>
+      {showViewAll ? (
+        <div className={styles.viewAllContainer}>
+          <Link href={viewAllHref} className={styles.viewAllButton}>
+            {viewAllLabel}
+          </Link>
+        </div>
+      ) : null}
     </section>
   );
 }

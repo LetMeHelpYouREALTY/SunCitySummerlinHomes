@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ScheduleButton from '@/components/ScheduleButton';
+import FeaturedPropertiesListings from '@/components/FeaturedPropertiesListings';
 import styles from '@/styles/Zipcodes.module.css';
 import type { ZipcodeData } from '@/lib/zipcodes-data';
 
@@ -120,6 +121,11 @@ export default function ZipcodePage({ zipcodeData, nearbyZipcodes }: ZipcodePage
             </section>
           )}
 
+          <FeaturedPropertiesListings
+            title={`Live listings near ${zipcodeData.area}`}
+            showViewAll={false}
+          />
+
           <section className={styles.ctaSection}>
             <h2>Find Your Dream Home in {zipcodeData.code}</h2>
             <p>
@@ -134,8 +140,8 @@ export default function ZipcodePage({ zipcodeData, nearbyZipcodes }: ZipcodePage
               >
                 Contact Dr. Jan
               </ScheduleButton>
-              <Link href="/properties" className={styles.secondaryButton}>
-                View Properties
+              <Link href="/search" className={styles.secondaryButton}>
+                Search MLS listings
               </Link>
             </div>
           </section>

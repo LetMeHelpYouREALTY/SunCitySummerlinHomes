@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from '@/styles/Services.module.css';
 import StructuredData from '@/components/StructuredData';
 import ScheduleButton from '@/components/ScheduleButton';
+import FeaturedPropertiesListings from '@/components/FeaturedPropertiesListings';
 
 export default function BuyingAgentPage() {
   return (
@@ -39,7 +40,7 @@ export default function BuyingAgentPage() {
             </div>
             <div className={styles.serviceImage}>
               <Image 
-                src="/property1.jpg" 
+                src="/community-center.jpg" 
                 alt="Sun City Summerlin Home" 
                 width={500} 
                 height={350} 
@@ -92,6 +93,11 @@ export default function BuyingAgentPage() {
               </div>
             </div>
           </section>
+
+          <FeaturedPropertiesListings
+            title="Homes for sale in Sun City Summerlin"
+            showViewAll={false}
+          />
 
           <section className={styles.ctaSection}>
             <h2>Ready to Find Your Dream Home?</h2>

@@ -3,6 +3,7 @@
 
 import { useEffect } from 'react';
 import Link from 'next/link';
+import FeaturedPropertiesListings from '@/components/FeaturedPropertiesListings';
 import styles from '@/styles/Zipcodes.module.css';
 
 // Data for the zipcodes
@@ -145,6 +146,11 @@ export default function Zipcodes() {
             </Link>
           ))}
         </section>
+
+        <FeaturedPropertiesListings
+          title="Live Sun City Summerlin listings"
+          showViewAll={false}
+        />
 
         <section className={styles.contactSection}>
           <h2>Find Your Perfect Home in These Zipcodes</h2>

@@ -5,6 +5,9 @@ import Image from 'next/image';
 import styles from '@/styles/Services.module.css';
 import StructuredData from '@/components/StructuredData';
 import ScheduleButton from '@/components/ScheduleButton';
+import FeaturedPropertiesListings from '@/components/FeaturedPropertiesListings';
+import RealScoutHomeSearchLink from '@/components/RealScoutHomeSearchLink';
+import { realScoutLuxuryPriceTiers } from '@/lib/realscout-config';
 
 export default function LuxuryHomesPage() {
   return (
@@ -78,6 +81,12 @@ export default function LuxuryHomesPage() {
             </div>
           </section>
 
+          <FeaturedPropertiesListings
+            title="Live luxury listings"
+            tiers={realScoutLuxuryPriceTiers}
+            showViewAll={false}
+          />
+
           <section className={styles.testimonialsSection}>
             <h2>What Luxury Clients Say</h2>
             <div className={styles.testimonialCards}>
@@ -94,7 +103,10 @@ export default function LuxuryHomesPage() {
 
           <section className={styles.ctaSection}>
             <h2>Ready to Buy or Sell a Luxury Property?</h2>
-            <p>Contact Dr. Jan Duffy today for a private consultation about Sun City Summerlin's luxury home market.</p>
+            <p>
+              Contact Dr. Jan Duffy today for a private consultation, or{' '}
+              <RealScoutHomeSearchLink>browse live luxury MLS listings on RealScout</RealScoutHomeSearchLink>.
+            </p>
             <ScheduleButton
               type="button"
               className={styles.primaryButton}

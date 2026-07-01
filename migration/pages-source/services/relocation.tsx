@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from '@/styles/Services.module.css';
 import StructuredData from '@/components/StructuredData';
 import ScheduleButton from '@/components/ScheduleButton';
+import FeaturedPropertiesListings from '@/components/FeaturedPropertiesListings';
 
 export default function RelocationPage() {
   return (
@@ -39,7 +40,7 @@ export default function RelocationPage() {
             </div>
             <div className={styles.serviceImage}>
               <Image 
-                src="/property3.jpg" 
+                src="/golf-cart-path.jpg" 
                 alt="Sun City Summerlin Community" 
                 width={500} 
                 height={350} 
@@ -92,6 +93,11 @@ export default function RelocationPage() {
               </div>
             </div>
           </section>
+
+          <FeaturedPropertiesListings
+            title="Homes available in Sun City Summerlin"
+            showViewAll={false}
+          />
 
           <section className={styles.ctaSection}>
             <h2>Ready to Make the Move to Las Vegas?</h2>
