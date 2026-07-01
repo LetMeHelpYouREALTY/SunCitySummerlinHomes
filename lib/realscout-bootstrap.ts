@@ -12,13 +12,19 @@ export const REALSCOUT_BOOTSTRAP_SCRIPT = `
   function mountHosts() {
     if (!isReady()) return;
     document.querySelectorAll('[data-realscout-tag]').forEach(function (host) {
-      if (host.getAttribute('data-realscout-mounted') === 'true') return;
       var tag = host.getAttribute('data-realscout-tag');
       if (!tag) return;
       var attrs = {};
       try {
         attrs = JSON.parse(host.getAttribute('data-realscout-attrs') || '{}');
       } catch (e) {
+        return;
+      }
+      var attrsKey = JSON.stringify(attrs);
+      if (
+        host.getAttribute('data-realscout-mounted') === 'true' &&
+        host.getAttribute('data-realscout-attrs-key') === attrsKey
+      ) {
         return;
       }
       host.replaceChildren();
@@ -28,6 +34,7 @@ export const REALSCOUT_BOOTSTRAP_SCRIPT = `
       });
       host.appendChild(el);
       host.setAttribute('data-realscout-mounted', 'true');
+      host.setAttribute('data-realscout-attrs-key', attrsKey);
     });
   }
 

@@ -23,9 +23,10 @@ export const realScoutAgentEncodedId =
 
 /** Defaults for `<realscout-office-listings>` (homepage + properties). */
 export const realScoutOfficeListingsDefaults = {
-  sortOrder: 'SOLD_DATE_NEWEST',
+  sortOrder: 'NEWEST',
   listingStatus: 'For Sale',
-  propertyTypes: ',SFR',
+  /** Comma-separated RealScout codes — no leading comma (`,SFR` returns zero listings). */
+  propertyTypes: 'SFR,MF',
   priceMin: '500000',
   priceMax: '1000000',
 } as const;
