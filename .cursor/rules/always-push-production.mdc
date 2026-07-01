@@ -1,0 +1,27 @@
+---
+description: Always push commits to remote and ship to Vercel production — never leave work local or preview-only
+alwaysApply: true
+---
+
+# Always push production
+
+## Git
+
+- After any meaningful code change, **commit and push** to the remote branch (`git push -u origin <branch>`).
+- Do not end a task with **unpushed commits** unless the user explicitly asks to hold the push.
+- Exclude unrelated files (debug screenshots, local artifacts, `.env`) from commits.
+
+## Vercel / production
+
+- **Default deploy target is production**, not preview-only.
+- Use **`vercel --prod`** (or merge to `main` when that triggers production) so changes go live on the production site.
+- For builds, prefer **`vercel build`** over `npm run build` / `pnpm build` (portfolio standard).
+- For local dev, prefer **`vercel dev`** when possible.
+
+## Agent workflow
+
+1. Implement → **commit** → **push**
+2. Create or update the PR on the feature branch
+3. When the task is complete and verified, **promote to production** (merge to `main` or `vercel --prod` per team workflow)
+
+If production promotion requires user approval (e.g. merge to `main`), still **push the branch** every turn so work is never stranded locally.

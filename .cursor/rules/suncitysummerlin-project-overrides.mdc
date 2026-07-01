@@ -30,3 +30,7 @@ records **paths and versions for this repo** so agents do not guess wrong.
 ## IDX
 
 - Do not edit **`components/idx/**`** without explicit approval (MLS compliance).
+
+## Deploy
+
+- See **`.cursor/rules/always-push-production.mdc`** — commit, push, and ship to Vercel **production** by default.
