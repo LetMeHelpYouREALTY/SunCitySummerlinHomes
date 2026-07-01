@@ -20,3 +20,12 @@ export const realScoutHomeSearchUrl =
 /** Office-listings widget `agent-encoded-id`. */
 export const realScoutAgentEncodedId =
   trimEnv(process.env.NEXT_PUBLIC_REALSCOUT_AGENT_ID) ?? DEFAULT_AGENT_ENCODED_ID;
+
+/** Defaults for `<realscout-office-listings>` (homepage + properties). */
+export const realScoutOfficeListingsDefaults = {
+  sortOrder: 'SOLD_DATE_NEWEST',
+  listingStatus: 'For Sale',
+  propertyTypes: ',SFR',
+  priceMin: '500000',
+  priceMax: '1000000',
+} as const;

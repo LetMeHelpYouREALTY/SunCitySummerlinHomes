@@ -1,6 +1,9 @@
 'use client';
 
-import { realScoutAgentEncodedId } from '@/lib/realscout-config';
+import {
+  realScoutAgentEncodedId,
+  realScoutOfficeListingsDefaults,
+} from '@/lib/realscout-config';
 
 type RealScoutOfficeListingsProps = {
   sortOrder?: string;
@@ -15,11 +18,11 @@ type RealScoutOfficeListingsProps = {
  * custom element lifecycle (required for RealScout web components).
  */
 export default function RealScoutOfficeListings({
-  sortOrder = 'NEWEST',
-  listingStatus = 'For Sale',
-  propertyTypes = 'SFR,MF',
-  priceMin = '800000',
-  priceMax = '4000000',
+  sortOrder = realScoutOfficeListingsDefaults.sortOrder,
+  listingStatus = realScoutOfficeListingsDefaults.listingStatus,
+  propertyTypes = realScoutOfficeListingsDefaults.propertyTypes,
+  priceMin = realScoutOfficeListingsDefaults.priceMin,
+  priceMax = realScoutOfficeListingsDefaults.priceMax,
 }: RealScoutOfficeListingsProps) {
   const html = `<realscout-office-listings
     agent-encoded-id="${realScoutAgentEncodedId}"
