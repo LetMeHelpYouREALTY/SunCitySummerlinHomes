@@ -13,13 +13,24 @@ function trimEnv(value: string | undefined): string | undefined {
   return t ? t : undefined;
 }
 
+/** RealScout expects base64(`Agent-{numericId}`). Vercel env sometimes stores only the digits. */
+function normalizeAgentEncodedId(value: string | undefined): string {
+  const t = trimEnv(value);
+  if (!t) return DEFAULT_AGENT_ENCODED_ID;
+  if (/^\d+$/.test(t)) {
+    return btoa(`Agent-${t}`);
+  }
+  return t;
+}
+
 /** Opens Dr. Jan’s RealScout portal (live search / registration). Override per deploy. */
 export const realScoutHomeSearchUrl =
   trimEnv(process.env.NEXT_PUBLIC_REALSCOUT_URL) ?? DEFAULT_HOME_SEARCH;
 
 /** Office-listings widget `agent-encoded-id`. */
-export const realScoutAgentEncodedId =
-  trimEnv(process.env.NEXT_PUBLIC_REALSCOUT_AGENT_ID) ?? DEFAULT_AGENT_ENCODED_ID;
+export const realScoutAgentEncodedId = normalizeAgentEncodedId(
+  process.env.NEXT_PUBLIC_REALSCOUT_AGENT_ID,
+);
 
 /** Defaults for `<realscout-office-listings>` (homepage + properties). */
 export const realScoutOfficeListingsDefaults = {
