@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css';
 import Header from '@/components/Header';
 import ScheduleButton from '@/components/ScheduleButton';
 import RealScoutOfficeListings from '@/components/RealScoutOfficeListings';
+import FeaturedPropertiesListings from '@/components/FeaturedPropertiesListings';
 import { NEVADA_REALTOR_LICENSE, phone } from '@/lib/site-contact';
 
 export default function Home() {
@@ -47,7 +48,7 @@ export default function Home() {
         <FeatureSection />
 
         {/* Property Search */}
-        <PropertySearch />
+        <FeaturedPropertiesListings />
 
         {/* Testimonial Section */}
         <TestimonialSection />
@@ -143,69 +144,6 @@ const FeatureSection = () => {
           <h3>Convenient Location</h3>
           <p>Minutes from shopping, dining, and entertainment with easy access to Las Vegas.</p>
         </div>
-      </div>
-    </section>
-  );
-};
-
-const PropertySearch = () => {
-  return (
-    <section className={styles.propertiesSection}>
-      <h2 className={styles.sectionTitle}>Featured Properties</h2>
-      <div className={styles.propertyGrid}>
-        <div className={styles.propertyCard}>
-          <img
-            src="/property1.jpg"
-            alt="Sun City Summerlin Home"
-            className={styles.propertyImage}
-            width={640}
-            height={480}
-            loading="lazy"
-            decoding="async"
-          />
-          <h3>Beautiful Single Story</h3>
-          <p>2 bed | 2 bath | 1,400 sq ft</p>
-          <Link href="/properties" className={styles.propertyLink}>
-            View Details
-          </Link>
-        </div>
-        <div className={styles.propertyCard}>
-          <img
-            src="/property2.jpg"
-            alt="Sun City Summerlin Home"
-            className={styles.propertyImage}
-            width={640}
-            height={480}
-            loading="lazy"
-            decoding="async"
-          />
-          <h3>Golf Course Home</h3>
-          <p>3 bed | 2.5 bath | 1,800 sq ft</p>
-          <Link href="/properties" className={styles.propertyLink}>
-            View Details
-          </Link>
-        </div>
-        <div className={styles.propertyCard}>
-          <img
-            src="/property3.jpg"
-            alt="Sun City Summerlin Home"
-            className={styles.propertyImage}
-            width={640}
-            height={480}
-            loading="lazy"
-            decoding="async"
-          />
-          <h3>Luxury Villa</h3>
-          <p>2 bed | 2 bath | 1,600 sq ft</p>
-          <Link href="/properties" className={styles.propertyLink}>
-            View Details
-          </Link>
-        </div>
-      </div>
-      <div className={styles.viewAllContainer}>
-        <Link href="/properties" className={styles.viewAllButton}>
-          View All Properties
-        </Link>
       </div>
     </section>
   );
