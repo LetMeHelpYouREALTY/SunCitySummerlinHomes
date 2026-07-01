@@ -5,6 +5,7 @@ import '@/styles/tokens.css';
 import '@/styles/globals.css';
 import 'aos/dist/aos.css';
 import AppProviders from '@/components/AppProviders';
+import { REALSCOUT_BOOTSTRAP_SCRIPT } from '@/lib/realscout-bootstrap';
 import {
   SITE_ORIGIN,
   getLocalBusinessJsonLd,
@@ -84,16 +85,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           `,
           }}
         />
+        <script
+          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
+          type="module"
+          async
+        />
       </head>
       <body>
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
         <Script
-          id="realscout-web-components"
-          src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
-          type="module"
+          id="realscout-bootstrap"
           strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: REALSCOUT_BOOTSTRAP_SCRIPT }}
         />
         <AppProviders>{children}</AppProviders>
         <Script

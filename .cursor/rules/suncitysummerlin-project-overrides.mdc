@@ -24,8 +24,9 @@ records **paths and versions for this repo** so agents do not guess wrong.
 
 - **Config:** `lib/realscout-config.ts` — `realScoutAgentEncodedId`, `realScoutHomeSearchUrl` (`NEXT_PUBLIC_REALSCOUT_*`).
 - **Portal link component:** `components/RealScoutHomeSearchLink.tsx` — never link buyers to **`/onboarding`**.
-- **Script:** single `next/script` in `app/layout.tsx` → `realscout-web-components.umd.js` with **`type="module"`** and **`id="realscout-web-components"`**.
-- **Mount:** `lib/realscout-mount.ts` + `components/RealScoutWidgetHost.tsx` — wait for **`realscout-web-components-ready`**, then `createElement` + `appendChild`. **Never** JSX tags or render-time `dangerouslySetInnerHTML` (React re-renders wipe upgraded widgets → “appears then fails”).
+- **Script:** `<script type="module" async>` in `app/layout.tsx` `<head>` → `realscout-web-components.umd.js` (loads before/during hydration, not gated on React).
+- **Bootstrap:** `lib/realscout-bootstrap.ts` inline `afterInteractive` script mounts every `[data-realscout-tag]` host after **`realscout-web-components-ready`** (MutationObserver rescans after React hydration).
+- **Hosts:** `RealScoutWidgetHost` renders only `data-realscout-tag` + `data-realscout-attrs` — **no useEffect mount**.
 - **CSP:** `next.config.js` must allow **`em.realscout.com`** (script) and **`www.realscout.com`** (API) in `script-src` and `connect-src`.
 - **Widgets:** `migration/pages-source/index.tsx`, `properties/index.tsx`, `search/index.tsx` via `RealScoutOfficeListings` / `RealScoutAdvancedSearch`.
 
