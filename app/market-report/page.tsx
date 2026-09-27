@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function MarketReportPage() {
   return (
     <MarketHubPage
+      path="/market-report"
       breadcrumbLabel="Market Report"
       eyebrow="Monthly Perspective"
       title="Sun City Summerlin Market Report"

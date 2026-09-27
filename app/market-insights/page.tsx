@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function MarketInsightsPage() {
   return (
     <MarketHubPage
+      path="/market-insights"
       breadcrumbLabel="Market Insights"
       eyebrow="Market Intelligence"
       title="Las Vegas Real Estate Market Insights"

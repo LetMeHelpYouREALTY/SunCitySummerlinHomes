@@ -14,7 +14,7 @@
  *
  * Post-deploy: Rich Results Test (/, /contact, /testimonials) + GSC URL Inspection.
  */
-export const SITE_ORIGIN = 'https://suncitysummerlin.com' as const;
+export const SITE_ORIGIN = 'https://www.suncitysummerlinhomesforsale.com' as const;
 
 export const NEVADA_REALTOR_LICENSE = 'S.0197614.LLC' as const;
 

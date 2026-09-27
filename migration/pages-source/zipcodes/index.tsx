@@ -1,7 +1,3 @@
-'use client';
-
-
-import { useEffect } from 'react';
 import Link from 'next/link';
 import FeaturedPropertiesListings from '@/components/FeaturedPropertiesListings';
 import styles from '@/styles/Zipcodes.module.css';
@@ -71,36 +67,6 @@ const zipcodes = [
 ];
 
 export default function Zipcodes() {
-  // For SEO purposes
-  useEffect(() => {
-    // Structured data for breadcrumbs
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.innerHTML = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      'itemListElement': [
-        {
-          '@type': 'ListItem',
-          'position': 1,
-          'name': 'Home',
-          'item': 'https://suncitysummerlin.com/'
-        },
-        {
-          '@type': 'ListItem',
-          'position': 2,
-          'name': 'Zipcodes',
-          'item': 'https://suncitysummerlin.com/zipcodes/'
-        }
-      ]
-    });
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
-
   return (
     <div className={styles.container}>
       <header className={styles.header}>

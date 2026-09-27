@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import ZipcodePage from '@/migration/pages-source/zipcodes/[zipcode]';
 import { ZIP_CODE_SLUGS, getZipcodePageData } from '@/lib/zipcodes-data';
 import { canonicalPath } from '@/lib/site-contact';
+import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 
 export function generateStaticParams() {
   return ZIP_CODE_SLUGS.map((zipcode) => ({ zipcode }));
@@ -29,5 +30,15 @@ export async function generateMetadata({
 export default async function ZipcodeRoute({ params }: { params: Promise<{ zipcode: string }> }) {
   const { zipcode } = await params;
   const data = getZipcodePageData(zipcode);
-  return <ZipcodePage {...data} />;
+  return (
+    <>
+      <JsonLdBreadcrumbs
+        items={breadcrumbTrail(
+          { name: 'Zip Codes', path: '/zipcodes' },
+          { name: `${data.zipcodeData.area} (${data.zipcodeData.code})`, path: `/zipcodes/${data.zipcodeData.code}` },
+        )}
+      />
+      <ZipcodePage {...data} />
+    </>
+  );
 }

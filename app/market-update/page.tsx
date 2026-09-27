@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function MarketUpdatePage() {
   return (
     <MarketHubPage
+      path="/market-update"
       breadcrumbLabel="Weekly Market Update"
       eyebrow="Weekly Update"
       title="Las Vegas Weekly Market Update"

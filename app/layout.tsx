@@ -6,11 +6,17 @@ import '@/styles/globals.css';
 import 'aos/dist/aos.css';
 import AppProviders from '@/components/AppProviders';
 import { REALSCOUT_BOOTSTRAP_SCRIPT } from '@/lib/realscout-bootstrap';
+import JsonLdScript from '@/components/seo/JsonLdScript';
 import {
   SITE_ORIGIN,
   getLocalBusinessJsonLd,
   getOrganizationJsonLd,
 } from '@/lib/site-contact';
+
+const defaultOgTitle = 'Sun City Summerlin Las Vegas | 55+ Community | Dr. Jan Duffy';
+const defaultOgDescription =
+  "Sun City Summerlin is Las Vegas' premier 55+ community with homes, golf, and amenities. Dr. Jan Duffy specializes in Sun City Summerlin real estate.";
+const defaultOgImage = '/golf-course.jpg';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -31,16 +37,37 @@ const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: 'Sun City Summerlin Las Vegas | 55+ Community | Dr. Jan Duffy',
+    default: defaultOgTitle,
     template: '%s | Dr. Jan Duffy',
   },
-  description:
-    "Sun City Summerlin is Las Vegas' premier 55+ community with homes, golf, and amenities. Dr. Jan Duffy specializes in Sun City Summerlin real estate.",
+  description: defaultOgDescription,
   icons: { icon: '/favicon.ico' },
   robots: {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: SITE_ORIGIN,
+    siteName: 'Sun City Summerlin Homes For Sale',
+    title: defaultOgTitle,
+    description: defaultOgDescription,
+    images: [
+      {
+        url: defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: 'Sun City Summerlin golf and community lifestyle',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: defaultOgTitle,
+    description: defaultOgDescription,
+    images: [defaultOgImage],
   },
   ...(googleSiteVerification
     ? { verification: { google: googleSiteVerification } }
@@ -90,6 +117,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="module"
           async
         />
+        <JsonLdScript id="local-business-schema" data={getLocalBusinessJsonLd()} />
+        <JsonLdScript id="organization-schema" data={getOrganizationJsonLd()} />
       </head>
       <body>
         <a href="#main-content" className="skip-link">
@@ -101,22 +130,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: REALSCOUT_BOOTSTRAP_SCRIPT }}
         />
         <AppProviders>{children}</AppProviders>
-        <Script
-          id="local-business-schema"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getLocalBusinessJsonLd()),
-          }}
-        />
-        <Script
-          id="organization-schema"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getOrganizationJsonLd()),
-          }}
-        />
       </body>
     </html>
   );

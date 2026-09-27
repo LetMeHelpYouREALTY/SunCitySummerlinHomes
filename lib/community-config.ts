@@ -11,7 +11,7 @@ export const SUN_CITY_SUMMERLIN = {
   state: 'NV',
   postalCode: '89134',
   description:
-    'Las Vegas premier 55+ active adult community developed by Del Webb, with championship golf, recreation centers, and gated neighborhoods.',
+    'A Del Webb 55+ active adult community in northwest Las Vegas with on-site golf, recreation centers, and gated neighborhoods.',
   /** Map search radius (meters) for nearby Places queries */
   nearbySearchRadiusMeters: 8000,
   center: {

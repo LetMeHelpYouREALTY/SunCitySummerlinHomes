@@ -11,6 +11,8 @@ import {
   communityEmbedMapUrl,
   directionsUrlForPlace,
 } from '@/lib/community-config';
+import { loadGoogleMaps, mapsAuthFailed } from '@/lib/google-maps-loader';
+import { searchCategory, type NearbyPlaceResult } from '@/lib/nearby-amenities-search';
 import styles from '@/styles/AmenityMap.module.css';
 
 export type MapPlace = {
@@ -19,7 +21,6 @@ export type MapPlace = {
   address?: string;
   lat: number;
   lng: number;
-  rating?: number;
   category: AmenityCategoryId;
 };
 
@@ -33,19 +34,41 @@ type AmenityMapProps = {
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
 const MAP_ID = process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID;
 
-function buildInfoWindowHtml(place: MapPlace): string {
-  const ratingLine =
-    place.rating != null ? `<p><strong>Rating:</strong> ${place.rating.toFixed(1)}</p>` : '';
-  const addressLine = place.address ? `<p>${place.address}</p>` : '';
+function formatDisplayAddress(place: CuratedPlaceLike): string {
+  return `${place.streetAddress}, ${SUN_CITY_SUMMERLIN.city}, ${SUN_CITY_SUMMERLIN.state} ${place.postalCode}`;
+}
+
+type CuratedPlaceLike = {
+  streetAddress: string;
+  postalCode: string;
+};
+
+function buildInfoWindowContent(place: MapPlace): HTMLElement {
+  const root = document.createElement('div');
+  const title = document.createElement('h3');
+  title.textContent = place.name;
+  title.style.margin = '0 0 8px';
+  title.style.color = '#235d89';
+  title.style.fontSize = '1rem';
+  root.appendChild(title);
+
+  if (place.address) {
+    const addr = document.createElement('p');
+    addr.textContent = place.address;
+    root.appendChild(addr);
+  }
+
   const dest = place.address ? `${place.name}, ${place.address}` : place.name;
-  return `
-    <div>
-      <h3 style="margin:0 0 8px;color:#235d89;font-size:1rem;">${place.name}</h3>
-      ${ratingLine}
-      ${addressLine}
-      <a href="${directionsUrlForPlace(dest)}" target="_blank" rel="noopener noreferrer" style="color:#235d89;font-weight:600;">Directions</a>
-    </div>
-  `;
+  const link = document.createElement('a');
+  link.href = directionsUrlForPlace(dest);
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.textContent = 'Directions';
+  link.style.color = '#235d89';
+  link.style.fontWeight = '600';
+  root.appendChild(link);
+
+  return root;
 }
 
 function curatedForCategory(categoryId: AmenityCategoryId): MapPlace[] {
@@ -55,10 +78,21 @@ function curatedForCategory(categoryId: AmenityCategoryId): MapPlace[] {
   return list.map((p) => ({
     id: p.id,
     name: p.name,
-    address: p.address,
+    address: formatDisplayAddress(p),
     lat: p.lat,
     lng: p.lng,
     category: p.category,
+  }));
+}
+
+function toMapPlaces(results: NearbyPlaceResult[]): MapPlace[] {
+  return results.map((place) => ({
+    id: place.id,
+    name: place.name,
+    address: place.address,
+    lat: place.lat,
+    lng: place.lng,
+    category: place.category,
   }));
 }
 
@@ -73,8 +107,8 @@ export default function AmenityMap({
   const mapRef = useRef<google.maps.Map | null>(null);
   const markersRef = useRef<google.maps.Marker[]>([]);
   const communityMarkerRef = useRef<google.maps.Marker | null>(null);
-  const scriptRequestedRef = useRef(false);
   const mapReadyRef = useRef(false);
+  const loadStartedRef = useRef(false);
 
   const [isInView, setIsInView] = useState(false);
   const [activeCategory, setActiveCategory] = useState<AmenityCategoryId>('healthcare');
@@ -88,6 +122,27 @@ export default function AmenityMap({
   );
 
   const useIframe = !API_KEY || mapMode === 'fallback';
+
+  const clearMarkers = useCallback(() => {
+    markersRef.current.forEach((marker) => marker.setMap(null));
+    markersRef.current = [];
+  }, []);
+
+  const enterFallback = useCallback(
+    (note?: string) => {
+      if (mapRef.current) {
+        mapRef.current = null;
+      }
+      clearMarkers();
+      communityMarkerRef.current?.setMap(null);
+      communityMarkerRef.current = null;
+      mapReadyRef.current = false;
+      setMapMode('fallback');
+      setPlaces(curatedForCategory(activeCategory));
+      if (note) setStatusNote(note);
+    },
+    [activeCategory, clearMarkers],
+  );
 
   useEffect(() => {
     const node = sectionRef.current;
@@ -105,11 +160,6 @@ export default function AmenityMap({
     return () => observer.disconnect();
   }, []);
 
-  const clearMarkers = useCallback(() => {
-    markersRef.current.forEach((marker) => marker.setMap(null));
-    markersRef.current = [];
-  }, []);
-
   const renderMarkers = useCallback(
     (map: google.maps.Map, nextPlaces: MapPlace[]) => {
       clearMarkers();
@@ -119,7 +169,7 @@ export default function AmenityMap({
           position: { lat: place.lat, lng: place.lng },
           title: place.name,
         });
-        const info = new google.maps.InfoWindow({ content: buildInfoWindowHtml(place) });
+        const info = new google.maps.InfoWindow({ content: buildInfoWindowContent(place) });
         marker.addListener('click', () => {
           info.open({ map, anchor: marker });
         });
@@ -138,7 +188,7 @@ export default function AmenityMap({
       zIndex: 999,
     });
     const info = new google.maps.InfoWindow({
-      content: buildInfoWindowHtml({
+      content: buildInfoWindowContent({
         id: 'community',
         name: SUN_CITY_SUMMERLIN.name,
         address: `${SUN_CITY_SUMMERLIN.city}, ${SUN_CITY_SUMMERLIN.state} ${SUN_CITY_SUMMERLIN.postalCode}`,
@@ -152,50 +202,29 @@ export default function AmenityMap({
     });
   }, []);
 
-  const fetchPlacesForCategory = useCallback(async (categoryId: AmenityCategoryId): Promise<MapPlace[]> => {
-    const category = AMENITY_CATEGORIES.find((item) => item.id === categoryId);
-    if (!category || !window.google?.maps) {
-      return curatedForCategory(categoryId);
-    }
+  const fetchPlacesForCategory = useCallback(
+    async (categoryId: AmenityCategoryId): Promise<MapPlace[]> => {
+      const category = AMENITY_CATEGORIES.find((item) => item.id === categoryId);
+      if (!category) return curatedForCategory(categoryId);
 
-    try {
-      const placesLibrary = (await google.maps.importLibrary('places')) as google.maps.PlacesLibrary;
-      const { Place } = placesLibrary;
-      const response = await Place.searchNearby({
-        fields: ['displayName', 'location', 'formattedAddress', 'rating'],
-        locationRestriction: {
-          center: SUN_CITY_SUMMERLIN.center,
-          radius: SUN_CITY_SUMMERLIN.nearbySearchRadiusMeters,
-        },
-        includedPrimaryTypes: category.placeTypes,
-        maxResultCount: 15,
-      });
-
-      const fromApi: MapPlace[] = [];
-      response.places.forEach((place, index) => {
-        const location = place.location;
-        if (!location) return;
-        fromApi.push({
-          id: `api-${categoryId}-${index}`,
-          name: place.displayName ?? 'Nearby place',
-          address: place.formattedAddress,
-          lat: location.lat(),
-          lng: location.lng(),
-          rating: place.rating,
-          category: categoryId,
-        });
-      });
-
-      if (fromApi.length > 0) return fromApi;
-      return curatedForCategory(categoryId);
-    } catch {
-      return curatedForCategory(categoryId);
-    }
-  }, []);
+      try {
+        const results = await searchCategory(
+          SUN_CITY_SUMMERLIN.center,
+          categoryId,
+          category.placeTypes,
+        );
+        if (results.length > 0) return toMapPlaces(results);
+        return curatedForCategory(categoryId);
+      } catch {
+        return curatedForCategory(categoryId);
+      }
+    },
+    [],
+  );
 
   const initInteractiveMap = useCallback(async () => {
-    if (!mapDivRef.current || !window.google?.maps) {
-      setMapMode('fallback');
+    if (!mapDivRef.current) {
+      enterFallback();
       return;
     }
 
@@ -218,51 +247,50 @@ export default function AmenityMap({
       setMapMode('interactive');
       setStatusNote(null);
     } catch {
-      setMapMode('fallback');
-      setStatusNote('Interactive map unavailable — showing embedded map and curated list.');
+      enterFallback('Interactive map unavailable — showing embedded map and curated list.');
     }
-  }, [activeCategory, ensureCommunityMarker, fetchPlacesForCategory, renderMarkers]);
+  }, [activeCategory, ensureCommunityMarker, enterFallback, fetchPlacesForCategory, renderMarkers]);
 
   useEffect(() => {
     if (!isInView) return;
 
-    if (!API_KEY) {
-      setMapMode('fallback');
-      return;
-    }
-
-    if (scriptRequestedRef.current) return;
-    scriptRequestedRef.current = true;
-    setMapMode('loading');
-
-    const onReady = () => {
-      void initInteractiveMap();
+    const onAuthFailure = () => {
+      enterFallback('Map authentication failed — showing embedded map and curated list.');
     };
 
-    const existing = document.querySelector<HTMLScriptElement>('script[data-nearby-amenity-map]');
-    if (existing) {
-      if (window.google?.maps) {
-        onReady();
-      } else {
-        existing.addEventListener('load', onReady, { once: true });
-      }
-      return;
+    window.addEventListener('gmaps:auth-failure', onAuthFailure);
+
+    if (mapsAuthFailed) {
+      enterFallback();
+      return () => window.removeEventListener('gmaps:auth-failure', onAuthFailure);
     }
 
-    const script = document.createElement('script');
-    script.dataset.nearbyAmenityMap = 'true';
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&loading=async&libraries=places`;
-    script.async = true;
-    script.addEventListener('load', onReady, { once: true });
-    script.addEventListener('error', () => {
+    if (!API_KEY) {
       setMapMode('fallback');
-      setStatusNote('Map API could not load — showing embedded map and curated list.');
-    });
-    document.head.appendChild(script);
-  }, [initInteractiveMap, isInView]);
+      return () => window.removeEventListener('gmaps:auth-failure', onAuthFailure);
+    }
+
+    if (loadStartedRef.current) return () => window.removeEventListener('gmaps:auth-failure', onAuthFailure);
+    loadStartedRef.current = true;
+    setMapMode('loading');
+
+    loadGoogleMaps(API_KEY)
+      .then(() => {
+        if (mapsAuthFailed) {
+          enterFallback();
+          return;
+        }
+        void initInteractiveMap();
+      })
+      .catch(() => {
+        enterFallback('Map API could not load — showing embedded map and curated list.');
+      });
+
+    return () => window.removeEventListener('gmaps:auth-failure', onAuthFailure);
+  }, [enterFallback, initInteractiveMap, isInView]);
 
   useEffect(() => {
-    if (!mapReadyRef.current || !mapRef.current) {
+    if (!mapReadyRef.current || !mapRef.current || mapMode !== 'interactive') {
       setPlaces(curatedForCategory(activeCategory));
       return;
     }
@@ -278,7 +306,7 @@ export default function AmenityMap({
     return () => {
       cancelled = true;
     };
-  }, [activeCategory, fetchPlacesForCategory, renderMarkers]);
+  }, [activeCategory, fetchPlacesForCategory, mapMode, renderMarkers]);
 
   useEffect(() => {
     if (mapMode === 'fallback') {

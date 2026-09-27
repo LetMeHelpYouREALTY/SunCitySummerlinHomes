@@ -377,8 +377,8 @@ export default function Header() {
                 items={[
                   { href: '/properties', pathKey: '/properties', label: 'Featured Listings' },
                   { href: '/search', pathKey: '/search', label: 'Search Properties' },
-                  { href: '/properties/golf-course', pathKey: '/properties/golf-course', label: 'Golf Course Homes' },
-                  { href: '/properties/new-listings', pathKey: '/properties/new-listings', label: 'New Listings' },
+                  { href: '/search', pathKey: '/search', label: 'Golf Course Homes' },
+                  { href: '/properties', pathKey: '/properties', label: 'New Listings' },
                 ]}
               />
 

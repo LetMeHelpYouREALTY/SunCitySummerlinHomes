@@ -6,6 +6,7 @@ import styles from '@/styles/Testimonials.module.css';
 import { useState, useEffect } from 'react';
 import StructuredData from '@/components/StructuredData';
 import Header from '@/components/Header';
+import { SITE_ORIGIN, phone } from '@/lib/site-contact';
 import ScheduleButton from '@/components/ScheduleButton';
 import RealScoutHomeSearchLink from '@/components/RealScoutHomeSearchLink';
 
@@ -77,7 +78,7 @@ export default function Testimonials() {
     "@type": "RealEstateAgent",
     name: "Dr. Jan Duffy, REALTOR®",
     image: "/drjan-logo.png",
-    url: "https://suncitysummerlin.com",
+    url: SITE_ORIGIN,
     telephone: "(702) 718-0043",
     address: {
       "@type": "PostalAddress",

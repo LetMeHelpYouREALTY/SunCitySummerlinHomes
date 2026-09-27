@@ -1,14 +1,14 @@
 /**
  * Optional: writes public/sitemap.xml for offline tools.
  * Production crawlers should use the dynamic route from app/sitemap.ts
- * (same URL: https://suncitysummerlin.com/sitemap.xml).
+ * (same URL: https://suncitysummerlinhomesforsale.com/sitemap.xml).
  */
 import fs from 'fs';
 import path from 'path';
 import { Readable } from 'stream';
 import { SitemapStream, streamToPromise } from 'sitemap';
 
-const SITE_ORIGIN = 'https://suncitysummerlin.com';
+import { SITE_ORIGIN } from '@/lib/site-contact';
 
 type ChangeFrequency = 'daily' | 'weekly' | 'monthly';
 

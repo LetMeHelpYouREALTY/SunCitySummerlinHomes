@@ -1,6 +1,7 @@
-import Link from 'next/link';
 import Header from '@/components/Header';
 import ScheduleButton from '@/components/ScheduleButton';
+import Breadcrumbs from '@/components/seo/Breadcrumbs';
+import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 import { phone } from '@/lib/site-contact';
 import styles from '@/styles/MarketPages.module.css';
 
@@ -11,6 +12,7 @@ type Section = {
 };
 
 type MarketHubPageProps = {
+  path: string;
   breadcrumbLabel: string;
   eyebrow: string;
   title: string;
@@ -19,19 +21,21 @@ type MarketHubPageProps = {
 };
 
 export default function MarketHubPage({
+  path,
   breadcrumbLabel,
   eyebrow,
   title,
   summary,
   sections,
 }: MarketHubPageProps) {
+  const breadcrumbItems = breadcrumbTrail({ name: breadcrumbLabel, path });
+
   return (
     <div className={styles.marketPage}>
+      <JsonLdBreadcrumbs items={breadcrumbItems} />
       <Header />
       <div className={styles.container}>
-        <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-          <Link href="/">Home</Link> / <span>{breadcrumbLabel}</span>
-        </nav>
+        <Breadcrumbs items={breadcrumbItems} />
 
         <section className={styles.heroCard}>
           <p className={styles.eyebrow}>{eyebrow}</p>

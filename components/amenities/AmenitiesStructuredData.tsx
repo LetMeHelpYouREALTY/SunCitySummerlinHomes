@@ -1,4 +1,3 @@
-import Breadcrumbs from '@/components/seo/Breadcrumbs';
 import { CURATED_NEARBY_PLACES } from '@/lib/nearby-amenities-data';
 import { SUN_CITY_SUMMERLIN } from '@/lib/community-config';
 import {
@@ -6,6 +5,7 @@ import {
   canonicalPath,
   jsonLdIds,
   phone,
+  SITE_ORIGIN,
 } from '@/lib/site-contact';
 
 export default function AmenitiesStructuredData() {
@@ -21,12 +21,13 @@ export default function AmenitiesStructuredData() {
       item: {
         '@type': place.schemaType,
         name: place.name,
+        url: place.sourceUrl,
         address: {
           '@type': 'PostalAddress',
-          streetAddress: place.address,
+          streetAddress: place.streetAddress,
           addressLocality: SUN_CITY_SUMMERLIN.city,
           addressRegion: SUN_CITY_SUMMERLIN.state,
-          postalCode: SUN_CITY_SUMMERLIN.postalCode,
+          postalCode: place.postalCode,
           addressCountry: 'US',
         },
         geo: {
@@ -43,6 +44,7 @@ export default function AmenitiesStructuredData() {
     '@type': 'Place',
     name: SUN_CITY_SUMMERLIN.name,
     description: SUN_CITY_SUMMERLIN.description,
+    url: `${SITE_ORIGIN}/community`,
     address: {
       '@type': 'PostalAddress',
       addressLocality: SUN_CITY_SUMMERLIN.city,
@@ -73,12 +75,6 @@ export default function AmenitiesStructuredData() {
 
   return (
     <>
-      <Breadcrumbs
-        items={[
-          { name: 'Home', href: '/' },
-          { name: 'Nearby Amenities', href: '/amenities' },
-        ]}
-      />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemList) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(communityPlace) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(agentExtension) }} />

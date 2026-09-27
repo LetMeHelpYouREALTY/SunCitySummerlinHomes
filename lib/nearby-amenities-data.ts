@@ -44,106 +44,130 @@ export type CuratedPlace = {
   id: string;
   name: string;
   category: AmenityCategoryId;
-  address: string;
+  /** Verified street line for display and schema streetAddress */
+  streetAddress: string;
+  postalCode: string;
   lat: number;
   lng: number;
   schemaType: string;
+  /** Official source used to verify name and address */
+  sourceUrl: string;
   note?: string;
 };
 
-/** Verified anchors for fallback map markers and ItemList schema (public addresses). */
+/** Verified anchors for fallback markers and ItemList schema (primary-source addresses). */
 export const CURATED_NEARBY_PLACES: CuratedPlace[] = [
   {
     id: 'community',
     name: SUN_CITY_SUMMERLIN.name,
     category: 'recreation',
-    address: 'Del Webb Boulevard corridor, Las Vegas, NV 89134',
+    streetAddress: '9107 Del Webb Boulevard',
+    postalCode: '89134',
     lat: SUN_CITY_SUMMERLIN.center.lat,
     lng: SUN_CITY_SUMMERLIN.center.lng,
     schemaType: 'Place',
-    note: '55+ gated active adult community',
+    sourceUrl: 'https://suncitysummerlin.com/',
+    note: '55+ master-planned community (association office address)',
   },
   {
     id: 'palm-valley-golf',
-    name: 'Palm Valley Golf Course',
+    name: 'Palm Valley Golf Club',
     category: 'golf',
-    address: '9201 Del Webb Boulevard, Las Vegas, NV 89134',
+    streetAddress: '9201 Del Webb Boulevard',
+    postalCode: '89134',
     lat: 36.2087,
     lng: -115.2916,
     schemaType: 'GolfCourse',
+    sourceUrl: 'https://www.golfsummerlin.com/palm_valley/',
   },
   {
     id: 'highland-falls-golf',
-    name: 'Highland Falls Golf Course',
+    name: 'Highland Falls Golf Club',
     category: 'golf',
-    address: '9400 Del Webb Boulevard, Las Vegas, NV 89134',
-    lat: 36.2095,
-    lng: -115.2968,
+    streetAddress: '10201 Sun City Boulevard',
+    postalCode: '89134',
+    lat: 36.2142,
+    lng: -115.2985,
     schemaType: 'GolfCourse',
+    sourceUrl: 'https://www.golfsummerlin.com/highland_falls/',
   },
   {
     id: 'eagle-crest-golf',
-    name: 'Eagle Crest Golf Course',
+    name: 'Eagle Crest Golf Club',
     category: 'golf',
-    address: '9400 Del Webb Boulevard, Las Vegas, NV 89134',
-    lat: 36.2118,
-    lng: -115.294,
+    streetAddress: '2203 Thomas W. Ryan Boulevard',
+    postalCode: '89134',
+    lat: 36.19904,
+    lng: -115.33408,
     schemaType: 'GolfCourse',
+    sourceUrl: 'https://www.golfsummerlin.com/eagle_crest/',
   },
   {
     id: 'pinnacle-clubhouse',
-    name: 'Pinnacle Clubhouse',
+    name: 'Pinnacle Community Center',
     category: 'recreation',
-    address: '11111 Desert Pines Street, Las Vegas, NV 89134',
-    lat: 36.2132,
-    lng: -115.2975,
+    streetAddress: '2215 Thomas W. Ryan Boulevard',
+    postalCode: '89134',
+    lat: 36.1992,
+    lng: -115.3338,
     schemaType: 'SportsActivityLocation',
-    note: 'Starbright Theatre and community events',
+    sourceUrl: 'https://suncitysummerlin.com/Explore/Amenities/Pinnacle',
+    note: 'Starbright Theatre and community programs',
   },
   {
     id: 'summerlin-hospital',
     name: 'Summerlin Hospital Medical Center',
     category: 'healthcare',
-    address: '657 North Town Center Drive, Las Vegas, NV 89144',
+    streetAddress: '657 North Town Center Drive',
+    postalCode: '89144',
     lat: 36.1742,
     lng: -115.3334,
     schemaType: 'Hospital',
+    sourceUrl: 'https://www.summerlinhospital.com/',
   },
   {
     id: 'centennial-hills-hospital',
     name: 'Centennial Hills Hospital Medical Center',
     category: 'healthcare',
-    address: '6900 North Durango Drive, Las Vegas, NV 89149',
+    streetAddress: '6900 North Durango Drive',
+    postalCode: '89149',
     lat: 36.2875,
     lng: -115.291,
     schemaType: 'Hospital',
+    sourceUrl: 'https://www.centennialhillshospital.com/',
   },
   {
     id: 'downtown-summerlin',
     name: 'Downtown Summerlin',
     category: 'shopping',
-    address: '1980 Festival Plaza Drive, Las Vegas, NV 89135',
+    streetAddress: '1980 Festival Plaza Drive',
+    postalCode: '89135',
     lat: 36.1496,
     lng: -115.3337,
     schemaType: 'ShoppingCenter',
+    sourceUrl: 'https://www.downtownsummerlin.com/',
   },
   {
-    id: 'albertsons-charleston',
-    name: 'Albertsons',
+    id: 'smiths-charleston',
+    name: "Smith's Food and Drug",
     category: 'grocery',
-    address: '9550 West Charleston Boulevard, Las Vegas, NV 89117',
-    lat: 36.1582,
-    lng: -115.2958,
+    streetAddress: '9851 West Charleston Boulevard',
+    postalCode: '89117',
+    lat: 36.1585,
+    lng: -115.299,
     schemaType: 'GroceryStore',
+    sourceUrl: 'https://www.smithsfoodanddrug.com/stores/details/706/00347',
   },
   {
     id: 'whole-foods-summerlin',
     name: 'Whole Foods Market',
     category: 'grocery',
-    address: '8850 West Charleston Boulevard, Las Vegas, NV 89117',
-    lat: 36.1594,
-    lng: -115.2865,
+    streetAddress: '2475 South Town Center Drive',
+    postalCode: '89135',
+    lat: 36.1458,
+    lng: -115.3312,
     schemaType: 'GroceryStore',
+    sourceUrl: 'https://www.wholefoodsmarket.com/stores/summerlin',
   },
 ];
 
@@ -151,7 +175,7 @@ export const AMENITIES_FAQ: FAQItem[] = [
   {
     question: `What grocery stores are near ${SUN_CITY_SUMMERLIN.name}?`,
     answer:
-      `Major grocers along Charleston Boulevard and in Downtown Summerlin serve the area west of the Strip; many residents also use delivery services from the same corridors.`,
+      `Smith's on West Charleston Boulevard and Whole Foods Market in Downtown Summerlin (South Town Center Drive) are common stops; many residents also use delivery from the same corridors.`,
   },
   {
     question: `How far is ${SUN_CITY_SUMMERLIN.name} from the Las Vegas Strip?`,
@@ -166,7 +190,7 @@ export const AMENITIES_FAQ: FAQItem[] = [
   {
     question: `Does ${SUN_CITY_SUMMERLIN.name} have its own golf courses?`,
     answer:
-      `Yes—Palm Valley, Highland Falls, and Eagle Crest are the three on-site courses managed for the community.`,
+      `Yes—Palm Valley, Highland Falls, and Eagle Crest are the three on-site courses operated as part of Golf Summerlin.`,
   },
   {
     question: `Where do residents shop and dine outside the community?`,
@@ -225,7 +249,7 @@ export const AMENITY_CONTENT_SECTIONS: AmenityContentSection[] = [
     id: 'recreation',
     heading: 'Community recreation centers',
     paragraphs: [
-      'Four major clubhouses—including Pinnacle with the Starbright Theatre—host fitness studios, pools, classes, and social clubs.',
+      'Recreation centers such as Pinnacle (home to the Starbright Theatre) host fitness studios, pools, classes, and social clubs.',
       'Resident-led clubs cover everything from woodworking and ceramics to card groups and performing arts.',
     ],
   },
@@ -233,7 +257,7 @@ export const AMENITY_CONTENT_SECTIONS: AmenityContentSection[] = [
     id: 'grocery',
     heading: 'Grocery and everyday errands',
     paragraphs: [
-      'Charleston Boulevard grocers such as Albertsons and Whole Foods Market are routine stops for Sun City Summerlin households.',
+      "Smith's Food and Drug on West Charleston Boulevard and Whole Foods Market in Downtown Summerlin are routine stops for Sun City Summerlin households.",
       'Downtown Summerlin adds specialty food, pharmacy, and home-goods options in one walkable district.',
     ],
   },

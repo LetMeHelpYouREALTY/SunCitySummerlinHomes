@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import ScheduleButton from '@/components/ScheduleButton';
+import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 import styles from '@/styles/JadePatterns.module.css';
 
 export const metadata: Metadata = {
@@ -40,6 +41,10 @@ const neighborhoods = [
 
 export default function PrestigeNeighborhoodsPage() {
   return (
+    <>
+      <JsonLdBreadcrumbs
+        items={breadcrumbTrail({ name: 'Prestige Neighborhoods', path: '/prestige-neighborhoods' })}
+      />
     <div className={styles.page}>
       <Header />
       <div className={styles.container}>
@@ -83,5 +88,6 @@ export default function PrestigeNeighborhoodsPage() {
         </section>
       </div>
     </div>
+    </>
   );
 }
