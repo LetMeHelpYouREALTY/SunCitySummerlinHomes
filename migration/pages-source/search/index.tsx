@@ -8,6 +8,7 @@ import ScheduleButton from '@/components/ScheduleButton';
 import RealScoutHomeSearchLink from '@/components/RealScoutHomeSearchLink';
 import RealScoutAdvancedSearch from '@/components/RealScoutAdvancedSearch';
 import FeaturedPropertiesListings from '@/components/FeaturedPropertiesListings';
+import NearbyAmenitiesSection from '@/components/amenities/NearbyAmenitiesSection';
 
 export default function PropertySearch() {
   const [isVisible, setIsVisible] = useState(false);
@@ -111,6 +112,8 @@ export default function PropertySearch() {
             </div>
           </div>
         </section>
+
+        <NearbyAmenitiesSection />
       </div>
 
       <footer className={styles.footer}>

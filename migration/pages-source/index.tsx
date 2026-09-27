@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import ScheduleButton from '@/components/ScheduleButton';
 import RealScoutOfficeListings from '@/components/RealScoutOfficeListings';
 import FeaturedPropertiesListings from '@/components/FeaturedPropertiesListings';
+import NearbyAmenitiesSection from '@/components/amenities/NearbyAmenitiesSection';
 import { NEVADA_REALTOR_LICENSE, phone } from '@/lib/site-contact';
 
 export default function Home() {
@@ -47,6 +48,8 @@ export default function Home() {
         {/* Feature Section */}
         <FeatureSection />
 
+        <NearbyAmenitiesSection />
+
         {/* Property Search */}
         <FeaturedPropertiesListings />
 
@@ -82,6 +85,7 @@ export default function Home() {
               <Link href="/service-area">Service area</Link>
               <Link href="/blog">Blog</Link>
               <Link href="/map">Community Map</Link>
+              <Link href="/amenities">Nearby Amenities</Link>
               <Link href="/testimonials">Testimonials</Link>
             </div>
           </div>

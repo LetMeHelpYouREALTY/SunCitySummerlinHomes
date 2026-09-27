@@ -6,6 +6,7 @@ import styles from '@/styles/Home.module.css';
 import { useState, useEffect } from 'react';
 import CommunityStructuredData from '@/components/CommunityStructuredData';
 import RealScoutHomeSearchLink from '@/components/RealScoutHomeSearchLink';
+import NearbyAmenitiesSection from '@/components/amenities/NearbyAmenitiesSection';
 
 export default function Community() {
   const [isVisible, setIsVisible] = useState(false);
@@ -98,6 +99,8 @@ export default function Community() {
             </div>
           </div>
         </section>
+
+        <NearbyAmenitiesSection />
       </div>
 
       <footer className={styles.footer}>
