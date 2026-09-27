@@ -7,7 +7,7 @@ import styles from '@/styles/Properties.module.css';
 import StructuredData from '@/components/StructuredData';
 import Link from 'next/link';
 import ScheduleButton from '@/components/ScheduleButton';
-import { phone } from '@/lib/site-contact';
+import { phone, canonicalPath } from '@/lib/site-contact';
 
 const schemaData = {
   '@context': 'https://schema.org',
@@ -15,7 +15,7 @@ const schemaData = {
   name: 'Dr. Jan Duffy - Sun City Summerlin Specialist',
   description:
     "Browse luxury homes for sale in Sun City Summerlin, Las Vegas' premier 55+ community with Dr. Jan Duffy, REALTOR® specialist with 25+ years of experience.",
-  url: 'https://suncitysummerlin.com/properties',
+  url: canonicalPath('/properties'),
   telephone: '(702) 718-0043',
   address: {
     '@type': 'PostalAddress',

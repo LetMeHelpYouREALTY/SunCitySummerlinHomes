@@ -1,67 +1,16 @@
 import Link from 'next/link';
 import Header from '@/components/Header';
 import ScheduleButton from '@/components/ScheduleButton';
-import StructuredData from '@/components/StructuredData';
 import styles from '@/styles/Home.module.css';
 import gb from '@/styles/GbpPages.module.css';
+import { agentFaqItems } from '@/lib/site-faq';
 import { address, footerLicenseDisclaimer, phone } from '@/lib/site-contact';
 
-const faqItems = [
-  {
-    q: 'What areas does Dr. Jan Duffy serve?',
-    a: 'Sun City Summerlin and the broader Las Vegas Valley, with a specialty in 55+ communities and Summerlin-area homes.',
-  },
-  {
-    q: 'How do I schedule a showing?',
-    a: 'Call the office number listed on this site or use the contact page to request a showing or a consultation.',
-  },
-  {
-    q: 'Do you help with relocation?',
-    a: 'Yes. Many clients relocate to Las Vegas for retirement. Dr. Jan Duffy can help you plan tours, timing, and next steps.',
-  },
-  {
-    q: 'Where is the office located?',
-    a: `The office address is ${address.singleLine}. Use the contact page for a map and directions.`,
-  },
-  {
-    q: 'How can I verify licensing?',
-    a: 'Nevada real estate license information is shown in the site footer and on the About page. You can also verify credentials with the Nevada Real Estate Division.',
-  },
-  {
-    q: 'What should I bring to a buyer consultation?',
-    a: 'Bring your questions, preferred timeline, budget range, and any must-have home features (single story, golf proximity, HOA preferences, etc.).',
-  },
-  {
-    q: 'Do you work with sellers?',
-    a: 'Yes. Listing services include pricing guidance, marketing preparation, and negotiation support aligned with your goals.',
-  },
-  {
-    q: 'Is Sun City Summerlin only for seniors?',
-    a: 'Sun City Summerlin is an active adult community with age restrictions. If you are unsure whether you qualify, ask during your consultation.',
-  },
-  {
-    q: 'How quickly can I get a response?',
-    a: 'For the fastest response, call during posted business hours. Email inquiries are typically answered as soon as possible during business days.',
-  },
-  {
-    q: 'Can I browse listings online?',
-    a: 'Yes. Use the search and properties sections of this site to explore listings and connect when you are ready for the next step.',
-  },
-];
+const faqItems = agentFaqItems;
 
 export default function FaqPage() {
-  const mainEntity = faqItems.map((item) => ({
-    '@type': 'Question',
-    name: item.q,
-    acceptedAnswer: {
-      '@type': 'Answer',
-      text: item.a,
-    },
-  }));
-
   return (
     <div className={styles.container}>
-      <StructuredData type="FAQPage" data={{ mainEntity }} />
       <Header />
 
       <div className={styles.main}>

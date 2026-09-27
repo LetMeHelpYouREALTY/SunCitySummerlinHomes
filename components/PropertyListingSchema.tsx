@@ -1,6 +1,6 @@
-
 import React from 'react';
 import StructuredData from './StructuredData';
+import { SITE_ORIGIN } from '@/lib/site-contact';
 
 const PropertyListingSchema: React.FC = () => {
   const propertyListings = {
@@ -13,7 +13,7 @@ const PropertyListingSchema: React.FC = () => {
           "@type": "RealEstateListing",
           "name": "Single-Story Villa in Sun City Summerlin",
           "description": "Beautiful 2-bedroom, 2-bath single-story villa with accessibility features in Highland Falls neighborhood of Sun City Summerlin. Zero-step entry, wide doorways, and updated kitchen.",
-          "url": "https://suncitysummerlin.com/properties/123456",
+          "url": "https://suncitysummerlinhomesforsale.com/properties/123456",
           "image": "/property1.jpg",
           "numberOfRooms": 2,
           "floorSize": {
@@ -80,7 +80,7 @@ const PropertyListingSchema: React.FC = () => {
           "@type": "RealEstateListing",
           "name": "Luxury Golf Course Home in Eagle Crest",
           "description": "Premium 3-bedroom, 2.5-bath single-level home with direct golf course views in Eagle Crest. Features gourmet kitchen, covered patio, and primary suite with walk-in shower.",
-          "url": "https://suncitysummerlin.com/properties/123457",
+          "url": "https://suncitysummerlinhomesforsale.com/properties/123457",
           "image": "/property2.jpg",
           "numberOfRooms": 3,
           "floorSize": {
@@ -147,7 +147,7 @@ const PropertyListingSchema: React.FC = () => {
           "@type": "RealEstateListing",
           "name": "Desert Contemporary Home in Sun City",
           "description": "Modern 2-bedroom, 2-bath home with stunning mountain views in Palm Valley. Features open floor plan, energy-efficient windows, and low-maintenance desert landscaping.",
-          "url": "https://suncitysummerlin.com/properties/123458",
+          "url": "https://suncitysummerlinhomesforsale.com/properties/123458",
           "image": "/property3.jpg",
           "numberOfRooms": 2,
           "floorSize": {

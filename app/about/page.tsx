@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Page from '@/migration/pages-source/about/index';
+import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 
 export const metadata: Metadata = {
   title: 'About Dr. Jan Duffy | Sun City Summerlin REALTOR® | Las Vegas 55+',
@@ -9,5 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default function AboutRoute() {
-  return <Page />;
+  return (
+    <>
+      <JsonLdBreadcrumbs items={breadcrumbTrail({ name: 'About', path: '/about' })} />
+      <Page />
+    </>
+  );
 }

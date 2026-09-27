@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Header from '@/components/Header';
 import ScheduleButton from '@/components/ScheduleButton';
+import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 import styles from '@/styles/JadePatterns.module.css';
 
 export const metadata: Metadata = {
@@ -31,6 +32,8 @@ const highlights = [
 
 export default function MediaHighlightsPage() {
   return (
+    <>
+      <JsonLdBreadcrumbs items={breadcrumbTrail({ name: 'Media Highlights', path: '/media-highlights' })} />
     <div className={styles.page}>
       <Header />
       <div className={styles.container}>
@@ -73,5 +76,6 @@ export default function MediaHighlightsPage() {
         </section>
       </div>
     </div>
+    </>
   );
 }

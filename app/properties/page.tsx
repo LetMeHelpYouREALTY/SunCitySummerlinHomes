@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Page from '@/migration/pages-source/properties/index';
+import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 
 export const metadata: Metadata = {
   title: "Properties | Sun City Summerlin",
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function RoutePage() {
-  return <Page />;
+  return (
+    <>
+      <JsonLdBreadcrumbs items={breadcrumbTrail({ name: 'Properties', path: '/properties' })} />
+      <Page />
+    </>
+  );
 }

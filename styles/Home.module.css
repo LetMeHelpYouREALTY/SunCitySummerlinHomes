@@ -2202,3 +2202,46 @@ button.card {
 .notFoundContactLink:hover {
   color: #1a4a6e;
 }
+
+.faqSection {
+  max-width: 1220px;
+  margin: 2.5rem auto 3rem;
+  padding: 0 1.25rem;
+}
+
+.faqSection h2 {
+  font-size: clamp(1.65rem, 2.4vw, 2.1rem);
+  color: #24141b;
+  margin-bottom: 0.75rem;
+}
+
+.faqIntro {
+  color: #5c4a52;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.faqList {
+  display: grid;
+  gap: 1rem;
+}
+
+.faqItem {
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  padding: 1.1rem 1.15rem;
+  box-shadow: 0 8px 20px rgba(30, 16, 24, 0.06);
+}
+
+.faqItem dt {
+  font-weight: 700;
+  color: #32131f;
+  margin-bottom: 0.45rem;
+}
+
+.faqItem dd {
+  margin: 0;
+  color: #5c4a52;
+  line-height: 1.65;
+}

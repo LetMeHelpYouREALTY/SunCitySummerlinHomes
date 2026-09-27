@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Page from '@/migration/pages-source/service-area/index';
+import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 
 export const metadata: Metadata = {
   title: 'Service Area | Las Vegas & Sun City Summerlin 55+ Real Estate | Dr. Jan Duffy',
@@ -9,5 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default function ServiceAreaRoute() {
-  return <Page />;
+  return (
+    <>
+      <JsonLdBreadcrumbs items={breadcrumbTrail({ name: 'Service Area', path: '/service-area' })} />
+      <Page />
+    </>
+  );
 }

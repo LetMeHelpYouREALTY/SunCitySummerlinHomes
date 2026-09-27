@@ -2,8 +2,8 @@
 import React from 'react';
 import Link from 'next/link';
 import styles from '@/styles/Services.module.css';
-import StructuredData from '@/components/StructuredData';
 import ScheduleButton from '@/components/ScheduleButton';
+import { SITE_ORIGIN } from '@/lib/site-contact';
 
 export default function ServiceOfferings() {
   return (
@@ -27,7 +27,7 @@ export default function ServiceOfferings() {
             <div className={`${styles.servicesContainer} services-container`} itemScope itemType="http://schema.org/LocalBusiness">
               <meta itemProp="name" content="Dr. Jan Duffy, REALTOR - 55+ Community Specialist" />
               <meta itemProp="telephone" content="(702) 718-0043" />
-              <meta itemProp="url" content="https://suncitysummerlinhomesforsale.com" />
+              <meta itemProp="url" content={SITE_ORIGIN} />
               
               <div className="service-item" itemProp="hasOfferCatalog" itemScope itemType="http://schema.org/OfferCatalog">
                 <div className={styles.serviceCard}>
@@ -99,74 +99,6 @@ export default function ServiceOfferings() {
             </ScheduleButton>
           </section>
         </div>
-
-        <StructuredData
-          type="LocalBusiness"
-          data={{
-            name: "Dr. Jan Duffy, REALTOR® - Sun City Summerlin 55+ Community Specialist",
-            telephone: "(702) 718-0043",
-            url: "https://suncitysummerlin.com",
-            address: {
-              "@type": "PostalAddress",
-              streetAddress: "9406 Del Webb Boulevard",
-              addressLocality: "Las Vegas",
-              addressRegion: "NV",
-              postalCode: "89134",
-              addressCountry: "US"
-            },
-            geo: {
-              "@type": "GeoCoordinates",
-              latitude: 36.2043,
-              longitude: -115.2936
-            },
-            hasOfferCatalog: {
-              "@type": "OfferCatalog",
-              name: "Sun City Summerlin Real Estate Services",
-              itemListElement: [
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Sun City Summerlin Buyer Representation",
-                    description: "Expert buyer representation for 55+ homebuyers in Sun City Summerlin."
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Luxury Property Sales in Sun City Summerlin",
-                    description: "Specialized luxury home marketing for discerning 55+ sellers and buyers."
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Senior Downsizing Specialist",
-                    description: "Complete downsizing coordination for 55+ homeowners transitioning to right-sized retirement living."
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "Veterans Housing Benefits Expert",
-                    description: "Specialized assistance for senior veterans using VA loan benefits for Sun City Summerlin properties."
-                  }
-                },
-                {
-                  "@type": "Offer",
-                  itemOffered: {
-                    "@type": "Service",
-                    name: "HOA Navigation Specialist",
-                    description: "Expert guidance for understanding Sun City Summerlin's HOA structure, fees, and regulations."
-                  }
-                }
-              ]
-            }
-          }}
-        />
       </div>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Page from '@/migration/pages-source/testimonials/index';
+import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 
 export const metadata: Metadata = {
   title: "Testimonials | Dr. Jan Duffy",
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function RoutePage() {
-  return <Page />;
+  return (
+    <>
+      <JsonLdBreadcrumbs items={breadcrumbTrail({ name: 'Testimonials', path: '/testimonials' })} />
+      <Page />
+    </>
+  );
 }

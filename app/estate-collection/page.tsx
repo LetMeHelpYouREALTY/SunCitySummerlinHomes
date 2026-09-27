@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Header from '@/components/Header';
 import ScheduleButton from '@/components/ScheduleButton';
 import FeaturedPropertiesListings from '@/components/FeaturedPropertiesListings';
+import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 import { realScoutLuxuryPriceTiers } from '@/lib/realscout-config';
 import { phone } from '@/lib/site-contact';
 import styles from '@/styles/JadePatterns.module.css';
@@ -49,6 +50,8 @@ const estateCards = [
 
 export default function EstateCollectionPage() {
   return (
+    <>
+      <JsonLdBreadcrumbs items={breadcrumbTrail({ name: 'Estate Collection', path: '/estate-collection' })} />
     <div className={styles.page}>
       <Header />
       <div className={styles.container}>
@@ -115,5 +118,6 @@ export default function EstateCollectionPage() {
         </section>
       </div>
     </div>
+    </>
   );
 }

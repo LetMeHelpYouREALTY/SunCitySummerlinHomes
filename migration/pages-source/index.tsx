@@ -7,6 +7,7 @@ import ScheduleButton from '@/components/ScheduleButton';
 import RealScoutOfficeListings from '@/components/RealScoutOfficeListings';
 import FeaturedPropertiesListings from '@/components/FeaturedPropertiesListings';
 import { NEVADA_REALTOR_LICENSE, phone } from '@/lib/site-contact';
+import { communityFaqItems } from '@/lib/site-faq';
 
 export default function Home() {
   return (
@@ -52,6 +53,22 @@ export default function Home() {
 
         {/* Testimonial Section */}
         <TestimonialSection />
+
+        <section className={styles.faqSection} aria-labelledby="home-faq-heading">
+          <h2 id="home-faq-heading">Sun City Summerlin buyer FAQ</h2>
+          <p className={styles.faqIntro}>
+            Quick answers about buying and living in this 55+ Summerlin community.{' '}
+            <Link href="/faq">See all FAQs</Link>
+          </p>
+          <dl className={styles.faqList}>
+            {communityFaqItems.map((item) => (
+              <div key={item.q} className={styles.faqItem}>
+                <dt>{item.q}</dt>
+                <dd>{item.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
       </div>
 
       <footer className={styles.footer}>

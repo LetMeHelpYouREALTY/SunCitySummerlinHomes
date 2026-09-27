@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Page from '@/migration/pages-source/services/selling-agent';
+import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 
 export const metadata: Metadata = {
   title: "Selling Agent | Dr. Jan Duffy",
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function RoutePage() {
-  return <Page />;
+  return (
+    <>
+      <JsonLdBreadcrumbs items={breadcrumbTrail({ name: 'Services', path: '/services' }, { name: 'Selling Agent', path: '/services/selling-agent' })} />
+      <Page />
+    </>
+  );
 }
