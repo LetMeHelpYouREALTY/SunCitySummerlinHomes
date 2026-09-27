@@ -14,7 +14,7 @@
  *
  * Post-deploy: Rich Results Test (/, /contact, /testimonials) + GSC URL Inspection.
  */
-export const SITE_ORIGIN = 'https://suncitysummerlinhomesforsale.com' as const;
+export const SITE_ORIGIN = 'https://www.suncitysummerlinhomesforsale.com' as const;
 
 export const NEVADA_REALTOR_LICENSE = 'S.0197614.LLC' as const;
 
@@ -84,6 +84,7 @@ export const serviceAreaLinks = [
   { label: 'Sun City Summerlin area (89134)', path: '/zipcodes/89134' },
   { label: '55+ neighborhoods in Las Vegas', path: '/neighborhoods' },
   { label: 'Community map', path: '/map' },
+  { label: 'Nearby amenities', path: '/amenities' },
 ] as const;
 
 export const gbpLinks = {

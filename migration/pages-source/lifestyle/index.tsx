@@ -5,6 +5,7 @@ import Link from "next/link";
 import styles from '@/styles/Home.module.css';
 import { useState, useEffect } from "react";
 import RealScoutHomeSearchLink from '@/components/RealScoutHomeSearchLink';
+import NearbyAmenitiesSection from '@/components/amenities/NearbyAmenitiesSection';
 
 export default function Lifestyle() {
   const [isVisible, setIsVisible] = useState(false);
@@ -108,6 +109,8 @@ export default function Lifestyle() {
             </div>
           </div>
         </section>
+
+        <NearbyAmenitiesSection />
       </div>
 
       <footer className={styles.footer}>

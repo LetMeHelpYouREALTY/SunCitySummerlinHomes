@@ -43,7 +43,7 @@ const nextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://em.realscout.com https://www.realscout.com https://assets.calendly.com https://www.googletagmanager.com https://maps.googleapis.com",
-              "connect-src 'self' https://www.realscout.com https://em.realscout.com https://calendly.com https://assets.calendly.com https://www.google-analytics.com https://region1.google-analytics.com https://maps.googleapis.com https://*.cloudfront.net",
+              "connect-src 'self' https://www.realscout.com https://em.realscout.com https://calendly.com https://assets.calendly.com https://www.google-analytics.com https://region1.google-analytics.com https://maps.googleapis.com https://places.googleapis.com https://*.cloudfront.net",
               "img-src 'self' data: blob: https:",
               "style-src 'self' 'unsafe-inline' https://assets.calendly.com",
               "font-src 'self' data:",

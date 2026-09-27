@@ -2,7 +2,8 @@
 declare module '*.css';
 
 interface Window {
-  google?: any;
   initSunCitySummerlinMap?: () => void;
   filterMapMarkers?: (filter: string) => void;
+  gm_authFailure?: () => void;
+  __gmapsReady?: () => void;
 }

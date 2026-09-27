@@ -7,6 +7,7 @@ import styles from '@/styles/Properties.module.css';
 import StructuredData from '@/components/StructuredData';
 import Link from 'next/link';
 import ScheduleButton from '@/components/ScheduleButton';
+import NearbyAmenitiesSection from '@/components/amenities/NearbyAmenitiesSection';
 import { phone, canonicalPath } from '@/lib/site-contact';
 
 const schemaData = {
@@ -103,6 +104,8 @@ export default function Properties() {
             </div>
           </div>
         </section>
+
+        <NearbyAmenitiesSection />
       </div>
 
       <footer className={styles.footer}>

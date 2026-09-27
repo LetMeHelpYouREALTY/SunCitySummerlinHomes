@@ -401,7 +401,7 @@ export default function Header() {
                 items={[
                   { href: '/community', pathKey: '/community', label: 'About Sun City' },
                   { href: '/lifestyle', pathKey: '/lifestyle', label: 'Lifestyle' },
-                  { href: '/amenities', pathKey: '/amenities', label: 'Amenities' },
+                  { href: '/amenities', pathKey: '/amenities', label: 'Nearby Amenities' },
                   { href: '/map', pathKey: '/map', label: 'Map' },
                 ]}
               />
