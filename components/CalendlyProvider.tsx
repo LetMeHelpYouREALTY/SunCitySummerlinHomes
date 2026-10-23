@@ -2,7 +2,7 @@
 
 import Script from 'next/script';
 import { useEffect, useRef, type ReactNode } from 'react';
-import { CALENDLY_EVENT_URL } from '@/lib/calendly-config';
+import { calendlyUrlFor } from '@/lib/calendly-config';
 
 /** Brand accent aligned with viewport themeColor / desert-luxury palette */
 const BADGE_COLOR = '#8e1f41';
@@ -30,7 +30,7 @@ export default function CalendlyProvider({ children }: CalendlyProviderProps) {
     }
     badgeStarted.current = true;
     window.Calendly.initBadgeWidget({
-      url: CALENDLY_EVENT_URL,
+      url: calendlyUrlFor(window.location.pathname, 'badge'),
       text: 'Schedule time with me',
       color: BADGE_COLOR,
       textColor: '#ffffff',
