@@ -1,7 +1,8 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import Script from 'next/script';
-import { useEffect, useRef, type ReactNode } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { calendlyUrlFor } from '@/lib/calendly-config';
 
 /** Brand accent aligned with viewport themeColor / desert-luxury palette */
@@ -12,7 +13,7 @@ type CalendlyProviderProps = {
 };
 
 export default function CalendlyProvider({ children }: CalendlyProviderProps) {
-  const badgeStarted = useRef(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const id = 'calendly-widget-css';
@@ -24,11 +25,12 @@ export default function CalendlyProvider({ children }: CalendlyProviderProps) {
     document.head.appendChild(link);
   }, []);
 
+  // Rebuilds the badge so it books the current page's event and utm_campaign after client-side navigation.
   const initBadge = () => {
-    if (badgeStarted.current || typeof window === 'undefined' || !window.Calendly) {
-      return;
-    }
-    badgeStarted.current = true;
+    if (typeof window === 'undefined' || !window.Calendly) return;
+    const widget = window.Calendly as typeof window.Calendly & { destroyBadgeWidget?: () => void };
+    if (widget.destroyBadgeWidget) widget.destroyBadgeWidget();
+    else document.querySelector('.calendly-badge-widget')?.remove();
     window.Calendly.initBadgeWidget({
       url: calendlyUrlFor(window.location.pathname, 'badge'),
       text: 'Schedule time with me',
@@ -37,6 +39,11 @@ export default function CalendlyProvider({ children }: CalendlyProviderProps) {
       branding: false,
     });
   };
+
+  useEffect(() => {
+    initBadge();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   return (
     <>
