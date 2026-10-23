@@ -42,7 +42,6 @@ export default function CalendlyProvider({ children }: CalendlyProviderProps) {
 
   useEffect(() => {
     initBadge();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   return (
