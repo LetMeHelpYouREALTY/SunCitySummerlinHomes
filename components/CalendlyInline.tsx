@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { CALENDLY_EVENT_URL } from '@/lib/calendly-config';
+import { calendlyUrlFor } from '@/lib/calendly-config';
 import styles from '@/styles/CalendlyInline.module.css';
 
 type CalendlyInlineProps = {
@@ -19,7 +19,7 @@ export default function CalendlyInline({ className }: CalendlyInlineProps) {
       if (!window.Calendly || !parentRef.current) return;
       parentRef.current.replaceChildren();
       window.Calendly.initInlineWidget({
-        url: CALENDLY_EVENT_URL,
+        url: calendlyUrlFor(window.location.pathname, 'inline'),
         parentElement: parentRef.current,
       });
     };
@@ -49,7 +49,7 @@ export default function CalendlyInline({ className }: CalendlyInlineProps) {
     <div
       ref={parentRef}
       className={[styles.inlineHost, className].filter(Boolean).join(' ')}
-      aria-label="Schedule a private 15-minute conversation with Dr. Jan Duffy"
+      aria-label="Schedule time with Dr. Jan Duffy"
     />
   );
 }

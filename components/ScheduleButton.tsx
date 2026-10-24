@@ -1,6 +1,6 @@
 'use client';
 
-import { CALENDLY_EVENT_URL } from '@/lib/calendly-config';
+import { calendlyUrlFor } from '@/lib/calendly-config';
 import { forwardRef, type ButtonHTMLAttributes, type MouseEvent } from 'react';
 
 const POPUP_RETRY_MS = 120;
@@ -8,9 +8,10 @@ const POPUP_RETRY_CAP = 120;
 
 export function openCalendlyPopup(): void {
   if (typeof window === 'undefined') return;
+  const url = calendlyUrlFor(window.location.pathname, 'popup');
 
   const run = () => {
-    window.Calendly?.initPopupWidget({ url: CALENDLY_EVENT_URL });
+    window.Calendly?.initPopupWidget({ url });
   };
 
   if (window.Calendly) {
@@ -26,7 +27,7 @@ export function openCalendlyPopup(): void {
       run();
     } else if (attempts >= POPUP_RETRY_CAP) {
       window.clearInterval(id);
-      window.open(CALENDLY_EVENT_URL, '_blank', 'noopener,noreferrer');
+      window.open(url, '_blank', 'noopener,noreferrer');
     }
   }, POPUP_RETRY_MS);
 }
