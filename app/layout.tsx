@@ -12,7 +12,6 @@ import {
   getLocalBusinessJsonLd,
   getOrganizationJsonLd,
 } from '@/lib/site-contact';
-import WidgetTracker from './widget-tracker'
 
 const defaultOgTitle = 'Sun City Summerlin Las Vegas | 55+ Community | Dr. Jan Duffy';
 const defaultOgDescription =
@@ -131,7 +130,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: REALSCOUT_BOOTSTRAP_SCRIPT }}
         />
         <AppProviders>{children}</AppProviders>
-        <WidgetTracker />
       </body>
     </html>
   );
