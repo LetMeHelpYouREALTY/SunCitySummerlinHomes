@@ -253,7 +253,7 @@ export default function SunCityMap() {
                     <h3>Dr. Jan Duffy, REALTOR®</h3>
                     <p>Sun City Summerlin 55+ Community Specialist</p>
                     <p>9406 Del Webb Boulevard<br>Las Vegas, NV 89134</p>
-                    <p>Phone: <a href="tel:+17027180043">(702) 718-0043</a></p>
+                    <p>Phone: <a href="tel:+17025001955">(702) 500-1955</a></p>
                     <div class="office-hours">
                       <strong>Office Hours:</strong>
                       <p>Monday-Friday: 9am-5pm<br>

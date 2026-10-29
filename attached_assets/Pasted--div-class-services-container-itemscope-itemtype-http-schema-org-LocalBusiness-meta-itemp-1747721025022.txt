@@ -1,6 +1,6 @@
 <div class="services-container" itemscope itemtype="http://schema.org/LocalBusiness">
   <meta itemprop="name" content="Dr. Jan Duffy, REALTOR - 55+ Community Specialist">
-  <meta itemprop="telephone" content="(702) 718-0043">
+  <meta itemprop="telephone" content="(702) 500-1955">
   <meta itemprop="url" content="https://suncitysummerlinhomesforsale.com">
   
   <div class="service-item" itemprop="hasOfferCatalog" itemscope itemtype="http://schema.org/OfferCatalog">

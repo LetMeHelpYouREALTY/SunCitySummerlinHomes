@@ -149,7 +149,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               "name": "Dr. Jan Duffy - Sun City Summerlin REALTOR®",
               "image": "/drjan-logo.png",
               "url": "https://suncitysummerlin.com",
-              "telephone": "(702) 718-0043",
+              "telephone": "(702) 500-1955",
               "priceRange": "$$$",
               "address": {
                 "@type": "PostalAddress",

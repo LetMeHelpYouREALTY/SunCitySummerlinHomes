@@ -94,7 +94,7 @@ const Home: NextPage = () => {
             name: "Dr. Jan Duffy, REALTOR®",
             image: "/drjan-logo.png",
             url: "https://suncitysummerlin.com",
-            telephone: "(702) 718-0043",
+            telephone: "(702) 500-1955",
             address: {
               "@type": "PostalAddress",
               streetAddress: "9406 Del Webb Boulevard",
@@ -202,9 +202,9 @@ const Home: NextPage = () => {
             </nav>
 
             <div className={styles.headerActions}>
-              <a href="tel:7027180043" className={styles.phoneButton}>
+              <a href="tel:7025001955" className={styles.phoneButton}>
                 <span className={styles.phoneIcon}>📞</span>
-                <span className={styles.phoneNumber}>(702) 718-0043</span>
+                <span className={styles.phoneNumber}>(702) 500-1955</span>
               </a>
               <button className={styles.mobileMenuButton} aria-label="Toggle menu">
                 <span></span>
@@ -700,7 +700,7 @@ const Home: NextPage = () => {
             </div>
             <div className={styles.infoItem}>
               <h3>Phone</h3>
-              <p>(702) 718-0043</p>
+              <p>(702) 500-1955</p>
             </div>
             <div className={styles.infoItem}>
               <h3>Email</h3>
@@ -733,7 +733,7 @@ const Home: NextPage = () => {
           </div>
           <div className={styles.faqItem}>
             <h3>How do I contact Dr. Jan Duffy for property viewings?</h3>
-            <p>You can contact Dr. Jan Duffy at (702) 718-0043, email at DrDuffy@bhhsnv.com, or fill out the contact form on this website to schedule a viewing or consultation.</p>
+            <p>You can contact Dr. Jan Duffy at (702) 500-1955, email at DrDuffy@bhhsnv.com, or fill out the contact form on this website to schedule a viewing or consultation.</p>
           </div>
         </div>
         <script type="application/ld+json" dangerouslySetInnerHTML={{
@@ -771,7 +771,7 @@ const Home: NextPage = () => {
                   "name": "How do I contact Dr. Jan Duffy for property viewings?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "You can contact Dr. Jan Duffy at (702) 718-0043, email at DrDuffy@bhhsnv.com, or fill out the contact form on this website to schedule a viewing or consultation."
+                    "text": "You can contact Dr. Jan Duffy at (702) 500-1955, email at DrDuffy@bhhsnv.com, or fill out the contact form on this website to schedule a viewing or consultation."
                   }
                 }
               ]

@@ -24,9 +24,9 @@ export const businessName = {
 } as const;
 
 export const phone = {
-  display: '(702) 718-0043',
-  e164: '+17027180043',
-  telHref: 'tel:+17027180043',
+  display: '(702) 500-1955',
+  e164: '+17025001955',
+  telHref: 'tel:+17025001955',
 } as const;
 
 export const email = {

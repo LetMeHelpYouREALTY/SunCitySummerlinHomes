@@ -92,7 +92,7 @@ export default function Community() {
                   Dr. Jan Duffy has been specializing in Sun City Summerlin homes for over 25 years. As a Las Vegas REALTOR® dedicated to the 55+ community, Dr. Duffy provides personal tours, senior-specific market analysis, and simplified transactions designed specifically for retirees. With expertise in low-maintenance single-story homes near golf courses, pools, and the 80+ social clubs that make this community special, Dr. Duffy is your trusted guide to finding the perfect home in this premier Del Webb community.
                 </p>
                 <p>
-                  As both a veteran-owned and women-owned business, Dr. Duffy's practice is dedicated to accessible, inclusive service for all clients. Contact (702) 718-0043 to schedule a consultation today.
+                  As both a veteran-owned and women-owned business, Dr. Duffy's practice is dedicated to accessible, inclusive service for all clients. Contact (702) 500-1955 to schedule a consultation today.
                 </p>
               </div>
             </div>
