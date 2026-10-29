@@ -78,7 +78,7 @@ const allZipcodeData: ZipcodeData[] = [
   {
     code: '89144',
     area: 'Summerlin North',
-    description: 'Family-friendly area with top schools, shopping centers, and outdoor recreation options.',
+    description: 'Area with nearby schools, shopping centers, and outdoor recreation options.',
     neighborhoods: ['Tournament Hills', 'The Canyons', 'The Gardens'],
   },
   {
@@ -90,7 +90,7 @@ const allZipcodeData: ZipcodeData[] = [
   {
     code: '89145',
     area: 'The Lakes',
-    description: 'Established community centered around man-made lakes with waterfront properties.',
+    description: 'Community centered around man-made lakes with waterfront properties.',
     neighborhoods: ['The Lakes', 'Section 10', 'Peccole Ranch'],
   },
   {
@@ -115,7 +115,7 @@ const allZipcodeData: ZipcodeData[] = [
     code: '89129',
     area: 'Centennial Hills North',
     description:
-      'Family-oriented neighborhoods with parks and community centers in northwest Las Vegas.',
+      'Neighborhoods with parks and community centers in northwest Las Vegas.',
     neighborhoods: ['Providence', 'Skye Canyon', 'Elkhorn Springs'],
   },
   {

@@ -39,7 +39,7 @@ const zipcodes = [
   {
     code: "89129",
     area: "Centennial Hills South",
-    description: "Southern portion of Centennial Hills, offering a mix of established neighborhoods and proximity to the 95 freeway and Centennial Hills Hospital."
+    description: "Southern portion of Centennial Hills, offering a mix of older neighborhoods and proximity to the 95 freeway and Centennial Hills Hospital."
   },
   {
     code: "89149",
@@ -54,12 +54,12 @@ const zipcodes = [
   {
     code: "89130",
     area: "Sunrise Manor North",
-    description: "Northern part of Sunrise Manor with a mix of established neighborhoods and newer developments, close to the Craig Ranch Regional Park."
+    description: "Northern part of Sunrise Manor with a mix of older neighborhoods and newer developments, close to the Craig Ranch Regional Park."
   },
   {
     code: "89131",
     area: "Aliante",
-    description: "Home to the Aliante community and golf course in North Las Vegas, with Aliante Casino and numerous family-friendly parks and trails."
+    description: "Home to the Aliante community and golf course in North Las Vegas, with Aliante Casino and numerous parks and trails."
   },
   {
     code: "89148",
