@@ -5,7 +5,7 @@
   "name": "Dr. Jan Duffy, REALTOR",
   "image": "https://suncitysummerlinhomesforsale.com/images/jan-duffy-realtor.jpg",
   "url": "https://suncitysummerlinhomesforsale.com",
-  "telephone": "+17027180043",
+  "telephone": "+17025001955",
   "slogan": "Your Sun City Summerlin 55+ Community Specialist",
   "description": "Specialized real estate services for the Sun City Summerlin 55+ community in Las Vegas, NV. Expert in senior home buying and selling with focus on accessibility, lifestyle, and community needs.",
   "address": {

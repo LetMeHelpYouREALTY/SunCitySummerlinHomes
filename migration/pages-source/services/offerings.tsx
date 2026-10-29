@@ -26,7 +26,7 @@ export default function ServiceOfferings() {
           <section className={styles.processList}>
             <div className={`${styles.servicesContainer} services-container`} itemScope itemType="http://schema.org/LocalBusiness">
               <meta itemProp="name" content="Dr. Jan Duffy, REALTOR - 55+ Community Specialist" />
-              <meta itemProp="telephone" content="(702) 718-0043" />
+              <meta itemProp="telephone" content="(702) 500-1955" />
               <meta itemProp="url" content={SITE_ORIGIN} />
               
               <div className="service-item" itemProp="hasOfferCatalog" itemScope itemType="http://schema.org/OfferCatalog">

@@ -120,7 +120,7 @@ export default function BuyingAgentPage() {
             provider: {
               "@type": "RealEstateAgent",
               name: "Dr. Jan Duffy",
-              telephone: "(702) 718-0043",
+              telephone: "(702) 500-1955",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "9406 Del Webb Boulevard",

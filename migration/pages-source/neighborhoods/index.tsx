@@ -87,7 +87,7 @@ export default function Neighborhoods() {
               <div className={neighborhoodStyles.expertInfo}>
                 <h3>Dr. Jan Duffy, REALTOR®</h3>
                 <p>With over 25 years of experience specializing in Las Vegas 55+ communities, Dr. Jan Duffy provides expert guidance for buyers and sellers in active adult neighborhoods. As both a veteran-owned and women-owned business, Dr. Duffy's practice is dedicated to accessible, inclusive service for all clients.</p>
-                <p>Contact (702) 718-0043 to schedule a consultation or community tour today.</p>
+                <p>Contact (702) 500-1955 to schedule a consultation or community tour today.</p>
               </div>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function Neighborhoods() {
           name: "Dr. Jan Duffy",
           description: "Real Estate agent specializing in 55+ communities in Las Vegas, North Las Vegas, and Henderson",
           url: "https://drjanduffy.com/neighborhoods",
-          telephone: "(702) 718-0043",
+          telephone: "(702) 500-1955",
           address: {
             "@type": "PostalAddress",
             "addressLocality": "Las Vegas",

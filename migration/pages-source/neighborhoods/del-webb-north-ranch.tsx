@@ -133,7 +133,7 @@ export default function DelWebbNorthRanch() {
                 <div className={neighborhoodStyles.expertInfo}>
                   <h4>Dr. Jan Duffy, REALTOR®</h4>
                   <p>With over 25 years specializing in 55+ communities in Las Vegas, Dr. Duffy provides expert guidance for buying and selling homes in Del Webb North Ranch. As your local specialist, she offers personalized tours, comprehensive market analysis, and simplified transactions designed for active adults.</p>
-                  <p>Contact Dr. Jan at (702) 718-0043 to schedule a consultation or community tour today.</p>
+                  <p>Contact Dr. Jan at (702) 500-1955 to schedule a consultation or community tour today.</p>
                 </div>
               </div>
             </div>
@@ -177,7 +177,7 @@ export default function DelWebbNorthRanch() {
           name: "Dr. Jan Duffy",
           description: "Real Estate agent specializing in Del Webb North Ranch, a 55+ community in North Las Vegas, Nevada",
           url: "https://drjanduffy.com/neighborhoods/del-webb-north-ranch",
-          telephone: "(702) 718-0043",
+          telephone: "(702) 500-1955",
           address: {
             "@type": "PostalAddress",
             "addressLocality": "Las Vegas",

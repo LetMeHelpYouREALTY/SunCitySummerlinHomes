@@ -31,7 +31,7 @@ const Contact: NextPage = () => {
     <div className={styles.container}>
       <Head>
         <title>Contact Dr. Jan Duffy | Sun City Summerlin Las Vegas REALTOR®</title>
-        <meta name="description" content="Contact Dr. Jan Duffy, specialized REALTOR® with 25+ years of experience in Sun City Summerlin. Call (702) 718-0043 for personalized assistance." />
+        <meta name="description" content="Contact Dr. Jan Duffy, specialized REALTOR® with 25+ years of experience in Sun City Summerlin. Call (702) 500-1955 for personalized assistance." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

@@ -76,7 +76,7 @@ const Testimonials: NextPage = () => {
     name: "Dr. Jan Duffy, REALTOR®",
     image: "/drjan-logo.png",
     url: "https://suncitysummerlin.com",
-    telephone: "(702) 718-0043",
+    telephone: "(702) 500-1955",
     address: {
       "@type": "PostalAddress",
       streetAddress: "9406 Del Webb Boulevard",

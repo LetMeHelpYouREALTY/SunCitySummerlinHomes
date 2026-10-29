@@ -92,9 +92,9 @@ const Header = () => {
           </nav>
 
           <div className={styles.headerActions}>
-            <a href="tel:7027180043" className={styles.phoneButton}>
+            <a href="tel:7025001955" className={styles.phoneButton}>
               <span className={styles.phoneIcon}>📞</span>
-              <span className={styles.phoneNumber}>(702) 718-0043</span>
+              <span className={styles.phoneNumber}>(702) 500-1955</span>
             </a>
             <button 
               className={styles.mobileMenuButton} 
