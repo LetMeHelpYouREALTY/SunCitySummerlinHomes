@@ -21,7 +21,7 @@ export default function SellingAgentPage() {
           <section className={styles.serviceIntro}>
             <div className={styles.serviceContent}>
               <h2>Maximize Your Home's Value</h2>
-              <p>With over 25 years of experience selling homes in Sun City Summerlin, Dr. Jan Duffy provides targeted marketing strategies and skilled negotiation to help you achieve the best possible price for your property.</p>
+              <p>Licensed since 2008 · 35 years in Las Vegas, Dr. Jan Duffy provides targeted marketing strategies and skilled negotiation to help you achieve the best possible price for your property.</p>
               
               <div className={styles.serviceHighlights}>
                 <div className={styles.highlightCard}>
@@ -97,7 +97,7 @@ export default function SellingAgentPage() {
               </div>
               <div className={styles.strategyItem}>
                 <h3>Luxury Network</h3>
-                <p>Access to Berkshire Hathaway's exclusive network of luxury buyers.</p>
+                <p>Access to an exclusive network of luxury buyers.</p>
               </div>
               <div className={styles.strategyItem}>
                 <h3>California Buyers Network</h3>

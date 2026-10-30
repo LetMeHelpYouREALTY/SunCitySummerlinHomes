@@ -23,7 +23,7 @@ export default function LuxuryHomesPage() {
           <section className={styles.serviceIntro}>
             <div className={styles.serviceContent}>
               <h2>Sun City Summerlin's Luxury Home Expert</h2>
-              <p>With over 25 years of experience in Sun City Summerlin's luxury market, Dr. Jan Duffy offers unparalleled expertise in buying and selling premium properties, including golf course homes, custom estates, and designer residences.</p>
+              <p>Licensed since 2008 · 35 years in Las Vegas, Dr. Jan Duffy offers unparalleled expertise in buying and selling premium properties, including golf course homes, custom estates, and designer residences.</p>
               
               <div className={styles.serviceHighlights}>
                 <div className={styles.highlightCard}>
@@ -64,7 +64,7 @@ export default function LuxuryHomesPage() {
               </div>
               <div className={styles.strategyItem}>
                 <h3>Luxury Network Access</h3>
-                <p>Direct marketing to Berkshire Hathaway's exclusive network of luxury buyers.</p>
+                <p>Direct marketing to an exclusive network of luxury buyers.</p>
               </div>
               <div className={styles.strategyItem}>
                 <h3>Feature Highlights</h3>

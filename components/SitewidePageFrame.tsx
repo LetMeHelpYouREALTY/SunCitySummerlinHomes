@@ -20,7 +20,7 @@ const fallbackContent: RouteContent = {
   eyebrow: 'Sun City Summerlin Real Estate',
   title: 'Local Guidance for 55+ Home Goals',
   summary:
-    'Get clear, local guidance for buying or selling in Sun City Summerlin with Dr. Jan Duffy and Berkshire Hathaway HomeServices Nevada Properties.',
+    'Get clear, local guidance for buying or selling in Sun City Summerlin with Dr. Jan Duffy.',
   primaryHref: '/contact',
   primaryLabel: 'Talk with Dr. Jan',
   secondaryHref: '/search',

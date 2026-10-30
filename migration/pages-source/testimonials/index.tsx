@@ -87,25 +87,6 @@ export default function Testimonials() {
       addressRegion: "NV",
       postalCode: "89134",
       addressCountry: "US"
-    },
-    review: testimonials.map(testimonial => ({
-      "@type": "Review",
-      author: {
-        "@type": "Person",
-        name: testimonial.name
-      },
-      datePublished: testimonial.date,
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: testimonial.rating,
-        bestRating: "5"
-      },
-      reviewBody: testimonial.text
-    })),
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5",
-      reviewCount: testimonials.length.toString()
     }
   };
 
@@ -127,7 +108,7 @@ export default function Testimonials() {
               <div className={styles.ratingStars}>
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
-              <p className={styles.ratingText}>5.0 out of 5 stars based on {testimonials.length} reviews</p>
+              <p className={styles.ratingText}>5.0★ on Realtor.com (50 reviews)</p>
             </div>
           </div>
         </section>
@@ -163,7 +144,7 @@ export default function Testimonials() {
 
         <section className={styles.testimonialCTA}>
           <h2>Ready to Experience the Sun City Summerlin Lifestyle?</h2>
-          <p>Join the many satisfied homeowners who found their perfect home with Dr. Jan Duffy, your 55+ community specialist with 25+ years of Las Vegas real estate experience</p>
+          <p>Join the many satisfied homeowners who found their perfect home with Dr. Jan Duffy, your 55+ community specialist, licensed since 2008 · 35 years in Las Vegas</p>
           <div className={styles.ctaButtons}>
             <Link href="/properties" className={styles.primaryBtn}>
               View Available Properties
@@ -181,11 +162,11 @@ export default function Testimonials() {
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>
-          <img src="/bhhs-quality-seal-black.png" alt="BHHS Logo" className={styles.footerLogo} />
-          <p>&copy; {new Date().getFullYear()} Berkshire Hathaway HomeServices. All rights reserved.</p>
-          <p>Sun City Summerlin REALTOR® Dr. Jan Duffy - Serving Las Vegas since 2013</p>
+          <img src="/bhhs-quality-seal-black.png" alt="" className={styles.footerLogo} />
+          <p>&copy; {new Date().getFullYear()} Dr. Jan Duffy. All rights reserved.</p>
+          <p>Sun City Summerlin REALTOR® Dr. Jan Duffy - licensed since 2008 · 35 years in Las Vegas</p>
           <p>Dr Jan Duffy REALTOR® | CA to LV Relocation Expert @DrJanDuffy</p>
-          <p>Dr. Jan Duffy is a Nevada REALTOR® Making Dreams Come True in Las Vegas, Summerlin, Henderson, North Las Vegas, and Spring Valley Nevada. S.0197614.LL</p>
+          <p>Dr. Jan Duffy is a Nevada REALTOR® Making Dreams Come True in Las Vegas, Summerlin, Henderson, North Las Vegas, and Spring Valley Nevada.</p>
           <p>
             Real Estate Las Vegas, NV{' '}
             <RealScoutHomeSearchLink>Live MLS search (RealScout)</RealScoutHomeSearchLink>
@@ -194,7 +175,6 @@ export default function Testimonials() {
         <div className={styles.footerLinks}>
           <a href="https://www.bhhs.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
           <a href="https://www.bhhs.com/terms-of-use" target="_blank" rel="noopener noreferrer">Terms of Service</a>
-          <a href="https://www.bhhs.com/" target="_blank" rel="noopener noreferrer">BHHS.com</a>
         </div>
         <div className={styles.socialLinks}>
           <h3>Connect With Dr. Jan</h3>
