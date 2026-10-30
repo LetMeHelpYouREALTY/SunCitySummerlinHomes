@@ -18,7 +18,7 @@ export default function Community() {
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.logoContainer}>
-          <img src="/bhhs-quality-seal-black.png" alt="Berkshire Hathaway HomeServices" className={styles.bhsLogo} />
+          <img src="/bhhs-quality-seal-black.png" alt="" className={styles.bhsLogo} />
           <p className={styles.logo}>Sun City Summerlin Homes</p>
         </div>
         <nav className={styles.nav}>
@@ -39,7 +39,7 @@ export default function Community() {
             <div className={styles.dualLogoContainer}>
               <Image 
                 src="/bhhs-nevada-logo.jpg" 
-                alt="Berkshire Hathaway HomeServices Nevada Properties" 
+                alt="" 
                 className={styles.bhhsLogo} 
                 width={150}
                 height={75}
@@ -89,7 +89,7 @@ export default function Community() {
               <div className={styles.realtorProfile}>
                 <h3>Your Sun City Summerlin Expert</h3>
                 <p>
-                  Dr. Jan Duffy has been specializing in Sun City Summerlin homes for over 25 years. As a Las Vegas REALTOR® dedicated to the 55+ community, Dr. Duffy provides personal tours, senior-specific market analysis, and simplified transactions designed specifically for retirees. With expertise in low-maintenance single-story homes near golf courses, pools, and the 80+ social clubs that make this community special, Dr. Duffy is your trusted guide to finding the perfect home in this premier Del Webb community.
+                  Licensed since 2008 · 35 years in Las Vegas, Dr. Jan Duffy specializes in Sun City Summerlin homes. As a Las Vegas REALTOR® dedicated to the 55+ community, Dr. Duffy provides personal tours, senior-specific market analysis, and simplified transactions designed specifically for retirees. With expertise in low-maintenance single-story homes near golf courses, pools, and the 80+ social clubs that make this community special, Dr. Duffy is your trusted guide to finding the perfect home in this premier Del Webb community.
                 </p>
                 <p>
                   As both a veteran-owned and women-owned business, Dr. Duffy's practice is dedicated to accessible, inclusive service for all clients. Contact (702) 500-1955 to schedule a consultation today.
@@ -102,10 +102,10 @@ export default function Community() {
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>
-          <img src="/bhhs-quality-seal-black.png" alt="BHHS Logo" className={styles.footerLogo} />
-          <p>&copy; {new Date().getFullYear()} Berkshire Hathaway HomeServices. All rights reserved.</p>
+          <img src="/bhhs-quality-seal-black.png" alt="" className={styles.footerLogo} />
+          <p>&copy; {new Date().getFullYear()} Dr. Jan Duffy. All rights reserved.</p>
           <p>Dr Jan Duffy REALTOR® | CA to LV Relocation Expert @DrJanDuffy</p>
-          <p>Dr. Jan Duffy is a Nevada REALTOR® Making Dreams Come True in Las Vegas, Summerlin, Henderson, North Las Vegas, and Spring Valley Nevada. S.0197614.LL</p>
+          <p>Dr. Jan Duffy is a Nevada REALTOR® Making Dreams Come True in Las Vegas, Summerlin, Henderson, North Las Vegas, and Spring Valley Nevada.</p>
           <p>
             Real Estate Las Vegas, NV{' '}
             <RealScoutHomeSearchLink>Live MLS search (RealScout)</RealScoutHomeSearchLink>
@@ -114,7 +114,6 @@ export default function Community() {
         <div className={styles.footerLinks}>
           <a href="https://www.bhhs.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
           <a href="https://www.bhhs.com/terms-of-use" target="_blank" rel="noopener noreferrer">Terms of Service</a>
-          <a href="https://www.bhhs.com/" target="_blank" rel="noopener noreferrer">BHHS.com</a>
         </div>
       </footer>
     </div>

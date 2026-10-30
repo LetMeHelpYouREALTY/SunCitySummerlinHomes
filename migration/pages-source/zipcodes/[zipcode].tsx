@@ -14,7 +14,7 @@ export default function ZipcodePage({ zipcodeData, nearbyZipcodes }: ZipcodePage
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.logoContainer}>
-          <img src="/bhhs-quality-seal-black.png" alt="Berkshire Hathaway HomeServices" className={styles.bhsLogo} />
+          <img src="/bhhs-quality-seal-black.png" alt="" className={styles.bhsLogo} />
           <p className={styles.logo}>Sun City Summerlin Homes</p>
         </div>
         <nav className={styles.nav}>
@@ -164,7 +164,7 @@ export default function ZipcodePage({ zipcodeData, nearbyZipcodes }: ZipcodePage
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>
           <p>&copy; {new Date().getFullYear()} All rights reserved.</p>
-          <p>Sun City Summerlin REALTOR® Dr. Jan Duffy - Serving Las Vegas since 2013</p>
+          <p>Sun City Summerlin REALTOR® Dr. Jan Duffy - licensed since 2008 · 35 years in Las Vegas</p>
           <p>Dr Jan Duffy REALTOR® | CA to LV Relocation Expert @DrJanDuffy</p>
         </div>
         <div className={styles.footerLinks}>

@@ -74,8 +74,8 @@ export default function Home() {
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
           <div className={styles.footerBranding}>
-            <img src="/bhhs-quality-seal-black.png" alt="BHHS Logo" className={styles.footerLogo} />
-            <p>Dr. Jan Duffy <br />BHHS Nevada Properties</p>
+            <img src="/bhhs-quality-seal-black.png" alt="" className={styles.footerLogo} />
+            <p>Dr. Jan Duffy, REALTOR®</p>
           </div>
           <div className={styles.footerLinks}>
             <div className={styles.footerCol}>
@@ -105,9 +105,6 @@ export default function Home() {
         </div>
         <div className={styles.footerBottom}>
           <p>© {new Date().getFullYear()} Dr. Jan Duffy. All rights reserved.</p>
-          <p>
-            BHHS Nevada Properties | Nevada REALTOR® license {NEVADA_REALTOR_LICENSE}
-          </p>
         </div>
       </footer>
     </div>

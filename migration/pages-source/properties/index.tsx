@@ -14,7 +14,7 @@ const schemaData = {
   '@type': 'RealEstateAgent',
   name: 'Dr. Jan Duffy - Sun City Summerlin Specialist',
   description:
-    "Browse luxury homes for sale in Sun City Summerlin, Las Vegas' premier 55+ community with Dr. Jan Duffy, REALTOR® specialist with 25+ years of experience.",
+    "Browse luxury homes for sale in Sun City Summerlin, Las Vegas' premier 55+ community with Dr. Jan Duffy, REALTOR® specialist, licensed since 2008 · 35 years in Las Vegas.",
   url: canonicalPath('/properties'),
   telephone: '(702) 500-1955',
   address: {
@@ -60,7 +60,7 @@ export default function Properties() {
         <section className={styles.callToAction}>
           <div className={styles.ctaContent}>
             <h2>Find Your Dream Home Today</h2>
-            <p>Work with Dr. Jan Duffy, your Sun City Summerlin specialist with 25+ years of experience</p>
+            <p>Work with Dr. Jan Duffy, your Sun City Summerlin specialist, licensed since 2008 · 35 years in Las Vegas</p>
             <div className={styles.ctaButtons}>
               <ScheduleButton type="button" className={styles.primaryButton}>
                 Schedule a showing
@@ -140,7 +140,7 @@ export default function Properties() {
           </div>
         </div>
         <div className={styles.footerBottom}>
-          <p>&copy; {new Date().getFullYear()} All rights reserved. Berkshire Hathaway HomeServices Nevada Properties.</p>
+          <p>&copy; {new Date().getFullYear()} Dr. Jan Duffy. All rights reserved.</p>
         </div>
       </footer>
     </div>

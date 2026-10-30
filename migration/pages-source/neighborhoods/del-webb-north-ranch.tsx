@@ -20,7 +20,7 @@ export default function DelWebbNorthRanch() {
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.logoContainer}>
-          <img src="/bhhs-quality-seal-black.png" alt="Berkshire Hathaway HomeServices" className={styles.bhsLogo} />
+          <img src="/bhhs-quality-seal-black.png" alt="" className={styles.bhsLogo} />
           <p className={styles.logo}>Del Webb North Ranch Expert</p>
         </div>
         <nav className={styles.nav}>
@@ -39,7 +39,7 @@ export default function DelWebbNorthRanch() {
           <div className={styles.dualLogoContainer}>
             <Image 
               src="/bhhs-nevada-logo.jpg" 
-              alt="Berkshire Hathaway HomeServices Nevada Properties" 
+              alt="" 
               className={styles.bhhsLogo} 
               width={150}
               height={75}
@@ -132,7 +132,7 @@ export default function DelWebbNorthRanch() {
                 />
                 <div className={neighborhoodStyles.expertInfo}>
                   <h4>Dr. Jan Duffy, REALTOR®</h4>
-                  <p>With over 25 years specializing in 55+ communities in Las Vegas, Dr. Duffy provides expert guidance for buying and selling homes in Del Webb North Ranch. As your local specialist, she offers personalized tours, comprehensive market analysis, and simplified transactions designed for active adults.</p>
+                  <p>Licensed since 2008 · 35 years in Las Vegas and specializing in 55+ communities, Dr. Duffy provides expert guidance for buying and selling homes in Del Webb North Ranch. As your local specialist, she offers personalized tours, comprehensive market analysis, and simplified transactions designed for active adults.</p>
                   <p>Contact Dr. Jan at (702) 500-1955 to schedule a consultation or community tour today.</p>
                 </div>
               </div>
@@ -159,15 +159,14 @@ export default function DelWebbNorthRanch() {
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>
-          <img src="/bhhs-quality-seal-black.png" alt="BHHS Logo" className={styles.footerLogo} />
-          <p>&copy; {new Date().getFullYear()} Berkshire Hathaway HomeServices. All rights reserved.</p>
+          <img src="/bhhs-quality-seal-black.png" alt="" className={styles.footerLogo} />
+          <p>&copy; {new Date().getFullYear()} Dr. Jan Duffy. All rights reserved.</p>
           <p>Dr Jan Duffy REALTOR® | Del Webb North Ranch Expert @DrJanDuffy</p>
-          <p>Dr. Jan Duffy is a Nevada REALTOR® specializing in 55+ communities in Las Vegas, North Las Vegas, and Henderson. S.0197614.LL</p>
+          <p>Dr. Jan Duffy is a Nevada REALTOR® specializing in 55+ communities in Las Vegas, North Las Vegas, and Henderson.</p>
         </div>
         <div className={styles.footerLinks}>
           <a href="https://www.bhhs.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
           <a href="https://www.bhhs.com/terms-of-use" target="_blank" rel="noopener noreferrer">Terms of Service</a>
-          <a href="https://www.bhhs.com/" target="_blank" rel="noopener noreferrer">BHHS.com</a>
         </div>
       </footer>
 

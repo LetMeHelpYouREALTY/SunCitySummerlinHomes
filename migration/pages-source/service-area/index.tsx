@@ -67,8 +67,8 @@ export default function ServiceAreaPage() {
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>
-          <img src="/bhhs-quality-seal-black.png" alt="BHHS Logo" className={styles.footerLogo} />
-          <p>&copy; {new Date().getFullYear()} Berkshire Hathaway HomeServices. All rights reserved.</p>
+          <img src="/bhhs-quality-seal-black.png" alt="" className={styles.footerLogo} />
+          <p>&copy; {new Date().getFullYear()} Dr. Jan Duffy. All rights reserved.</p>
           <p>{footerLicenseDisclaimer}</p>
         </div>
         <div className={styles.footerLinks}>

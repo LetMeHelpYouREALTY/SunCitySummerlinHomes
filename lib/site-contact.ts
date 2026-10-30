@@ -112,7 +112,7 @@ export const brokerage = {
   logoUrl: `${SITE_ORIGIN}/bhhs-logo.png`,
 } as const;
 
-export const footerLicenseDisclaimer = `Dr. Jan Duffy is a Nevada REALTOR® Making Dreams Come True in Las Vegas, Summerlin, Henderson, North Las Vegas, and Spring Valley Nevada. ${NEVADA_REALTOR_LICENSE}`;
+export const footerLicenseDisclaimer = `Dr. Jan Duffy is a Nevada REALTOR® Making Dreams Come True in Las Vegas, Summerlin, Henderson, North Las Vegas, and Spring Valley Nevada.`;
 
 /** Stable fragment IDs for `@graph` / cross-references (align with SITE_ORIGIN). */
 export const jsonLdIds = {

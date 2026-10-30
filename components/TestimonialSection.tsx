@@ -54,7 +54,7 @@ const TestimonialSection = () => {
             <div className={styles.aboutText}>
               <h3 className={styles.aboutTitle}>Meet Dr. Jan Duffy</h3>
               <p className={styles.aboutDescription}>
-                With over 25 years of experience specializing in Sun City Summerlin, Dr. Jan Duffy provides unparalleled expertise in helping buyers and sellers navigate this premier 55+ community in Las Vegas.
+                Licensed since 2008 · 35 years in Las Vegas and specializing in Sun City Summerlin, Dr. Jan Duffy provides unparalleled expertise in helping buyers and sellers navigate this premier 55+ community in Las Vegas.
               </p>
               <p className={styles.aboutDescription}>
                 As both a veteran-owned and women-owned business, Dr. Duffy's practice is dedicated to accessible, inclusive service for all clients.
