@@ -12,6 +12,8 @@ import {
   getLocalBusinessJsonLd,
   getOrganizationJsonLd,
 } from '@/lib/site-contact';
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights as VercelSpeedInsights } from "@vercel/speed-insights/next";
 
 const defaultOgTitle = 'Sun City Summerlin Las Vegas | 55+ Community | Dr. Jan Duffy';
 const defaultOgDescription =
@@ -130,6 +132,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: REALSCOUT_BOOTSTRAP_SCRIPT }}
         />
         <AppProviders>{children}</AppProviders>
+        <VercelAnalytics />
+        <VercelSpeedInsights />
       </body>
     </html>
   );
