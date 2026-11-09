@@ -21,7 +21,7 @@ export default function BuyingAgentPage() {
           <section className={styles.serviceIntro}>
             <div className={styles.serviceContent}>
               <h2>Find Your Dream Home in Sun City Summerlin</h2>
-              <p>With over 25 years of experience as a REALTOR® in Sun City Summerlin, Dr. Jan Duffy provides unparalleled expertise in helping buyers find their perfect home in Las Vegas' premier 55+ community.</p>
+              <p>Licensed since 2008 · 35 years in Las Vegas, Sun City Summerlin REALTOR® Dr. Jan Duffy provides unparalleled expertise in helping buyers find their perfect home in Las Vegas' premier 55+ community.</p>
               
               <div className={styles.serviceHighlights}>
                 <div className={styles.highlightCard}>

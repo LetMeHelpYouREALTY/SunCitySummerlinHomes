@@ -31,7 +31,7 @@ export default function Neighborhoods() {
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.logoContainer}>
-          <img src="/bhhs-quality-seal-black.png" alt="Berkshire Hathaway HomeServices" className={styles.bhsLogo} />
+          <img src="/bhhs-quality-seal-black.png" alt="" className={styles.bhsLogo} />
           <p className={styles.logo}>Las Vegas 55+ Communities</p>
         </div>
         <nav className={styles.nav}>
@@ -86,7 +86,7 @@ export default function Neighborhoods() {
               />
               <div className={neighborhoodStyles.expertInfo}>
                 <h3>Dr. Jan Duffy, REALTOR®</h3>
-                <p>With over 25 years of experience specializing in Las Vegas 55+ communities, Dr. Jan Duffy provides expert guidance for buyers and sellers in active adult neighborhoods. As both a veteran-owned and women-owned business, Dr. Duffy's practice is dedicated to accessible, inclusive service for all clients.</p>
+                <p>Licensed since 2008 · 35 years in Las Vegas and specializing in 55+ communities, Dr. Jan Duffy provides expert guidance for buyers and sellers in active adult neighborhoods. As both a veteran-owned and women-owned business, Dr. Duffy's practice is dedicated to accessible, inclusive service for all clients.</p>
                 <p>Contact (702) 500-1955 to schedule a consultation or community tour today.</p>
               </div>
             </div>
@@ -96,15 +96,14 @@ export default function Neighborhoods() {
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>
-          <img src="/bhhs-quality-seal-black.png" alt="BHHS Logo" className={styles.footerLogo} />
-          <p>&copy; {new Date().getFullYear()} Berkshire Hathaway HomeServices. All rights reserved.</p>
+          <img src="/bhhs-quality-seal-black.png" alt="" className={styles.footerLogo} />
+          <p>&copy; {new Date().getFullYear()} Dr. Jan Duffy. All rights reserved.</p>
           <p>Dr Jan Duffy REALTOR® | 55+ Community Expert @DrJanDuffy</p>
-          <p>Dr. Jan Duffy is a Nevada REALTOR® specializing in 55+ communities in Las Vegas, North Las Vegas, and Henderson. S.0197614.LL</p>
+          <p>Dr. Jan Duffy is a Nevada REALTOR® specializing in 55+ communities in Las Vegas, North Las Vegas, and Henderson.</p>
         </div>
         <div className={styles.footerLinks}>
           <a href="https://www.bhhs.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
           <a href="https://www.bhhs.com/terms-of-use" target="_blank" rel="noopener noreferrer">Terms of Service</a>
-          <a href="https://www.bhhs.com/" target="_blank" rel="noopener noreferrer">BHHS.com</a>
         </div>
       </footer>
 

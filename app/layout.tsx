@@ -130,6 +130,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: REALSCOUT_BOOTSTRAP_SCRIPT }}
         />
         <AppProviders>{children}</AppProviders>
+        <footer
+          className="site-legal-footer"
+          style={{ padding: '1rem', textAlign: 'center', fontSize: '0.85rem' }}
+        >
+          <p>Berkshire Hathaway HomeServices Nevada Properties since September 2008 · License S.0197614.LLC</p>
+        </footer>
       </body>
     </html>
   );

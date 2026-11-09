@@ -64,7 +64,7 @@ const EnhancedHero = () => {
             Luxury Living in Sun City Summerlin
           </h1>
           <p className={styles.heroSubtitle}>
-            Experience resort-style living in Las Vegas' premier 55+ active adult community with Dr. Jan Duffy, your REALTOR® specialist with 25+ years of experience
+            Experience resort-style living in Las Vegas' premier 55+ active adult community with Dr. Jan Duffy, your REALTOR® specialist, licensed since 2008 · 35 years in Las Vegas
           </p>
           
           {/* Property Info Card */}

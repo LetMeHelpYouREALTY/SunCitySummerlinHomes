@@ -20,7 +20,7 @@ export default function Contact() {
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.logoContainer}>
-          <img src="/bhhs-quality-seal-black.png" alt="Berkshire Hathaway HomeServices" className={styles.bhsLogo} />
+          <img src="/bhhs-quality-seal-black.png" alt="" className={styles.bhsLogo} />
           <div className={styles.logoText}>
             <p className={styles.logo}>Sun City Summerlin Homes</p>
             <p className={styles.subLogo}>Dr. Jan Duffy, REALTOR® | 55+ Community Specialist</p>
@@ -44,7 +44,7 @@ export default function Contact() {
             <div className={styles.dualLogoContainer}>
               <Image
                 src="/bhhs-nevada-logo.jpg"
-                alt="Berkshire Hathaway HomeServices Nevada Properties"
+                alt=""
                 className={styles.bhhsLogo}
                 width={150}
                 height={75}
@@ -128,13 +128,13 @@ export default function Contact() {
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>
-          <img src="/bhhs-quality-seal-black.png" alt="BHHS Logo" className={styles.footerLogo} />
-          <p>&copy; {new Date().getFullYear()} Berkshire Hathaway HomeServices. All rights reserved.</p>
-          <p>Sun City Summerlin REALTOR® Dr. Jan Duffy - Serving Las Vegas since 2013</p>
+          <img src="/bhhs-quality-seal-black.png" alt="" className={styles.footerLogo} />
+          <p>&copy; {new Date().getFullYear()} Dr. Jan Duffy. All rights reserved.</p>
+          <p>Sun City Summerlin REALTOR® Dr. Jan Duffy - licensed since 2008 · 35 years in Las Vegas</p>
           <p>Dr Jan Duffy REALTOR® | CA to LV Relocation Expert @DrJanDuffy</p>
           <p>
             Dr. Jan Duffy is a Nevada REALTOR® Making Dreams Come True in Las Vegas, Summerlin, Henderson, North Las
-            Vegas, and Spring Valley Nevada. S.0197614.LL
+            Vegas, and Spring Valley Nevada.
           </p>
           <p>
             Real Estate Las Vegas, NV{' '}
@@ -147,9 +147,6 @@ export default function Contact() {
           </a>
           <a href="https://www.bhhs.com/terms-of-use" target="_blank" rel="noopener noreferrer">
             Terms of Service
-          </a>
-          <a href="https://www.bhhs.com/" target="_blank" rel="noopener noreferrer">
-            BHHS.com
           </a>
         </div>
         <div className={styles.socialLinks}>

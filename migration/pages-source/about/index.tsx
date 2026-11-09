@@ -5,9 +5,7 @@ import RealEstateAgentSchema from '@/components/RealEstateAgentSchema';
 import styles from '@/styles/Home.module.css';
 import gb from '@/styles/GbpPages.module.css';
 import {
-  NEVADA_REALTOR_LICENSE,
   address,
-  brokerage,
   email,
   footerLicenseDisclaimer,
   gbpLinks,
@@ -25,18 +23,10 @@ export default function AboutPage() {
         <article className={gb.wrap}>
           <h1 className={gb.h1}>About Dr. Jan Duffy</h1>
           <p className={gb.lead}>
-            Dr. Jan Duffy is a REALTOR® with {brokerage.organizationName}, focused on Sun City Summerlin and Las Vegas
-            55+ real estate. This page summarizes who you are working with, how to reach the office, and how to verify
-            licensing.
+            Dr. Jan Duffy is a REALTOR® focused on Sun City Summerlin and Las Vegas 55+ real estate. This page
+            summarizes who you are working with and how to reach the office.
           </p>
 
-          <section className={gb.section}>
-            <h2>Brokerage &amp; license</h2>
-            <p className={gb.prose}>
-              Dr. Jan Duffy is affiliated with {brokerage.organizationName}. Nevada real estate license:{' '}
-              <strong>{NEVADA_REALTOR_LICENSE}</strong>.
-            </p>
-          </section>
 
           <section className={gb.section}>
             <h2>Office hours</h2>
@@ -84,8 +74,8 @@ export default function AboutPage() {
 
       <footer className={styles.footer}>
         <div className={styles.footerBranding}>
-          <img src="/bhhs-quality-seal-black.png" alt="BHHS Logo" className={styles.footerLogo} />
-          <p>&copy; {new Date().getFullYear()} Berkshire Hathaway HomeServices. All rights reserved.</p>
+          <img src="/bhhs-quality-seal-black.png" alt="" className={styles.footerLogo} />
+          <p>&copy; {new Date().getFullYear()} Dr. Jan Duffy. All rights reserved.</p>
           <p>{footerLicenseDisclaimer}</p>
         </div>
         <div className={styles.footerLinks}>

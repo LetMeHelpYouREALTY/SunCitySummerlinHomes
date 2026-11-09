@@ -19,7 +19,7 @@ export default function ServiceOfferings() {
           <section className={styles.serviceIntro}>
             <div className={styles.serviceContent}>
               <h2>Expert Services for Sun City Summerlin's Unique Market</h2>
-              <p>With over 25 years of specialized experience in Sun City Summerlin real estate, Dr. Jan Duffy provides tailored services designed specifically for the unique needs of 55+ community residents and prospective buyers.</p>
+              <p>Licensed since 2008 · 35 years in Las Vegas, Dr. Jan Duffy provides tailored services designed specifically for the unique needs of 55+ community residents and prospective buyers.</p>
             </div>
           </section>
 

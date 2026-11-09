@@ -129,7 +129,7 @@ export default function Zipcodes() {
 
       <footer className={styles.footer}>
         <p>&copy; {new Date().getFullYear()} Dr. Jan Duffy, REALTOR®. All rights reserved.</p>
-        <p>Berkshire Hathaway HomeServices Nevada Properties | (702) 500-1955 | DrDuffy@bhhsnv.com</p>
+        <p>Dr. Jan Duffy, REALTOR® | (702) 500-1955 | DrDuffy@bhhsnv.com</p>
       </footer>
     </div>
   );
