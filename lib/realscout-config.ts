@@ -53,19 +53,19 @@ export type RealScoutPriceTier = {
 export const realScoutFeaturedPriceTiers: readonly RealScoutPriceTier[] = [
   {
     label: 'Single-Story Homes',
-    description: '$450K – $650K',
+    description: 'Single-story and patio homes',
     priceMin: '450000',
     priceMax: '650000',
   },
   {
     label: 'Golf Course Homes',
-    description: '$650K – $1M',
+    description: 'Homes on or near association golf courses',
     priceMin: '650000',
     priceMax: '1000000',
   },
   {
-    label: 'Luxury Estates',
-    description: '$1M – $4M',
+    label: 'Premium Homes',
+    description: 'Larger floor plans and golf-adjacent locations',
     priceMin: '1000000',
     priceMax: '4000000',
   },
