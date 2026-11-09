@@ -14,8 +14,8 @@ export default function Amenities() {
   }, []);
 
   const amenities = [
-    "Three Championship Golf Courses",
-    "Four Recreation Centers",
+    "Three Golf Courses (Highland Falls, Palm Valley, Eagle Crest)",
+    "Four Recreation Centers (Mountain Shadows, Sun Shadows, Desert Vista, Pinnacle)",
     "Multiple Swimming Pools",
     "Tennis &amp; Pickleball Courts",
     "Fitness Centers with Classes",
@@ -23,7 +23,7 @@ export default function Amenities() {
     "Over 100 Social Clubs &amp; Activities",
     "Walking &amp; Golf Cart Trails",
     "On-site Shopping &amp; Dining",
-    "24/7 Security &amp; Gated Areas"
+    "Association-Managed Recreation &amp; Clubs"
   ];
 
   return (
@@ -69,7 +69,9 @@ export default function Amenities() {
                 layout="responsive"
               />
               <p>
-                Sun City Summerlin features three distinct championship golf courses designed by renowned architects. Highland Falls offers panoramic views of the Las Vegas Strip, Palm Valley provides a traditional layout with mild elevation changes, and Eagle Crest is a shorter executive course perfect for a quick round.
+                Per the Sun City Summerlin Community Association (November 2026): Highland Falls and
+                Palm Valley are 18-hole championship courses, and Eagle Crest is the executive course
+                for shorter rounds.
               </p>
             </div>
 
@@ -83,7 +85,10 @@ export default function Amenities() {
                 layout="responsive"
               />
               <p>
-                Four state-of-the-art recreation centers provide residents with swimming pools, fitness facilities, tennis and pickleball courts, and spaces for various clubs and activities. The centers also host regular social events, classes, and workshops.
+                Four community centers serve residents: Mountain Shadows at 9107 Del Webb Blvd, Sun
+                Shadows at 8700 Del Webb Blvd, Desert Vista at 10360 Sun City Blvd, and Pinnacle at
+                2215 Thomas Ryan Blvd. Each offers fitness, aquatics, courts, and club meeting space
+                per the association.
               </p>
             </div>
 

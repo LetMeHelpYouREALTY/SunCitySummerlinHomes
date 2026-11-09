@@ -4,11 +4,11 @@ import { address } from '@/lib/site-contact';
 export const communityFaqItems = [
   {
     q: 'What is Sun City Summerlin?',
-    a: 'Sun City Summerlin is an active adult community in the Las Vegas area designed for residents who want golf, recreation centers, clubs, and a 55+ lifestyle in Summerlin.',
+    a: 'Sun City Summerlin is an age-qualified (55+) community in ZIP 89134 within Summerlin, with 7,781 homes, three golf courses, and four association recreation centers (source: suncitysummerlin.com, November 2026).',
   },
   {
     q: 'Who can buy a home in Sun City Summerlin?',
-    a: 'Sun City Summerlin is an age-restricted active adult community. If you are unsure whether you meet the community requirements, ask during a consultation before you tour homes.',
+    a: 'Sun City Summerlin is an age-qualified (55+) community. Occupancy requirements are set in the association\'s Rules & Regulations—review those documents or ask during a consultation before you tour homes.',
   },
   {
     q: 'How do I search for homes in the community?',

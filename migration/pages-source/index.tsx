@@ -20,11 +20,11 @@ export default function Home() {
         <section className={styles.trustBar} aria-label="Sun City Summerlin highlights">
           <div className={styles.trustItem}>
             <span className={styles.trustValue}>55+</span>
-            <span className={styles.trustLabel}>Active Adult Community</span>
+            <span className={styles.trustLabel}>Age-qualified community</span>
           </div>
           <div className={styles.trustItem}>
             <span className={styles.trustValue}>3</span>
-            <span className={styles.trustLabel}>Championship Golf Courses</span>
+            <span className={styles.trustLabel}>Golf courses (2 championship, 1 executive)</span>
           </div>
           <div className={styles.trustItem}>
             <span className={styles.trustValue}>4</span>
@@ -48,6 +48,8 @@ export default function Home() {
         {/* Feature Section */}
         <FeatureSection />
 
+        <CommunityGuideSection />
+
         {/* Property Search */}
         <FeaturedPropertiesListings />
 
@@ -57,7 +59,7 @@ export default function Home() {
         <section className={styles.faqSection} aria-labelledby="home-faq-heading">
           <h2 id="home-faq-heading">Sun City Summerlin buyer FAQ</h2>
           <p className={styles.faqIntro}>
-            Quick answers about buying and living in this 55+ Summerlin community.{' '}
+            Quick answers about buying and living in this age-qualified (55+) Summerlin community.{' '}
             <Link href="/faq">See all FAQs</Link>
           </p>
           <dl className={styles.faqList}>
@@ -121,10 +123,10 @@ const EnhancedHero = () => {
       <div className={styles.heroContent}>
         <p className={styles.heroEyebrow}>Las Vegas Real Estate Guidance for 55+ Living</p>
         <h1 className={styles.title}>Sun City Summerlin Real Estate</h1>
-        <h2 className={styles.subtitle}>Las Vegas&apos; Premier 55+ Community</h2>
+        <h2 className={styles.subtitle}>Age-qualified (55+) community in Summerlin</h2>
         <p className={styles.description}>
-          Find your perfect home in this beautiful active adult community with Dr. Jan Duffy, 
-          your Sun City Summerlin real estate specialist.
+          Explore homes, golf, and recreation in Del Webb&apos;s Sun City Summerlin (ZIP 89134) with
+          Dr. Jan Duffy, your local real estate guide.
         </p>
         <div className={styles.heroPills} aria-label="Key benefits">
           <span className={styles.heroPill}>Golf Course Homes</span>
@@ -139,6 +141,17 @@ const EnhancedHero = () => {
             Schedule with Dr. Jan
           </ScheduleButton>
         </div>
+        <p className={styles.homeValueCta}>
+          <a
+            href="https://calendly.com/drjanduffy/listing-consultation?utm_source=suncitysummerlinhomesforsale.com&utm_medium=website&utm_content=home-value"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.homeValueLink}
+          >
+            What&apos;s my Sun City Summerlin home worth?
+            <span className={styles.srOnly}> (opens Calendly in a new tab)</span>
+          </a>
+        </p>
       </div>
     </div>
   );
@@ -151,7 +164,10 @@ const FeatureSection = () => {
       <div className={styles.features}>
         <div className={styles.featureCard}>
           <h3>Active Lifestyle</h3>
-          <p>Four golf courses, multiple community centers, pools, and countless activities.</p>
+          <p>
+            Three golf courses (Highland Falls, Palm Valley, and Eagle Crest), four community
+            centers, pools, and club activities across the association.
+          </p>
         </div>
         <div className={styles.featureCard}>
           <h3>Beautiful Views</h3>
@@ -162,6 +178,47 @@ const FeatureSection = () => {
           <p>Minutes from shopping, dining, and entertainment with easy access to Las Vegas.</p>
         </div>
       </div>
+    </section>
+  );
+};
+
+const CommunityGuideSection = () => {
+  return (
+    <section className={styles.communityGuideSection} aria-labelledby="community-guide-heading">
+      <h2 id="community-guide-heading" className={styles.sectionTitle}>
+        Sun City Summerlin community guide
+      </h2>
+      <p className={styles.communityGuideLead}>
+        Per the Sun City Summerlin Community Association, Del Webb&apos;s Sun City Summerlin has
+        operated since 1989 in the Summerlin area of Las Vegas, NV (ZIP 89134), with 7,781 homes and
+        association-managed recreation across the neighborhood.
+      </p>
+      <div className={styles.communityGuideGrid}>
+        <div className={styles.communityGuideCard}>
+          <h3>Golf</h3>
+          <p>
+            Highland Falls and Palm Valley are championship courses; Eagle Crest is the executive
+            course.
+          </p>
+        </div>
+        <div className={styles.communityGuideCard}>
+          <h3>Community centers</h3>
+          <ul className={styles.communityGuideList}>
+            <li>Mountain Shadows — 9107 Del Webb Blvd</li>
+            <li>Sun Shadows — 8700 Del Webb Blvd</li>
+            <li>Desert Vista — 10360 Sun City Blvd</li>
+            <li>Pinnacle — 2215 Thomas Ryan Blvd</li>
+          </ul>
+        </div>
+      </div>
+      <p className={styles.communityGuideNote}>
+        Occupancy in this age-qualified (55+) community follows the association&apos;s published rules.
+        For current listings, use the search tools on this site or{' '}
+        <a href="https://www.suncityvegas.com/" rel="noopener noreferrer">
+          suncityvegas.com
+        </a>
+        .
+      </p>
     </section>
   );
 };

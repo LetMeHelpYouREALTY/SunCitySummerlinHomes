@@ -62,34 +62,45 @@ export default function Community() {
 
             <div className={styles.communityHighlights}>
               <div className={styles.statsCard}>
-                <h3>$548,175</h3>
-                <p>Average Home Value</p>
+                <h3>1989</h3>
+                <p>Community established</p>
               </div>
               <div className={styles.statsCard}>
-                <h3>$331</h3>
-                <p>Average Price per Sq Ft</p>
+                <h3>7,781</h3>
+                <p>Homes (association)</p>
               </div>
               <div className={styles.statsCard}>
-                <h3>8,000+</h3>
-                <p>Homes in Community</p>
+                <h3>89134</h3>
+                <p>ZIP code</p>
               </div>
               <div className={styles.statsCard}>
-                <h3>20,000+</h3>
-                <p>Active Residents</p>
+                <h3>4</h3>
+                <p>Community centers</p>
               </div>
             </div>
 
             <div className={styles.communityDescription}>
               <p>
-                Sun City Summerlin is a 55-plus, active adult community brimming with amenities. Located just beyond the foothills of the Spring Mountains, residents enjoy stunning backyard views of Red Rock Canyon and adjacent rocky peaks. As Las Vegas&apos; oldest and largest community of its kind, Sun City Summerlin is truly &quot;a city within a city,&quot; offering convenient access to doctors, banks, florists, and various stores right within the community.
+                Sun City Summerlin is an age-qualified (55+) Del Webb community within the
+                Summerlin master plan on the western edge of Las Vegas. The association reports
+                tree-lined streets, on-site services, and recreation including golf, fitness centers,
+                and pools (source: suncitysummerlin.com, November 2026).
               </p>
               <p>
-                Built in three phases starting in 1989, the community consists of almost 8,000 attached and single-family homes. With more than two dozen floor plans ranging from 1,000 to 2,900 square feet, homes feature contemporary Mediterranean bungalow designs with characteristic terracotta roofing and stucco siding. Many properties front one of the community&apos;s renowned golf courses, with garage space specifically for golf carts.
+                The community opened in 1989 and includes 7,781 homes in ZIP 89134. Golf includes
+                championship courses Highland Falls and Palm Valley plus the executive Eagle Crest
+                course. Recreation centers include Mountain Shadows (9107 Del Webb Blvd), Sun Shadows
+                (8700 Del Webb Blvd), Desert Vista (10360 Sun City Blvd), and Pinnacle (2215 Thomas
+                Ryan Blvd). Occupancy rules are published in the association&apos;s Rules &amp;
+                Regulations.
               </p>
               <div className={styles.realtorProfile}>
                 <h3>Your Sun City Summerlin Expert</h3>
                 <p>
-                  Dr. Jan Duffy has been specializing in Sun City Summerlin homes for over 25 years. As a Las Vegas REALTOR® dedicated to the 55+ community, Dr. Duffy provides personal tours, senior-specific market analysis, and simplified transactions designed specifically for retirees. With expertise in low-maintenance single-story homes near golf courses, pools, and the 80+ social clubs that make this community special, Dr. Duffy is your trusted guide to finding the perfect home in this premier Del Webb community.
+                  Dr. Jan Duffy helps buyers and sellers navigate Sun City Summerlin with local
+                  market guidance, tours, and transaction support focused on this age-qualified (55+)
+                  community—golf-adjacent homes, single-story floor plans, and the association&apos;s
+                  clubs and recreation centers.
                 </p>
                 <p>
                   As both a veteran-owned and women-owned business, Dr. Duffy's practice is dedicated to accessible, inclusive service for all clients. Contact (702) 500-1955 to schedule a consultation today.
