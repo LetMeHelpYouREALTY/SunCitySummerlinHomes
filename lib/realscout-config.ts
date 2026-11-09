@@ -53,19 +53,22 @@ export type RealScoutPriceTier = {
 export const realScoutFeaturedPriceTiers: readonly RealScoutPriceTier[] = [
   {
     label: 'Single-Story Homes',
-    description: 'Single-story and patio homes',
+    description:
+      'Newest Berkshire Hathaway HomeServices Nevada Properties listings in this price range',
     priceMin: '450000',
     priceMax: '650000',
   },
   {
     label: 'Golf Course Homes',
-    description: 'Homes on or near association golf courses',
+    description:
+      'Newest Berkshire Hathaway HomeServices Nevada Properties listings in this price range',
     priceMin: '650000',
     priceMax: '1000000',
   },
   {
     label: 'Premium Homes',
-    description: 'Larger floor plans and golf-adjacent locations',
+    description:
+      'Newest Berkshire Hathaway HomeServices Nevada Properties listings in this price range',
     priceMin: '1000000',
     priceMax: '4000000',
   },

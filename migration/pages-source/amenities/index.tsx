@@ -87,8 +87,8 @@ export default function Amenities() {
               <p>
                 Four community centers serve residents: Mountain Shadows at 9107 Del Webb Blvd, Sun
                 Shadows at 8700 Del Webb Blvd, Desert Vista at 10360 Sun City Blvd, and Pinnacle at
-                2215 Thomas Ryan Blvd. Each offers fitness, aquatics, courts, and club meeting space
-                per the association.
+                2215 Thomas Ryan Blvd. Per suncitysummerlin.com, the association supports four fitness
+                centers and five indoor and outdoor pools across the centers, plus club meeting space.
               </p>
             </div>
 
