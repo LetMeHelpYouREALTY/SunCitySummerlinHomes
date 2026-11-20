@@ -3,7 +3,7 @@ import Page from '@/migration/pages-source/contact/index';
 import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 
 export const metadata: Metadata = {
-  title: "Contact Dr. Jan Duffy",
+  title: { absolute: "Contact Dr. Jan Duffy" },
   description: "Contact Dr. Jan Duffy for Sun City Summerlin real estate.",
   alternates: { canonical: "/contact" },
 };

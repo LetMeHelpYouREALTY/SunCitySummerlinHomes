@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import MarketHubPage from '@/components/MarketHubPage';
 
 export const metadata: Metadata = {
-  title: 'Weekly Market Update | Dr. Jan Duffy',
+  title: 'Weekly Market Update',
   description:
     'Get a weekly Sun City Summerlin and Las Vegas market update with actionable guidance for current buyers and sellers.',
   alternates: { canonical: '/market-update' },

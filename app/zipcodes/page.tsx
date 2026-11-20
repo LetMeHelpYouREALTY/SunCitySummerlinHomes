@@ -3,7 +3,7 @@ import Page from '@/migration/pages-source/zipcodes/index';
 import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 
 export const metadata: Metadata = {
-  title: "Las Vegas Zip Codes | Dr. Jan Duffy",
+  title: "Las Vegas Zip Codes",
   description: "Las Vegas zip code directory.",
   alternates: { canonical: "/zipcodes" },
 };

@@ -3,7 +3,7 @@ import Page from '@/migration/pages-source/services/index';
 import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 
 export const metadata: Metadata = {
-  title: "Real Estate Services | Dr. Jan Duffy",
+  title: "Real Estate Services",
   description: "Buying, selling, and relocation services.",
   alternates: { canonical: "/services" },
 };

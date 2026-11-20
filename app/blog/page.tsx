@@ -3,7 +3,7 @@ import Page from '@/migration/pages-source/blog/index';
 import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 
 export const metadata: Metadata = {
-  title: "Blog | Dr. Jan Duffy",
+  title: "Blog",
   description: "Real estate news and updates for Sun City Summerlin.",
   alternates: { canonical: "/blog" },
 };

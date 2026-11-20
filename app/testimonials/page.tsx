@@ -3,7 +3,7 @@ import Page from '@/migration/pages-source/testimonials/index';
 import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 
 export const metadata: Metadata = {
-  title: "Testimonials | Dr. Jan Duffy",
+  title: "Testimonials",
   description: "Client testimonials for Dr. Jan Duffy.",
   alternates: { canonical: "/testimonials" },
 };

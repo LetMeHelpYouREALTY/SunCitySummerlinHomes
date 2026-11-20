@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { zipcode } = await params;
   const { zipcodeData } = getZipcodePageData(zipcode);
   return {
-    title: `${zipcodeData.area} (${zipcodeData.code}) | Las Vegas Real Estate | Dr. Jan Duffy`,
+    title: `${zipcodeData.area} (${zipcodeData.code}) | Las Vegas Real Estate`,
     description: `Explore homes for sale in ${zipcodeData.area} (${zipcodeData.code}). ${zipcodeData.description} Contact Dr. Jan Duffy for expert real estate guidance in Las Vegas.`,
     alternates: { canonical: `/zipcodes/${zipcodeData.code}` },
     openGraph: {

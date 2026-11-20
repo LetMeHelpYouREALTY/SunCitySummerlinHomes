@@ -3,7 +3,7 @@ import Page from '@/migration/pages-source/services/relocation';
 import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 
 export const metadata: Metadata = {
-  title: "Relocation | Dr. Jan Duffy",
+  title: "Relocation",
   description: "Relocation help to Las Vegas and Sun City Summerlin.",
   alternates: { canonical: "/services/relocation" },
 };

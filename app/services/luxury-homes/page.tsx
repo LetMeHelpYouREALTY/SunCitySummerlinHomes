@@ -3,7 +3,7 @@ import Page from '@/migration/pages-source/services/luxury-homes';
 import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 
 export const metadata: Metadata = {
-  title: "Luxury Homes | Dr. Jan Duffy",
+  title: "Luxury Homes",
   description: "Luxury homes in Las Vegas and Summerlin.",
   alternates: { canonical: "/services/luxury-homes" },
 };

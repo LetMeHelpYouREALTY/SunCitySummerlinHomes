@@ -6,7 +6,7 @@ import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBread
 import styles from '@/styles/JadePatterns.module.css';
 
 export const metadata: Metadata = {
-  title: 'Media Highlights | Dr. Jan Duffy',
+  title: 'Media Highlights',
   description:
     'Authority and proof section patterned after elite agent websites, adapted for Dr. Jan Duffy and Sun City Summerlin positioning.',
   alternates: { canonical: '/media-highlights' },

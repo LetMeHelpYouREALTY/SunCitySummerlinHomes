@@ -5,7 +5,7 @@ import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBread
 import { getAgentFaqPageJsonLd } from '@/lib/site-faq';
 
 export const metadata: Metadata = {
-  title: 'FAQ | Sun City Summerlin Real Estate | Dr. Jan Duffy',
+  title: 'FAQ | Sun City Summerlin Real Estate',
   description:
     'Answers about buying, selling, and relocating in Sun City Summerlin and Las Vegas with Dr. Jan Duffy, REALTOR® and 55+ community specialist.',
   alternates: { canonical: '/faq' },

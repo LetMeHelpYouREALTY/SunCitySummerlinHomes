@@ -3,7 +3,7 @@ import Page from '@/migration/pages-source/services/selling-agent';
 import JsonLdBreadcrumbs, { breadcrumbTrail } from '@/components/seo/JsonLdBreadcrumbs';
 
 export const metadata: Metadata = {
-  title: "Selling Agent | Dr. Jan Duffy",
+  title: "Selling Agent",
   description: "Listing and selling homes in Sun City Summerlin.",
   alternates: { canonical: "/services/selling-agent" },
 };

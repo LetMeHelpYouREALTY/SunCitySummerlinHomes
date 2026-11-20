@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import MarketHubPage from '@/components/MarketHubPage';
 
 export const metadata: Metadata = {
-  title: 'Las Vegas Market Insights | Dr. Jan Duffy',
+  title: 'Las Vegas Market Insights',
   description:
     'Read strategic market insights for Sun City Summerlin and Las Vegas real estate, including local demand shifts, inventory patterns, and buyer-seller opportunities.',
   alternates: { canonical: '/market-insights' },
